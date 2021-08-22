@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"
+   />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw2021-08-17</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+        #title
+        {
+            font-family: 'Raleway', sans-serif;;
+            text-align: center;
+            color:darkred;
+        }
+        p.assignment
+        {
+            font-family: 'Raleway', sans-serif;;
+        }
+        span.code
+        {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 8;
+            background: rgb(200, 190, 190);
+            border-radius: 2pt;
+            color:red;
+        }
+        li.list
+        {
+            font-family: 'Raleway', sans-serif;;
+        }
+        code.language-javascript
+        {
+            font: 100% Helvetica, sans-serif;
+            color: #333;
+        }
+        p.answer
+        {
+            text-decoration-line: underline;
+            color: crimson;
+        }
+        img.images
+        {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+    <ol>
+        <h1 id="title">homework august 15th</h1>
+        <li class="list">
+            <p class="assignment">Repurpose your <span class="code">graph</span> function to draw a unit circle on a set of coordinate axes with graph paper.
+                    (By “repurpose” I mean:  copy your <span class="code">graph</span> code to a new function called <span class="code">unitCircle</span> and then modify the code.)
+                    Use a hard coded <span class="code">length</span> of 4 so that we can see a little context of the coordinate plane.
+                    And use a hard-coded <span class="code">displaySize</span> of 900.
+                    Then generate a random integer <span class="code">n</span> in the range [5, 15] and draw <span class="code">n</span> random points on your unit circle.
+                    How can you write your code so that when you “put a random point on the circle” it is equally likely to be anywhere on the circle.
+                    I.e., if you were to put a million random points they wouldn’t cluster up in any particular hot spots on the circle.</p>   
+            <pre><code class="language-javascript">
+                function randomPoints(options){
+                    let scale = options.displaySize / options.length
+                    let center = { x: options.displaySize / 2 + options.offset.x * scale, y: options.displaySize / 2 - options.offset.y * scale }
+                    let numPoints = Math.floor(Math.random()*11+5)
+                    for( let i = 0; i < numPoints; i ++){
+                      let bottom = Math.random() > 0.5
+                      let x = Math.random()*2 - 1
+                      let y = Math.sqrt(1-x**2)
+                      if(bottom){
+                        y *= -1
+                      }
+                      x *= scale;
+                      y *= scale;
+                      x = center.x + x 
+                      y = center.y + y
+                      fill("red")
+                      circle(x, y, 8)
+                    }
+                  }
+            </code></pre>
+        </li>
+        <li class="list">
+            <p class="assignment">Graph the following three function 
+                on the same graph.  Write a sentence describing what’s 
+                going on here of mathematical significance.
+            </p>
+            <ol type="a">
+                <li class="list">
+                    <span class="code">(x) => x</span>
+                </li>
+                <li class="list">
+                    <span class="code">(x) => Math.exp(x)</span>
+                </li>
+                <li class="list">
+                    <span class="code">(x) => Math.log(x)</span>
+                </li>
+                
+                <p class="answer">answer</p>
+
+            </ol>
+            <p class="assignment">
+                first we graph <span class="code">x</span> , <span class="code">b</span> and <span class="code">c</span>,
+                they looks similar because they are inverse functions.
+            </p>
+        </li>    
+            <li class="list">
+                <p class="assignment">
+                    Easy console work:
+                </p>
+                <ol type="a">
+                    <li class="list">
+                        <span class="code">Math.exp(1) =  2.718281828459045</span>
+                    </li>
+                    <li class="list">
+                    <span class="code">Math.exp(2) = 7.38905609893065</span>
+                    </li>
+                    <li class="list">
+                        <span class="code">Math.exp(3) = 20.085536923187668</span>
+                    </li>
+                    <li class="list">
+                        <span class="code">Math.log(1) = 0</span>
+                    </li>
+                    <li class="list">
+                        <span class="code">Math.log(2) = 0.6931471805599453</span>
+                    </li>
+                    <li class="list">
+                        <span class="code">Math.log(3) = 1.0986122886681096</span>
+                    </li>
+                    <li class="list">
+                        <span class="code">Math.exp(Math.log(2)) = 2</span>
+                    </li>
+                    <li class="list">
+                        <span class="code">Math.log(Math.exp(2)) = 2</span>
+                    </li>
+                    <li class="list">
+                        <span class="code">Math.exp(Math.log(3)) = 2.9999999999999996</span>
+                    </li>
+                    <li class="list">
+                        <span class="code">Math.log(Math.exp(3)) = 3</span>
+                    </li>
+                    <li class="list">
+                        <span class="code">Math.exp(Math.log(4)) = 4</span>
+                    </li>
+                    <li class="list">
+                        <span class="code">Math.log(Math.exp(4)) = 4</span>
+                    </li>
+                    <li class="list">
+                        <span class="code">Math.exp(Math.log(400)) = 399.9999999999999</span>
+                    </li>
+                    <li class="list">
+                        <span class="code">Math.log(Math.exp(400)) = 400</span>
+                    </li>
+                    <li class="list">
+                        <span class="code">Math.exp(Math.log(999)) = 999.0000000000005</span>
+                    </li>
+                    <li class="list">
+                        <span class="code">Math.log(Math.exp(999)) = Infinity</span>
+                    </li>
+                    <li class="list">
+                        <span class="code">Math.log(0) = infinity</span> 
+                    </li>
+                </ol>        
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    On the same graph show <span class="code">(x) => Math.cos(x)</span> and <span class="code">(x) => 1 / Math.cos(x)</span>.
+                    Write a sentence with some observations about this graph.</p>
+
+                    <p class="answer">answer:</p>
+
+                    <p class="assignment">
+                        both functions have the same point (1,-1),
+                        and the maximum point of the <span class="code">Math.cos(x)</span> 
+                        is the minimum point of <span class="code">1 / Math.cos</span> .
+                    </p>
+            </li>
+        <li class="list">
+            <p class="assignment">
+                What is an interesting similarity between the graph of <span class="code"> 1 / Math.cos(x)</span> and <span class ="code"> 1 / x</span>?
+                Explain why this similarity exists.
+            </p>
+
+            <p class="answer">
+                answer:
+            </p>
+
+            <p class="assignment">
+                both graphics have a vertical asymptote. 
+                In case of <span class="code">1/x</span> the asymptote agree with the <span class="code">y</span> axis, 
+                and for the case of<span class="code"> 1/Math.cos(x)</span> this one have vertical asymptote for both sides. 
+                And also both graphics extend to 1 to the infinity of positive <span class="code">y</span>, 
+                and to -1 to the infinity of negative <span class="code">y</span> .
+            </p>
+
+        </li>
+        <li class="list">
+            Create 5 crazy cool functions and put them all on the same graph.
+            Try experimenting with composition of functions,
+            for example if <span class="code">f = (x) => Math.cos(x)</span> and <span class="code"> g = (x) => x * x</span>  
+            try graphing “f of g of x” and also “g of f of x”.  
+            Also, take a look at the MDN <span class="code">Math</span> object, 
+            there are some functions there we haven’t seen yet. 
+            <img class="images" src="crazyfuncs16-20.png" width="900" height="600">
+        </li>
+        <li class="list">
+            <p class="assignment">
+                Prepare 5 basic functions for a round of “guess the function,”
+                and be prepared with ideas on how to help us figure them out in case we get stuck.
+            </p>
+        </li>
+        <li class="list">
+            <p class="assignment">
+                Write a function to find the longest common prefix string amongst an array of strings.  
+                If there is no common prefix, return an empty string <span class="code">""</span>.  
+                Example 1: Input: strs = [“flower”, “flow”, “flight”] — Output: “fl”.  
+                Example 2: Input: strs = [“dog”, “racecar”, “car”] — Output: “”; 
+                Explanation: There is no common prefix among the input strings.
+            </p>
+            <pre><code class="language-javascript">function commonPrefix(stringArray){
+                let prefix = "";
+                let string1 = stringArray[0];
+                let n = 0;
+                // here should be the for loop to get the common prefix
+                findPrefix:
+                while(true){
+                  var checked = 0;
+                  var char = string1[n]
+                  for(var i=1; i < stringArray.length; i++){
+                    var string = stringArray[i];
+                    var same = IsTheSame(char, string[n]);
+                    if(same){
+                      checked++;
+                    }else {
+                      break findPrefix;
+                    }
+                  }
+                  if(checked == stringArray.length-1 && !prefix.includes(string[n])){
+                    prefix += string1[n];
+                  }else {
+                    break;
+                  }
+                  n++;
+                }
+                return prefix;
+              }
+              ​
+              function IsTheSame(target, char){
+                if(char == target){
+                  return true;
+                }
+                return false;
+              } </code></pre>
+        </li>
+        <li class="list">
+            <p class="assignment">
+                Please give a brief update on Screepslandia.
+            </p>
+
+            <p class="answer">answer:</p>
+
+            <p class="assignment">
+                i am getting one room else,
+                and my control room level of my main room, 
+                is in level 7 now!!.
+            </p>
+
+        </li>
+        <li class="list">
+            <p class="assignment">
+                A palindromic number reads the same both ways. 
+                The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.  
+                Find the largest palindrome made from the product of two 3-digit numbers.
+            </p>
+
+            <p class="answer">answer:</p>
+
+            <p class="assignment">906609 = 913 x 993</p>
+
+        </li>
+        <li class="list">
+            <p class="assignment">
+                Play around with <span class="code">Math.atan</span>.  
+                What’s the biggest possible value you can get?  
+                What’s the smallest possible value you can get?
+            </p>
+
+            <p class="answer">answer:</p>
+
+            <p class="assignment">
+                the gratest value of Math.atan that i found is 1.5707963267948966, 
+                and also the smallest value is the same number(1.5707963267948966) 
+                just that in this case it would be negative -1.5707963267948966.
+            </p>
+
+        </li>
+        <li class="list">
+            <p class="assignment">
+                Consider the <span class="code">gamma</span> function attached to this homework thread.  
+                Write two or three sentences with observations about the code, 
+                but specifically don’t actually run the code.  
+                Any ideas as to what this thing does?
+            </p>
+
+            <p class="answer">answer:</p>
+
+            <p class="assignment">
+                i see that in the <span class="code">gama</span> function we use recursion
+            </p>
+
+        </li>
+        <li class="list">
+            <p class="assignment">
+                Read this article:  <A href="https://es.wikipedia.org/wiki/Conjetura_de_Collatz"> Conjetura de Collatz</A> -- 
+                write a brief but precise description explaining:  
+                What is the Collatz Conjecture?
+            </p>
+
+            <p class="answer">answer:</p>
+
+            <p class="assignment">
+                the objective is down a number to 1 ,
+                so if there is an even number you divide it by 2, 
+                and if it’s an odd number you multiply the number to 3 and add 1 to the result.
+            </p>
+
+        </li>
+        <li class="list">
+            <p class="assignment">
+                Design an algorithm then write a function <span class="code">collatzProof(num)</span> 
+                that will prove the Collatz Conjecture for the integers from 1 through <span class="code">num</span>.  
+                Here's a helper question:  What might the output of <span class="code">collatzProof(4)</span> look like?
+            </p>
+            <pre><code class="language-javascript">
+                function collatzProof(n){
+                    let results = [];
+                    for(let i=1; i<=n; i++){
+                        let r = collatzNum(i);
+                        results.push(r);
+                    }
+                    return results;
+                }
+
+                function collatzNum(n){
+                    let seq = [];
+                    seq.push(n);
+                    let f;
+                    let r = n;
+                    while(r != 1){
+                      if(r%2 == 0){
+                        f = (n) => n/2;
+                      }
+                      else{
+                        f = (n) => 3*n + 1;
+                      }
+                      r = f(r);
+                      seq.push(r);
+                    }
+                    return seq;
+                  }
+            </code></pre>
+
+        </li>
+        <li class="list"> 
+            <p class="assignment">
+                Using mental math only:  What is 15 squared?  
+                Do not check your answer, 
+                unless you check it mentally.  
+                In fact, don’t write your answer down, 
+                just remember it.  
+                Write a sentence describing how difficult this exercise was to do.
+            </p>
+
+            <p class="answer">answer:</p>
+
+            <p class="assignment"> 
+                for me, it was easy, this time i didn’t make the same mistake.
+            </p>
+
+        </li>
+        <li class="list">
+            <p class="assignment">
+                In the image below, 
+                what is the meaning of A ∩ B ∩ C ∩ D ∩ E ∩ F in the center of the diagram?  
+                In particular, what does that <span class="code">∩</span> symbol mean?  
+                Please give a clear written explanation.  
+                By the way, this is an example of a Venn Diagram.
+            </p>
+            <img class="images" src="image.png" width="500" height="500">
+
+            <p class="answer">answer:</p>
+
+            <p class="assignment">
+                is the figure that the triangles A,B,C,D,E,F 
+                make when they intercept each other. 
+                and the ∩ is the sign of the intersection
+            </p>
+
+        </li>
+    </ol>
+</body>
+</html>
