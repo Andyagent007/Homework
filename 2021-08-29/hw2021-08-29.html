@@ -26,6 +26,11 @@
             border-radius: 2pt;
             color:greenyellow;
         }
+        code.language-javascript
+        {
+            font:100% helvetica  ;
+            color: rgb(13, 17, 59);      
+        }
         li.list
         {
             font-family: 'Raleway', sans-serif;;
@@ -34,6 +39,12 @@
         {
             text-decoration-line: underline;
             color: darkgreen;
+        }
+        img.images
+        {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
   </head>
@@ -47,27 +58,39 @@
                 <p class="answer">answer</p>
                     <ol type="a">
                         <li class="list">
-                            <span class="code">git init</span>
+                            <span class="code">git init</span> 
+                            is for <span class="code"> initialize</span> 
+                            a new repository of 
+                            <span class="code"> github</span> .
                         </li> 
                         <li class="list">
                             <span class="code">git status</span>
+                            is to see every changes that you have made and you haven’t add or committed.
                         </li>
                         <li class="list">
                             <span class="code">git add</span>
+                            is to add a change that you did in the <span class="code"> github</span> repository
+                            (is more like a change of some file or other thing inside the <span class="code"> github </span> repository).
                         </li>
                         <li class="list">
                             <span class="code">git commit</span>
+                            is to save the changes that you did in the repository.
                         </li>
                         <li class="list">
                             <span class="code">git log</span>
+                            is to see every different commit that you have made in the repository.
                         </li>
                         <li class="list">
                             <span class="code">git push</span>
+                            is to push the changes that you made in your terminal into your <span class="code"> github</span> account.
                         </li>
                         <li class="list">
                             <span class="code">git pull</span>
+                            is to pull the changes that you have made in your <span class="code">github</span> account by the browser 
+                            ,to the terminal.
                         </li>
                     </ol>
+                </li>
             </p>
             <li class="list">
             <p class="assignment">
@@ -87,8 +110,52 @@
                     Create 5 crazy cool functions and put them all on the same graph.  
                     Include a code snippet showing what these functions are.
                 </p>
+                <p class="answer">answer</p>
+                    <pre><code class="language-javascript">
+                        const specialFunc10 = (x) => Math.atan(x) / Math.tan(x)
+                        const whackoFunc5 = (x) => ceil(x**-8) ** cos(x**-8)  ** atan(x**-2) / tan(x**x)
+                        const func3 = ( x )  => exp(x)
+                        const func4 = ( x )  => log(x)
+                        //crazyFuncs draws in the graphic
+                        const crazyFunc25 = (x) => whackoFunc5(specialFunc10(x))
+                        const crazyFunc24 = (x) => func3(func4(x))+sin(x)/Math.random(x)
+                        const crazyFunc23 = (x) => crazyFunc22(crazyFunc21(x))
+                        const crazyFunc22 = (x) => atan(x*x)/cos(x*x)*exp(x)**Math.random(x)
+                        const crazyFunc21 = (x) => abs(x*x)*Math.floor(x)*Math.random(x) 
+                    </code></pre>
+                <img class="images" src="5_crazyFuncs.png" width="600">
             </li>
-        </li>
+            <li class="list">
+                <p class="assignment">
+                    Maybe you’ve seen this theorem before: 
+                    Math.tan(a+b) == (Math.tan(a) + Math.tan(b)) / (1 - Math.tan(a) * Math.tan(b)).  
+                    Let’s suppose you had two angles, x and y and you knew that Math.tan(x) == 3/7 and Math.tan(y) == 21/4.  
+                    Use your skills with grade school math to evaluate Math.tan(x+y) — specifically, 
+                    do not use the console.  
+                    Show all the little steps of your solution.
+                </p>
+                <p class="answer">answer</p>
+                <ol type="i">
+                    <li class="list"> 
+                        <span class="code"> (Math.tan(x) == 3/7,Math.tan(y) == 21/4) </span> 
+                    </li>
+                    <li class="list"> 
+                        <span class="code"> (Math.tan(3/7) + Math.tan(21/4)) / (1 - Math.tan(3/7) * Math.tan(21/4)) </span> 
+                    </li>
+                    <li class="list"> 
+                        <span class="code"> (159/28) / (1 - (3/7 * 21/4)) </span> 
+                    </li>
+                    <li class="list"> 
+                        <span class="code"> (159/28) / (1 - 9/4)</span> 
+                    </li>
+                    <li class="list"> 
+                        <span class="code"> (159/28) / (-5/4) </span> 
+                    </li>
+                    <li class="list"> 
+                        <span class="code"> -159/35 </span> 
+                    </li>
+                </ol>
+            </li>
     </ol>
   </body>
 </html>
