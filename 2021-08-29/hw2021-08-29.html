@@ -52,7 +52,15 @@
             margin-left:auto;
             margin-right: auto;
         }
-
+        .side_by_side
+        {
+            display: flex;
+        }
+        .side_by_side img
+        {
+            width: 500px;
+            height: 100%;
+        }
     </style>
   </head>
   <body>
@@ -107,8 +115,10 @@
                     use MacOS Preview to scale it to a width of 500,
                     then put that screenshot here.
                 <p class="answer">answer</p>
-                <img class="screenshot" src="hw2021-08-29.png" width="400">
-                <img class="screenshot" src="hw2021-08-29_2.png" width="400">
+                <div class="side_by_side" >
+                    <img class="screenshot" src="hw2021-08-29.png" >
+                    <img class="screenshot" src="hw2021-08-29_2.png" >
+                </div>
             </p>
             </li>
             <li class="list">
