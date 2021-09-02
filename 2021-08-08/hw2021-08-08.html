@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"
+   />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw2021-08-08</hw2021-08-08></title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+        #title
+        {
+            font-family: 'Raleway', sans-serif;;
+            text-align: center;
+            color:purple;
+        }
+        li.list
+        {
+            font-family: 'Raleway', sans-serif;;
+        }
+        p.assignment
+        {
+            font-family: 'Raleway', sans-serif;;
+        }
+        span.code
+        {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 8;
+            background: rgb(196, 194, 194);
+            border-radius: 2pt;
+            color:darkmagenta;
+        }
+        p.answer
+        {
+            text-decoration-line: underline;
+            color:indigo;
+        }
+    </style>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+        <ol>
+            <h1 id="title">Homework Due August 8</h1>
+            <li class="list">
+                <p class="assignment">
+                    Can you schedule a Screeps session for:
+                    <ol type="a">
+                        <li class="list">Monday Aug 2?</li>
+                        <li class="list">Friday Aug 6?</li>
+                        <li class="list">Thanks.</li>
+                    </ol>
+                </p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Do you remember this interesting fact about the tangent function from trigonometry?  
+                    <span class="code">Math.tan(a+b) == (Math.tan(a) + Math.tan(b)) / (1 - Math.tan(a) * Math.tan(b))</span>.  
+                    Let’s suppose you had two angles, x and y and you knew that Math.tan(x) == 3/5 and Math.tan(y) == 15/7.  
+                    Use your skills with grade school math to evaluate Math.tan(x+y) — specifically, do not use the console.  
+                    Show all the little steps of your solution.
+                </p>
+                <p class="answer">answer</p>
+                <p class="assignment">
+                    <ol type="i">
+                        <li class="list">
+                        <span class="code">(Math.tan(x) + Math.tan(y)) / (1 - Math.tan(x) * Math.tan(y)) </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">(Math.tan(3/5) + Math.tan(15/7)) / (1 - Math.tan(3/5) * Math.tan(15/7))</span>
+                        </li>
+                        <li class="list">
+                            <span class="code">(96/35) / (1 - (3/5 * 15/7))</span>
+                        </li>
+                        <li class="list">
+                            <span class="code">(96/35) / (1 - 9/7)</span>
+                        </li>
+                        <li class="list">
+                            <span class="code">(96/35) / (-2/7)</span>
+                        </li>
+                        <li class="list">
+                            <span class="code">-48/5</span>
+                        </li>
+                    </ol>
+                </p>
+            </li>
+        </ol> 
+    </body>
+    <!-- (Math.tan(3/5) + Math.tan(15/7)) / (1 - Math.tan(3/5) * Math.tan(15/7))
+    (96/35) / (1 - (3/5 * 15/7)) =
+    (96/35) / (1 - 9/7) =
+    (96/35) / (-2/7) =
+    32/15 -->
