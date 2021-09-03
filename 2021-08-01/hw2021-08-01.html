@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"
+   />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw2021-08-01</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+        #title
+        {
+            font-family: 'Raleway', sans-serif;;
+            text-align: center;
+            color:steelblue;
+        }
+        li.list
+        {
+            font-family: 'Raleway', sans-serif;;
+        }
+        p.assignment
+        {
+            font-family: 'Raleway', sans-serif;;
+        }
+        span.code
+        {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 8;
+            background: rgb(196, 194, 194);
+            border-radius: 2pt;
+            color:deepskyblue;
+        }
+        p.answer
+        {
+            text-decoration-line: underline;
+            color:darkturquoise;
+        }
+    </style>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+        <ol>
+            <h1 id="title">Homework Due Sunday August 1</h1>
+            <li class="list">
+                <p class="assignment">
+                    Here is an interesting fact about the “tangent” function: 
+                    Math.tan(a+b) == (Math.tan(a) + Math.tan(b)) / (1 - Math.tan(a) * Math.tan(b)).  
+                    Let’s suppose you had two angles, x and y and you knew that Math.tan(x) == 3/4 and Math.tan(y) == 12/5.  
+                    Use your skills with grade school math to evaluate Math.tan(x+y) — specifically, do not use the console.  
+                    Show all the little steps of your solution.
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    On the same graph show f(x) = Math.tan(x) and g(x) = 1 / Math.tan(x).  
+                    Write a sentence with some observations about this graph.
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Do question 2 first.  Now: Try to use mental math to graph the function h(x) = 1/x.  
+                    Write a sentence describing what you think it will look like.  
+                    Then graph the function.  
+                    (By now you should know that I expect to see a screenshot of this graph in your answer.)  
+                    Next, 
+                    write a sentence to see if the image of the graph compares to what your mental model was before; 
+                    write down some thoughts / observations.  
+                    Finally write a sentence that compares the graph for h(x) to the graph you got for #2.
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Graph the function (x) => Math.tan(x) and the function (x) => Math.atan(x) on the same graph.  
+                    Write a sentence with some thoughts about what you see.
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Easy console work:
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Create 5 crazy cool functions and put them all on the same graph.  
+                    Be artistic.
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Prepare 5 basic functions for a round of “guess the function,” 
+                    and be prepared with ideas on how to help us figure them out in case we get stuck.
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Create a video of you counting from 0 to 31 in base 2 using your hand.
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Write a function toBinary that takes a number and returns a string having that number converted to base 2.  
+                    For example, toBinary(13) should return the string "0b1101".
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Write a function toDecimal that takes a string containing a number expressed as a string in base 2 and returns a number.  
+                    For example, toDecimal('0b1101') should return 13.
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Read this wikipedia article:  <A href="https://en.wikipedia.org/wiki/Inverse_function">Inverse_function</A> (or the Spanish equivalent).
+                    <ol type="a">
+                        <li class="list">
+                            Choose your favorite example from the article and explain it in your own words. 
+                        </li>
+                        <li class="list">
+                            Explain why the article is relevant to the topics we are discussing in this homework assignment.
+                        </li>
+                    </ol> 
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Goldbach’s conjecture states that every even whole number greater than 2 is the sum of two prime numbers.
+                    <ol type="a">
+                        <li class="list">
+                                Prove it up to 10. Easy:
+                            <ol type="i">
+                                <li class="list">
+                                    4 = 2 + 2
+                                </li>
+                                <li class="list">
+                                    6 = 3 + 3
+                                </li>
+                                <li class="list">
+                                    8 = 3 + 5
+                                </li>
+                                <li class="list">
+                                    10 = 3 + 7
+                                </li>
+                            </ol>
+                        </li>
+                        <li class="list">
+                            Prove it up to 1000 by implementing your algorithm from the previous homework.
+                        </li>
+                    </ol>
+                </p>
+                <p class="answer">answer</p>
+            </li>
+        </ol>
+    </body>
