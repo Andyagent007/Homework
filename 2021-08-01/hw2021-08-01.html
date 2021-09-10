@@ -30,14 +30,19 @@
         {
             font-family: 'Roboto Mono', monospace;
             font-size: 8;
-            background: rgb(196, 194, 194);
+            background: rgb(184, 182, 182);
             border-radius: 2pt;
-            color:deepskyblue;
+            color:mediumblue;
         }
         p.answer
         {
             text-decoration-line: underline;
-            color:darkturquoise;
+            color:dodgerblue;
+        }
+        div.images
+        {
+            display: flex;
+            justify-content: center;
         }
     </style>
     <body>
@@ -47,45 +52,103 @@
             <li class="list">
                 <p class="assignment">
                     Here is an interesting fact about the “tangent” function: 
-                    Math.tan(a+b) == (Math.tan(a) + Math.tan(b)) / (1 - Math.tan(a) * Math.tan(b)).  
+                    <span class="code"> Math.tan(a+b) == (Math.tan(a) + Math.tan(b)) / (1 - Math.tan(a) * Math.tan(b))</span>.  
                     Let’s suppose you had two angles, x and y and you knew that Math.tan(x) == 3/4 and Math.tan(y) == 12/5.  
                     Use your skills with grade school math to evaluate Math.tan(x+y) — specifically, do not use the console.  
                     Show all the little steps of your solution.
                 </p>
                 <p class="answer">answer</p>
+                <ol type="i">
+                    <li class="list">
+                        <span class="code">(Math.tan(x) + Math.tan(y)) / (1 - Math.tan(x) * Math.tan(y))</span>
+                    </li>
+                    <li class="list">
+                        <span class="code">(Math.tan(3/4) + Math.tan(12/5)) / (1 - Math.tan(3/4) * Math.tan(12/5))</span>
+                    </li>
+                    <li class="list">
+                        <span class="code">(63/20) / (1 - (3/4 * 12/5))</span>
+                    </li>
+                    <li class="list">
+                        <span class="code">(63/20) / (1 - 36/20)</span>
+                    </li>
+                    <li class="code">
+                        <span class="code">(63/20) / (-4/5)</span>
+                    </li>
+                    <li class="list">
+                        <span class="code">315/-80 = 63/-16</span>
+                    </li>
+                </ol>
             </li>
             <li class="list">
                 <p class="assignment">
-                    On the same graph show f(x) = Math.tan(x) and g(x) = 1 / Math.tan(x).  
+                    On the same graph show <span class="code"> f(x) = Math.tan(x)</span> and <span class="code"> g(x) = 1 / Math.tan(x)</span>.  
                     Write a sentence with some observations about this graph.
                 </p>
                 <p class="answer">answer</p>
+                <p class="assignment">
+                    I notice that is the same graph ,
+                    just that when you divide the <span class="code"> Math.tan(x) / 1</span> it just flip 
+                </p>
+                <div class="images">
+                <img  src="Math.tan(x)_and_1overMath.tan.png" height="600">
+                </div>
             </li>
             <li class="list">
                 <p class="assignment">
-                    Do question 2 first.  Now: Try to use mental math to graph the function h(x) = 1/x.  
+                    Do question 2 first.  Now: Try to use mental math to graph the function <span class="code"> h(x) = 1/x</span>.  
                     Write a sentence describing what you think it will look like.  
                     Then graph the function.  
                     (By now you should know that I expect to see a screenshot of this graph in your answer.)  
                     Next, 
                     write a sentence to see if the image of the graph compares to what your mental model was before; 
                     write down some thoughts / observations.  
-                    Finally write a sentence that compares the graph for h(x) to the graph you got for #2.
+                    Finally write a sentence that compares the graph for <span class="code"> h(x)</span> to the graph you got for #2.
                 </p>
                 <p class="answer">answer</p>
+                <p class="assignment">
+                    to me the function would look like two curve, 
+                    one is on the 2nd quadrant of the graph and it doesn’t touch the 0,
+                    and the other one is on the 3rd quadrant of the graph and also it doesn’t touch the 0, 
+                    i think they looks very similar, 
+                    i could say that they are the same maybe the difference could be,
+                    just that the space between those curves are not the same, 
+                    one think that i see similar to the function is that they both, 
+                    like flip when you divide it by 1.
+                </p>
+                <div class="images">
+                    <img src="1_over_x.png" height="600">
+                </div>
             </li>
             <li class="list">
                 <p class="assignment">
-                    Graph the function (x) => Math.tan(x) and the function (x) => Math.atan(x) on the same graph.  
+                    Graph the function <span class="code"> (x) => Math.tan(x)</span> and the function <span class="code"> (x) => Math.atan(x)</span> on the same graph.  
                     Write a sentence with some thoughts about what you see.
                 </p>
                 <p class="answer">answer</p>
+                <p class="assignment">
+                    i realized that <span class="code"> Math.atan</span> and <span class="code"> Math.tan</span> have the same shape 
+                    just that one is horizontal and the other one is vertical.
+                </p>
             </li>
             <li class="list">
                 <p class="assignment">
                     Easy console work:
                 </p>
                 <p class="answer">answer</p>
+                <ol type="a">
+                    <li class="list">
+                        <span class="code">Math.tan(Math.atan(1)) = 0.9999999999999999</span>
+                    </li>
+                    <li class="list">
+                        <span class="code"> Math.atan(Math.tan(1)) = 1</span>
+                    </li>
+                    <li class="list">
+                        <span class="code">Math.tan(Math.atan(0.5)) = 0.5</span>
+                    </li>
+                    <li class="list">
+                        <span class="code"> Math.atan(Math.tan(0.5)) = 0.5 </span>
+                    </li>
+                </ol>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -93,6 +156,9 @@
                     Be artistic.
                 </p>
                 <p class="answer">answer</p>
+                <div class="images">
+                    <img src="crazyFuncs_6_to_10.png" height="600">
+                </div>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -109,15 +175,15 @@
             </li>
             <li class="list">
                 <p class="assignment">
-                    Write a function toBinary that takes a number and returns a string having that number converted to base 2.  
-                    For example, toBinary(13) should return the string "0b1101".
+                    Write a function <span class="code"> toBinary</span> that takes a number and returns a string having that number converted to base 2.  
+                    For example, toBinary(13) should return the string <span class="code"> "0b1101"</span>.
                 </p>
                 <p class="answer">answer</p>
             </li>
             <li class="list">
                 <p class="assignment">
-                    Write a function toDecimal that takes a string containing a number expressed as a string in base 2 and returns a number.  
-                    For example, toDecimal('0b1101') should return 13.
+                    Write a function <span class="code"> toDecimal</span> that takes a string containing a number expressed as a string in base 2 and returns a number.  
+                    For example, <span class="code"> toDecimal('0b1101')</span> should return 13.
                 </p>
                 <p class="answer">answer</p>
             </li>
