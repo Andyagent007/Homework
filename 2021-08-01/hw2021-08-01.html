@@ -42,7 +42,14 @@
         div.images
         {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        code.language-javascript
+        {
+            font: 100% Helvetica, sans-serif;
+            color: #333;
         }
     </style>
     <body>
@@ -166,12 +173,22 @@
                     and be prepared with ideas on how to help us figure them out in case we get stuck.
                 </p>
                 <p class="answer">answer</p>
+                <p class="assignment">
+                    functions ready!!
+                </p>
             </li>
             <li class="list">
                 <p class="assignment">
                     Create a video of you counting from 0 to 31 in base 2 using your hand.
                 </p>
                 <p class="answer">answer</p>
+                <div class="images">
+                    <img src="base2.png" height="200">
+                    <img src="base2_2.png" height="200">
+                    <img src="base2_3.png" height="200">
+                    <img src="base2_4.png" height="200">
+                    <img src="base2_5.png" height="200">
+                </div>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -179,6 +196,15 @@
                     For example, toBinary(13) should return the string <span class="code"> "0b1101"</span>.
                 </p>
                 <p class="answer">answer</p>
+                <pre>
+                    <code class="language-javascript">
+                        function toBinary(num){
+                            let binary = num.toString(2)
+                            let bin = "0b" + binary
+                            return bin 
+                        }
+                    </code>
+                </pre>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -186,20 +212,36 @@
                     For example, <span class="code"> toDecimal('0b1101')</span> should return 13.
                 </p>
                 <p class="answer">answer</p>
+                <pre>
+                    <code class="language-javascript">
+                        function toDecimal(bin){
+                            let decimal = bin.toString()
+                            return Number.parseFloat(decimal)
+                        }
+                    </code>
+                </pre>
             </li>
             <li class="list">
                 <p class="assignment">
                     Read this wikipedia article:  <A href="https://en.wikipedia.org/wiki/Inverse_function">Inverse_function</A> (or the Spanish equivalent).
                     <ol type="a">
                         <li class="list">
-                            Choose your favorite example from the article and explain it in your own words. 
+                            <p class="assignment"> Choose your favorite example from the article and explain it in your own words.</p>
+                            <p class="answer">answer</p> 
+                            <p class="assignment"> to make an inverse function,
+                            the function x has to have like codominian y, 
+                            but it can have two y , f(x) = y == g(y) = x, 
+                            x have to corresponde to y and y have to corresponde to x.</p>
                         </li>
                         <li class="list">
-                            Explain why the article is relevant to the topics we are discussing in this homework assignment.
+                            <p class="assignment"> Explain why the article is relevant to the topics we are discussing in this homework assignment.</p>
+                            <p class="answer">answer</p> 
+                            <p class="assignment">
+                                because in this case we could say that for number 9 and 10 we are making inverse function
+                            </p>
                         </li>
                     </ol> 
                 </p>
-                <p class="answer">answer</p>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -224,10 +266,57 @@
                         </li>
                         <li class="list">
                             Prove it up to 1000 by implementing your algorithm from the previous homework.
+                            <pre>
+                                <code class="language-javascript">
+                                    function getEvens(num){
+                                        let evens = []
+                                        for(let i=4; i < =num; i+=2){
+                                            evens.push(i);
+                                        }
+                                        return evens;
+                                    }
+                                    
+                                    function backwardSearch(array,value){
+                                        for(i=array.length-1; i>=0; i--){
+                                            let element = this[i];
+                                            if(element==value){
+                                                return true;
+                                            }
+                                        }
+                                        return false
+                                    }
+                                    
+                                    Array.prototype.backwardSearch = function(value){
+                                        for(i=this.length-1; i>=0; i--){
+                                            let element = array[i];
+                                            if(element==value){
+                                                return true;
+                                            }
+                                        }
+                                        return false
+                                    }
+                                    
+                                    function goldbach(num){
+                                        let primes = sieve(num)
+                                    
+                                        function partner(even){
+                                            let difference;
+                                            for(let prime of primes){
+                                                difference = even-prime;
+                                                if(primes.backwardSearch(difference)){
+                                                    return [even,prime,difference]
+                                                }
+                                            }
+                                            return [even,'Goldbach fails!!']
+                                        } 
+                                    
+                                        return getEvens(num).map(partner);
+                                    }
+                                </code>
+                            </pre>
                         </li>
                     </ol>
                 </p>
-                <p class="answer">answer</p>
             </li>
         </ol>
     </body>
