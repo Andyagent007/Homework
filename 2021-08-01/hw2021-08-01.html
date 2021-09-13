@@ -39,12 +39,24 @@
             text-decoration-line: underline;
             color:dodgerblue;
         }
+        div.image
+        {
+            display: flex;
+            justify-content: center;
+        }
         div.images
         {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
+            flex-direction: flex-start;
             justify-content: space-around;
-            align-items: center;
+            width: 1200px;
+            
+        }
+        div.images img
+        {
+            height: 200px;
+            margin: 10px;
         }
         code.language-javascript
         {
@@ -96,7 +108,7 @@
                     I notice that is the same graph ,
                     just that when you divide the <span class="code"> Math.tan(x) / 1</span> it just flip 
                 </p>
-                <div class="images">
+                <div class="image">
                 <img  src="Math.tan(x)_and_1overMath.tan.png" height="600">
                 </div>
             </li>
@@ -122,7 +134,7 @@
                     one think that i see similar to the function is that they both, 
                     like flip when you divide it by 1.
                 </p>
-                <div class="images">
+                <div class="image">
                     <img src="1_over_x.png" height="600">
                 </div>
             </li>
@@ -163,7 +175,7 @@
                     Be artistic.
                 </p>
                 <p class="answer">answer</p>
-                <div class="images">
+                <div class="image">
                     <img src="crazyFuncs_6_to_10.png" height="600">
                 </div>
             </li>
@@ -182,12 +194,12 @@
                     Create a video of you counting from 0 to 31 in base 2 using your hand.
                 </p>
                 <p class="answer">answer</p>
-                <div class="images">
-                    <img src="base2.png" height="200">
-                    <img src="base2_2.png" height="200">
-                    <img src="base2_3.png" height="200">
-                    <img src="base2_4.png" height="200">
-                    <img src="base2_5.png" height="200">
+                <div class="images" >
+                    <img src="base2.png">
+                    <img src="base2_2.png">
+                    <img src="base2_3.png">
+                    <img src="base2_4.png">
+                    <img src="base2_5.png">
                 </div>
             </li>
             <li class="list">
