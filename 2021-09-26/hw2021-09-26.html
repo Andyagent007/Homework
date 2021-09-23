@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"
+   />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw2021-09-26</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+        #title
+        {
+            font-family: 'Raleway', sans-serif;;
+            text-align: center;
+            color:steelblue;
+        }
+        li.list
+        {
+            font-family: 'Raleway', sans-serif;;
+        }
+        p.assignment
+        {
+            font-family: 'Raleway', sans-serif;;
+        }
+        span.code
+        {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 8;
+            background: rgb(184, 182, 182);
+            border-radius: 2pt;
+            color:mediumblue;
+        }
+        p.answer
+        {
+            font-family: 'Raleway', sans-serif;
+            text-decoration-line: underline;
+            color:dodgerblue;
+        }
+        div.image
+        {
+            display: flex;
+            justify-content: center;
+        }
+        div.images
+        {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: flex-start;
+            justify-content: space-around;
+            width: 1200px;
+            
+        }
+        div.images img
+        {
+            height: 200px;
+            margin: 10px;
+        }
+        code.language-javascript
+        {
+            font: 100% Helvetica, sans-serif;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+    <h1 id="title">Homework for september 26, 2021</h1>
+    <ol>
+        <li class="list">
+            <p class="assignment">
+                In the xy-plane the red curve is the graph of some anonymous function, 
+                and the blue straight line is tangent to the red curve at some point in the fourth quadrant.  
+                Does the tangent line have a positive or negative slope?  
+                Approximately what is the slope of that line?  Explain.
+            </p>
+            <img src="red_function_with_a_tangent_line.png">
+            <p class="answer">answer</p>
+            <img src="negative_slope.png">
+            <p class="assignemnt">
+                Here is the original graph on top of my own graph. 
+                In my own graph I draw this function: <span class="code">f(x) = (-1/2)*x + 0.3</span>,
+                and it looks like the slope is almost identical to the original graph.
+                So I think the tangent line in the original graph has a slope of about -1/2. 
+            </p>
+        </li>
+    </ol>
+</body>
