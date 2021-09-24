@@ -22,14 +22,200 @@
         {
             font-family: 'Raleway', sans-serif;;
         }
+        p.assignment
+        {
+            font-family: 'Raleway', sans-serif;;
+        }
+        span.code
+        {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 8;
+            background: rgb(184, 182, 182);
+            border-radius: 2pt;
+            color:mediumblue;
+        }
+        p.answer
+        {
+            font-family: 'Raleway', sans-serif;
+            text-decoration-line: underline;
+            color:dodgerblue;
+        }
+        div.images
+        {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: flex-start;
+            justify-content: space-around;
+            width: 1200px;
+            
+        }
+        div.image
+        {
+            display: flex;
+            justify-content: center;
+        }
+        code.language-javascript
+        {
+            font: 100% Helvetica, sans-serif;
+            color: rgb(226, 2, 2);
+        }
     </style>
     <body>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
         <ol>
             <h1 id="title">Homework Due July 4</h1>
-            <li class="list"></li>
-            <li class="list"></li>
-            <li class="list"></li>
+            <li class="list">
+                <p class="assignment">
+                    Recall the unordered lists that Daniel Catalaa showed us.  
+                    Think Screeps and create a list of three items where each item has three or more items within it.  
+                    Your work product should be pure HTML, 
+                    no CSS required.
+                </p>
+                <p class="answer">answer</p>
+                <pre>
+                    <code class="language-javascript">
+                        <html>
+                            <!-- < ul>
+                                < li>
+                                    Invaders
+                                    < ul>
+                                        < li>
+                                            strongHold
+                                        </ li>
+                                        < li>
+                                            healers
+                                        </ li>
+                                        < li>
+                                            invader room
+                                        </ li>
+                                    </ ul>
+                                </ li>
+                                < li>
+                                    Room Controller
+                                    < ul>
+                                        < li>
+                                            level control
+                                        </ li>
+                                        < li>
+                                            safe mode
+                                        </ li>
+                                        < li>
+                                            novice area
+                                        </ li>
+                                    </ ul>
+                            </ li>
+                                < li>
+                                    Builder
+                                    < ul>
+                                        < li>
+                                            rampart
+                                        </ li>
+                                        < li>
+                                            walls
+                                        </ li>
+                                        < li>
+                                            container
+                                        </ li>
+                                    </ ul>
+                                </ li>
+                            </ ul>
+                        </ html> -->
+                    </code>
+                </pre>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Create an HTML file with an <span class="code"> < h1> </span> tag having text “click demo”, 
+                    a checkbox <span class="code"> < input></span> with a <span class="code"> < label> </span> (using for to connect it to the <span class="code"> < input> </span>)  
+                    that says “check me to hide some text”, and finally an <span class="code"> < h2> </span> tag with text “hide me”.  
+                    Then use CSS so that checking / unchecking will hide / reveal the <span class="code"> < h2> </span> tag.  
+                    You can put the CSS into the <span class="code"> < head></span> section of your html file, 
+                    no need to get fancy with a separate file
+                </p>
+                <p class="answer">answer</p>
+                <pre>
+                    <code class="language-javascript">
+                        <!-- < html>
+                            < head>
+                                < style>
+                                    input.checkbox:checked ~ h2 
+                                    {
+                                        display:none;
+                                    }
+                                < /style>
+                            < /head>
+                            < body>
+                                < h1>click demo< /h1>
+                                < input class="checkbox" type="checkbox" id="botom">< /input>
+                                < label for="botom">check me to hide some text< /label>
+                                < h2>hide me< /h2>
+                            </ body>
+                        </ html> -->
+                    </code>
+                </pre>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Use p5js to build something 3D that you haven’t done before.  
+                    It could be a rotating donut, 
+                    or a cat textured onto a cube … 
+                    whatever creative idea you might have.
+                </p>
+                <p class="answer">answer</p>
+                <div class="image">
+                    <img src="something_on_p5.png" height="500">
+                </div>
+                <pre>
+                    <code class="language-javascript">
+                        function setup(){
+                            createCanvas(windowWidth,windowHeight);
+                            noStroke()
+                            const flowerCount = 100;
+                            for(let i=0; i < flowerCount; i++){ 
+                                flower(randomColor(), { x: Math.random()*windowWidth, y : Math.random()*windowHeight });
+                              }
+                            }
+                            
+                            function flower(color, center){
+                              const size = windowHeight/10
+                              petals(7+Math.floor(Math.random()*5), size, color, center)
+                              fill('yellow')
+                              circle(center.x, center.y, size)
+                            }
+                      
+                            function petals(n, size, color, center){
+                              for(let i=0; i < n; i++){
+                                let angle = (i/n)*Math.PI*2
+                                let radius = size*0.8
+                                let x = Math.cos(angle)*radius
+                                let y = Math.sin(angle)*radius
+                                fill(color)
+                                circle(center.x + x, center.y + y, size)
+                              }
+                            }
+                      
+                            function randomColor(){
+                              let r = random(255)
+                              let g = random(255)
+                              let b = random(255)
+                              let a = random(200, 255)
+                              return color(r, g, b, a)
+                            }
+                      
+                            function coloredCircle(size, color){
+                              c = {r: c.r, g: c.g - 1, b: c.b -2};
+                              fill(c.r, c.g, c.b);
+                              if(color){
+                                fill(color);
+                              }
+                              circle(windowWidth/2, windowHeight/2, size);
+                              if(c.r < 1 || c.g < 1 || c.b < 1){
+                                c = {r: 225, g: 255, b: 255};
+                              }
+                            }
+                    </code>
+                </pre>
+            </li>
             <li class="list"></li>
             <li class="list"></li>
             <li class="list"></li>
