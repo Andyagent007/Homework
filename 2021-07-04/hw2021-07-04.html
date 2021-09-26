@@ -74,7 +74,7 @@
                 <p class="answer">answer</p>
                 <pre>
                     <code class="language-javascript">
-                        < ul>
+                        <!-- < ul>
                             < li>
                                 Invaders
                                 < ul>
@@ -117,7 +117,7 @@
                                     </ li>
                                 </ ul>
                             </ li>
-                        </ ul>
+                        </ ul> -->
                     </code>
                 </pre>
             </li>
@@ -133,7 +133,7 @@
                 <p class="answer">answer</p>
                 <pre>
                     <code class="language-javascript">
-                        < html>
+                        <!-- < html>
                             < head>
                                 < style>
                                     input.checkbox:checked ~ h2 
@@ -148,7 +148,7 @@
                                 < label for="botom">check me to hide some text< /label>
                                 < h2>hide me< /h2>
                             </ body>
-                        </ html> 
+                        </ html>  -->
                     </code>
                 </pre>
             </li>
@@ -165,7 +165,7 @@
                 </div>
                 <pre>
                     <code class="language-javascript">
-                        function setup(){
+                            <!-- function setup(){
                             createCanvas(windowWidth,windowHeight);
                             noStroke()
                             const flowerCount = 100;
@@ -210,114 +210,137 @@
                               if(c.r < 1 || c.g < 1 || c.b < 1){
                                 c = {r: 225, g: 255, b: 255};
                               }
-                            }
+                            } -->
                     </code>
                 </pre>
             </li>
             <li class="list"> 
                 <p class="assignment">
-                Invent 5 whacko functions that you haven’t done before, and put them all on the same graph.  Hint:  You’ve done functions plus / times / divided by other functions  … have you tried functions of functions?  Like f(x) = sin(x**2) … see what you can come up with.
+                Invent 5 whacko functions that you haven’t done before, 
+                and put them all on the same graph.  
+                Hint:  
+                You’ve done functions plus / times / divided by other functions  … 
+                have you tried functions of functions?  
+                Like f(x) = <span class="code"> sin(x**2) </span> … 
+                see what you can come up with.
                 </p>
                 <p class="answer">answer</p>
+                <div class="image">
+                    <img src="5wacko_functions.png" height="500">
+                </div>
+                <pre>
+                    <code class="language-javascript">
+                        const whackoFunc5 = (x) => ceil(x**-8) ** cos(x**-8)  ** atan(x**-2) / tan(x**x)
+                        const whackoFunc4 = (x) => cos(x*x) * sin(x*x) ** Math.random()
+                        const whackoFunc3 = (x) => ceil(x**8) ** cos(x**8) 
+                        const whackoFunc2 = (x) => sin(x**x * x) / -x
+                        const whackoFunc1 = (x) => atan(x**2) / tan(x**x)
+                    </code>
+                </pre>
             <li class="list">
                 <p class="assignment">
-                    Identify the polynomial functions a, b, c in the screenshot.  Prove that you have the right answer by graphing these using your own graph function.
+                    Identify the polynomial functions a, b, c in the screenshot.  
+                    Prove that you have the right answer by graphing these using your own <span class="code">graph</span> function.
                 </p>
+                <div class="images">
+                    <img src="three polynomial functions -- of degree 2, 3, and 4.png" height="500">    
+                </div>
                 <p class="answer">answer</p>
                 <ol type="a">
                     <li class="list">
-                        a) f(x) => **3 + 5
+                        <span class="code">f(x) => **3 + 5</span>
                     </li>
                     <li class="list">
-                        b) f(x) => (x-1)*(x-2)*(x-3)*(x-4)
+                        <span class="code">f(x) => (x-1)*(x-2)*(x-3)*(x-4)</span>
                     </li>
-                    <li class=list
-                    c) f(x) => x*-x
+                    <li class=list>
+                        <span class="code">f(x) => x*-x</span>
+                    </li>
                 </ol>    
             </li>
             <li class="list">
                 <p class="assignment">
-                    Today we saw a graph of the function f(x) = (x-1)*(x-2)*(x-3)*(x-4)  — recall that this is a fourth degree polynomial.  Use the distributive property to multiply out those four parenthetical expressions so that you get something of the form f(x) = a*x**4 + b*x**3 + c*x**2 + d*x + e  where a, b, c, d, e are all integers.
+                    Today we saw a graph of the function <span class="code"> f(x) = (x-1)*(x-2)*(x-3)*(x-4)</span>  — 
+                    recall that this is a fourth degree polynomial.  
+                    Use the distributive property to multiply out those four parenthetical expressions so that you get something of the form 
+                    <span class="code">f(x) = a*x**4 + b*x**3 + c*x**2 + d*x + e </span>
+                    where a, b, c, d, e are all integers.
                 </p>
                 <p class="answer">answer</p>
             </li>
             <li class="list">
                 <p class="assignment">
                     Console work
-                    in these questions the b stands for “binary”.  Why does this make sense?  Then calculate these:
+                    in these questions the <span class="code">b</span> stands for “binary”.  
+                    Why does this make sense?  Then calculate these:
                     <ol type="a">
                         <li class="list">
-
-                            0b0
+                            <span class="code">0b0 = 0</span>
                         </li>
                         <li class="list">
-                            0b1
-
+                            <span class="code">0b1 = 1</span>
                         </li>
                         <li class="list">
-
-                            0b10
+                            <span class="code">0b10 = 2</span>
                         </li>
                         <li class="list">
-
-                            0b11
+                            <span class="code">0b11 = 3</span>
                         </li>
                         <li class="list">
-
-                            0b100
+                            <span class="code">0b100 = 4</span>
                         </li>
                         <li class="list">
-
-                            0b101
+                            <span class="code">0b101 = 5</span>
                         </li>
                         <li class="list">
-
-                            0b110
+                            <span class="code">0b110 = 6</span>
                         </li>
                         <li class="list">
-
-                            0b111
+                            <span class="code">0b111 = 7</span>
                         </li>
                         <li class="list">
-
-                            0b111 | 0b111
+                            <span class="code">0b111 | 0b111 = 7</span>
                         </li>
                         <li class="list">
-
-                            0b111 | 0b110
+                            <span class="code">0b111 | 0b110 = 7</span>
                         </li>
                         <li class="list">
-                            0b111 | 0b101
+                            <span class="code">0b111 | 0b101 = 7</span>
                         </li>
                         <li class="list">
-
-                            0b111 | 0b100
+                            <span class="code">0b111 | 0b100 = 7</span>
                         </li>
                         <li class="list">
-                            0b111 | 0b011
-
+                            <span class="code">0b111 | 0b011 = 7</span>
                         </li>
                         <li class="list">
-
-                            0b111 | 0b010
+                            <span class="code">0b111 | 0b010 = 7</span>
                         </li>
                         <li class="list">
-
-                            0b111 | 0b001
+                            <span class="code">0b111 | 0b001 = 7</span>
                         </li>
                         <li class="list">
-
-                            0b111 | 0b000
+                            <span class="code">0b111 | 0b000 = 7</span>
                         </li>
                     </ol>
-                    Explain what that vertical bar does, the pipe symbol | that lives immediately above the return key on your mac’s keyboard.  Hint:  It is related to the double vertical bar construct that you are familiar with, namely || .
+                    Explain what that vertical bar does, 
+                    the pipe symbol <span class="code">|</span> that lives immediately 
+                    above the <span class="code">return</span> key on your mac’s keyboard.  
+                    Hint:  It is related to the double vertical bar construct that you are familiar with, 
+                    namely <span class="code">||</span> .
                 </p>
                 <p class="answer">answer</p>
+                it’s looks like the symbol <span class="code">|</span> sometimes return the sum of the two number, 
+                and other times just return one of those two number 
+                (sometimes return the right side number, 
+                and others return the left side number ).
             </li>
             <li class="list">
                 <p class="assignment">
-                    Prepare some functions for the next time we do “guess the function”.   Make them either easy or medium in difficulty.
+                    Prepare some functions for the next time we do “guess the function”.   
+                    Make them either easy or medium in difficulty.
                 </p>
-                <p class="answer">answer</p>     
+                <p class="answer">answer</p> 
+                <p class="assignment">functions ready to a round of guess the function</p>    
         </ol>
     </body>
