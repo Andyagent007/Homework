@@ -74,50 +74,52 @@
                 <p class="answer">answer</p>
                 <pre>
                     <code class="language-javascript">
-                        <!-- < ul>
-                            < li>
-                                Invaders
-                                < ul>
-                                    < li>
-                                        strongHold
-                                    </ li>
-                                    < li>
-                                        healers
-                                    </ li>
-                                    < li>
-                                        invader room
-                                    </ li>
-                            </ ul>
-                            </ li>
-                            < li>
-                                Room Controller
-                                < ul>
-                                    < li>
-                                        level control
-                                    </ li>
-                                    < li>
-                                        safe mode
-                                    </ li>
-                                    < li>
-                                        novice area
-                                    </ li>
-                                </ ul>
-                            < /li>
-                            < li>
-                                Builder
-                                < ul>
-                                    < li>
-                                        rampart
-                                    </ li>
-                                    < li>
-                                        walls
-                                    </ li>
-                                    < li>
-                                        container
-                                    </ li>
-                                </ ul>
-                            </ li>
-                        </ ul> -->
+                        &lt;html>
+                            &lt;ul>
+                                &lt;li>
+                                    Invaders
+                                    &lt;ul>
+                                        &lt;li>
+                                            strongHold
+                                        &lt;/li>
+                                        &lt;li>
+                                            healers
+                                        &lt;/li>
+                                        &lt;li>
+                                            invader room
+                                        &lt;/li>
+                                    &lt;/ul>
+                                &lt;/li>
+                                &lt;li>
+                                    Room Controller
+                                    &lt;ul>
+                                        &lt;li>
+                                            level control
+                                        &lt;/li>
+                                        &lt;li>
+                                            safe mode
+                                        &lt;/li>
+                                        &lt;li>
+                                            novice area
+                                        &lt;/li>
+                                    &lt;/ul>
+                                &lt;/li>
+                                &lt;li>
+                                    Builder
+                                    &lt;ul>
+                                        &lt;li>
+                                            rampart
+                                        &lt;/li>
+                                        &lt;li>
+                                            walls
+                                        &lt;/li>
+                                        &lt;li>
+                                            container
+                                        &lt;/li>
+                                    &lt;/ul>
+                                &lt;/li>
+                            &lt;/ul>
+                        &lt;/html>
                     </code>
                 </pre>
             </li>
@@ -133,22 +135,22 @@
                 <p class="answer">answer</p>
                 <pre>
                     <code class="language-javascript">
-                        <!-- < html>
-                            < head>
-                                < style>
+                        &lt;html>
+                            &lt;head>
+                                &lt;style>
                                     input.checkbox:checked ~ h2 
                                     {
                                         display:none;
                                     }
-                                < /style>
-                            < /head>
-                            < body>
-                                < h1>click demo< /h1>
-                                < input class="checkbox" type="checkbox" id="botom">< /input>
-                                < label for="botom">check me to hide some text< /label>
-                                < h2>hide me< /h2>
-                            </ body>
-                        </ html>  -->
+                                &lt;/style>
+                            &lt;/head>
+                            &lt;body>
+                                &lt;h1>click demo&lt; /h1>
+                                &lt;input class="checkbox" type="checkbox" id="botom">&lt; /input>
+                                &lt;label for="botom">check me to hide some text&lt; /label>
+                                &lt;h2>hide me&lt; /h2>
+                            &lt;/body>
+                        &lt;/html> 
                     </code>
                 </pre>
             </li>
@@ -165,24 +167,24 @@
                 </div>
                 <pre>
                     <code class="language-javascript">
-                            <!-- function setup(){
-                            createCanvas(windowWidth,windowHeight);
-                            noStroke()
-                            const flowerCount = 100;
-                            for(let i=0; i < flowerCount; i++){ 
-                                flower(randomColor(), { x: Math.random()*windowWidth, y : Math.random()*windowHeight });
-                              }
+                            function setup(){
+                                createCanvas(windowWidth,windowHeight);
+                                noStroke()
+                                const flowerCount = 100;
+                                for(let i=0; i < flowerCount; i++){ 
+                                    flower(randomColor(), { x: Math.random()*windowWidth, y : Math.random()*windowHeight });
+                                }
                             }
                             
                             function flower(color, center){
-                              const size = windowHeight/10
-                              petals(7+Math.floor(Math.random()*5), size, color, center)
-                              fill('yellow')
-                              circle(center.x, center.y, size)
+                                const size = windowHeight/10
+                                petals(7+Math.floor(Math.random()*5), size, color, center)
+                                fill('yellow')
+                                circle(center.x, center.y, size)
                             }
                       
                             function petals(n, size, color, center){
-                              for(let i=0; i < n; i++){
+                                for(let i=0; i < n; i++){
                                 let angle = (i/n)*Math.PI*2
                                 let radius = size*0.8
                                 let x = Math.cos(angle)*radius
@@ -193,24 +195,24 @@
                             }
                       
                             function randomColor(){
-                              let r = random(255)
-                              let g = random(255)
-                              let b = random(255)
-                              let a = random(200, 255)
-                              return color(r, g, b, a)
+                                let r = random(255)
+                                let g = random(255)
+                                let b = random(255)
+                                let a = random(200, 255)
+                                return color(r, g, b, a)
                             }
                       
                             function coloredCircle(size, color){
-                              c = {r: c.r, g: c.g - 1, b: c.b -2};
-                              fill(c.r, c.g, c.b);
-                              if(color){
-                                fill(color);
-                              }
-                              circle(windowWidth/2, windowHeight/2, size);
-                              if(c.r < 1 || c.g < 1 || c.b < 1){
-                                c = {r: 225, g: 255, b: 255};
-                              }
-                            } -->
+                                c = {r: c.r, g: c.g - 1, b: c.b -2};
+                                fill(c.r, c.g, c.b);
+                                if(color){
+                                    fill(color);
+                                }
+                                circle(windowWidth/2, windowHeight/2, size);
+                                if(c.r < 1 || c.g < 1 || c.b < 1){
+                                    c = {r: 225, g: 255, b: 255};
+                                }
+                            }
                     </code>
                 </pre>
             </li>
@@ -248,7 +250,7 @@
                 <p class="answer">answer</p>
                 <ol type="a">
                     <li class="list">
-                        <span class="code">f(x) => **3 + 5</span>
+                        <span class="code">f(x) => x**3 + 5</span>
                     </li>
                     <li class="list">
                         <span class="code">f(x) => (x-1)*(x-2)*(x-3)*(x-4)</span>
@@ -267,6 +269,9 @@
                     where a, b, c, d, e are all integers.
                 </p>
                 <p class="answer">answer</p>
+                <p class="assignment">
+                    I got <span class="code"> x**4-10**3+35x**2-50x-24</span>
+                </p>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -330,10 +335,11 @@
                     namely <span class="code">||</span> .
                 </p>
                 <p class="answer">answer</p>
-                it’s looks like the symbol <span class="code">|</span> sometimes return the sum of the two number, 
-                and other times just return one of those two number 
-                (sometimes return the right side number, 
-                and others return the left side number ).
+                    It looks like the symbol <span class="code">|</span> sometimes returns the sum of the two numbers, 
+                    and other times returns one of those two numbers 
+                    (sometimes returns the right side number, 
+                    and other times returns the left side number).
+                </p>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -341,6 +347,6 @@
                     Make them either easy or medium in difficulty.
                 </p>
                 <p class="answer">answer</p> 
-                <p class="assignment">functions ready to a round of guess the function</p>    
+                <p class="assignment">Functions ready for a round of "guess the function".</p>    
         </ol>
     </body>
