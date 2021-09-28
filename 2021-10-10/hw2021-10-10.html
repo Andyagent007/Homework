@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"
+   />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw2021-10-10</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+        #title
+        {
+            font-family: 'Raleway', sans-serif;;
+            text-align: center;
+            color:rgb(18, 77, 92);
+        }
+        li.list
+        {
+            font-family: 'Raleway', sans-serif;;
+        }
+        p.assignment
+        {
+            font-family: 'Raleway', sans-serif;;
+        }
+        pre.assignment
+        {
+            font-family: 'Raleway', sans-serif;;
+        }
+        span.code
+        {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 8;
+            background: rgb(165, 164, 164);
+            border-radius: 2pt;
+            color:rgb(22, 140, 161);
+        }
+        p.answer
+        {
+            font-family: 'Raleway', sans-serif;
+            text-decoration-line: underline;
+            color:rgb(13, 62, 110);
+        }
+        div.image
+        {
+            display: flex;
+            justify-content: center;
+        }
+        div.images
+        {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: space-between;
+            
+        }
+        code.language-javascript
+        {
+            font: 100% Helvetica, sans-serif;
+            color: rgb(183, 0, 255);
+        }
+    </style>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+        <ol>
+            <h1 id="title">Homework Due October 10</h1>
+            <li class="list">
+                <p class="assignment">
+                    Prove that there are infinitely many prime numbers.
+                </p>
+                <p class="answer">answer</p>
+                <pre class="assignment">
+                    Assume there are only a finite quantity of primes
+                    then let q = the biggest prime number
+                    2, 3, 5, 7, .... q these are all of the prime number in the universe
+                    p = 2*3*5*7...*q
+                    let N = p+1
+                    is N divisible by 2? no
+                    is N divisible by 3? no
+                    is N divisible by 5? no
+                    is N divisible by 7? no
+                    .
+                    .
+                    .
+                    is N divisible by q? no
+
+                    N is not divisible by any prime smaller than it, so it must be prime.
+                    But this is a contradiction, because "q" was supposed to be the biggest prime.
+                    And N is biggest than q, and also it is prime. 
+                    Therefore our assumption is false, so there are in fact infinitely many primes.
+                </pre>
+            </li>    
+            <li class="list">
+                <p class="assignment">
+                    Install the <span class="code">pngquant</span> command on your mac to compress png files.  
+                    We will use this for all png files going forward to conserve space.  
+                    Run the following commands, then copy the output as the answer to this question.  
+                    Run in a directory where you have a png file -- here coolFuncs.png is used as an example, 
+                    replace that with your own file.
+                    <ol type="a">
+                        <li class="list">
+                            <span class="code">brew install pngquant</span>
+                        </li>
+                        <li class="list">
+                            <span class="code">pngquant --help</span>
+                        </li>
+                        <li class="list">
+                            <span class="code">pngquant coolFuncs.png</span>
+                        </li>
+                        <li class="list">
+                            <span class="code">ls -l coolFuncs*</span>
+                        </li>
+                    </ol>
+                </p>
+                <p class="answer">answer</p>
+            </li>    
+            <li class="list">
+                <p class="assignment">
+                    For the homework that was due June 25, turn it into an html file with associated image files.  
+                    Take a screenshot and put that as your answer here.  
+                    Remember:  
+                    use <span class="code">pngquant</span> to compress the screenshot from now on.
+                </p>
+                <p class="answer">answer</p>
+            </li>    
+            <li class="list">
+                <p class="assignment">
+                    Easy console work:
+                    <ol type="a">
+                        <li class="list">
+                            <span class="code">a = []</span>
+                        </li>
+                        <li class="list">
+                            <span class="code">for (i=0;i<=16;i++) { a.push(2**i) }</span>
+                        </li>
+                        <li class="list">
+                            <span class="code">console.table(a)</span>
+                        </li>
+                    </ol>
+                </p>
+            </li>    
+            <li class="list">
+                <p class="assignment">
+                    Mental math:  Study the table you produced in the last question.  
+                    Prepare to say these numbers from memory as an exercise in class.  
+                    Use “spaced repetition” -- repeat this study on 3 different days.  
+                    On the third day write a sentence with some comments regarding what is easy and what is hard about this exercise.
+                </p>
+                <p class="answer">answer</p>
+            </li>    
+            <li class="list">
+                <p class="assignment">
+                    Write two functions (see below) that depend on Unicode.  
+                    In <A href="https://gist.github.com/ivandrofly/0fe20773bd712b303f78">Unicode</A> you’ll need lines 154, 155, 161 and 614-637.  
+                    Run all of the following <span class="code">console.assert</span> commands to make sure your code is correct.  
+                    If your code is not correct you will get <span class="code">Assertion failed</span>
+                    (correct code will just return undefined ... a little weird, but run with it).
+                    <ol type="a">
+                        <li class="list">
+                            Write a function <span class="code">xToThe(n)</span> that returns a string of x to the n, where n is any integer.  Examples
+                            <ol type="i">
+                                <li class="list">
+                                    <span class="code">console.assert(xToThe(12) == "x¹²")</span>
+                                </li>
+                                <li class="list">
+                                    <span class="code">console.assert(xToThe(370) == "x³⁷⁰")</span>
+                                </li>
+                                <li class="list">
+                                    <span class="code">console.assert(xToThe(-5) == "x⁻⁵")</span>
+                                </li>
+                                <li class="list">
+                                    <span class="code">console.assert(xToThe(1234567890) == "x¹²³⁴⁵⁶⁷⁸⁹⁰"</span>
+                                </li>
+                            </ol>
+                        </li>
+                        <li class="list">
+                            Write a function <span class="code">xSub(n)</span> that returns a string of x with a subscript of n, where n is a non-negative integer.  Examples:
+                            <ol type="i">
+                                <li class="list">
+                                    <span class="code">console.assert(xSub(0) == "x₀");</span>
+                                </li>
+                                <li class="list">
+                                    <span class="code">console.assert(xSub(4) == "x₄");</span>
+                                </li>
+                                <li class="list">
+                                    <span class="code">console.assert(xSub(678) == "x₆₇₈");</span>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </p>
+                <p class="answer">answer</p>
+            </li>    
+            <li class="list">
+                <p class="assignment">
+                    Create six different images, and list which functions you choose for each:
+                    <ol type="a">
+                        <li class="list">
+                            <span class="code">A graph with five degree 0 polynomial functions</span>
+                        </li>
+                        <li class="list">
+                            <span class="code">A graph with five degree 1 polynomial functions</span>
+                        </li>
+                        <li class="list">
+                            <span class="code">A graph with five degree 2 polynomial functions</span>
+                        </li>
+                        <li class="list">
+                            <span class="code">A graph with five degree 3 polynomial functions</span>
+                        </li>
+                        <li class="list">
+                            <span class="code">A graph with five degree 4 polynomial functions</span>
+                        </li>
+                        <li class="list">
+                            <span class="code">A graph with five degree 5 polynomial functions</span>
+                        </li>
+                    </ol>
+                </p>
+                <p class="answer">answer</p>
+            </li>    
+            <li class="list">
+                <p class="assignment">
+                    Write 5 creative and complicated functions and put them all on the same graph.  This time two simple rules:
+                    <ol type="a">
+                        <li class="list">
+                            no pure polynomial functions
+                        </li>
+                        <li class="list">
+                            no use of <span class="code">Math.random</span>
+                        </li>
+                    </ol>
+                </p>
+                <p class="answer">answer</p>
+            </li>    
+            <li class="list">
+                <p class="assignment">
+                    Screeps update:
+                    <ol type="a">
+                        <li class="list">
+                            Show a screenshot of Screeps and describe what’s going on
+                        </li>
+                        <li class="list">
+                            2 days later:  show another screenshot, and describe what has changed
+                        </li>
+                        <li class="list">
+                            3 days after that:  show a third screenshot, describe what has changed
+                        </li>
+                        <li class="list">
+                            Write a summary describing the whole arc of what happened
+                        </li>
+                    </ol>
+                </p>
+                <p class="answer">answer</p>
+            </li>    
+            <li class="list">
+                <p class="assignment">
+                    Zombie Flexbox game.  
+                    Go through two more levels.  
+                    Take two screenshots at interesting moments and explain all of the Flex details you are working on.
+                </p>
+                <p class="answer">answer</p>
+            </li>    
+            <li class="list">
+                <p class="assignment">
+                    What is “nullish coalescing”, the new operator ?? 
+                    introduced into JavaScript in the year 2020?  
+                    Do some research/reading, then explain these:
+                    <ol type="a">
+                        <li class="list">
+                            <span class="code">x = null; y = x ?? “hello”;</span>
+                        </li>
+                        <li class="list">
+                            <span class="code">x = undefined; y = x ?? “hello”;</span>
+                        </li>
+                        <li class="list">
+                            <span class="code">x = 3.14; y = x ?? “hello”;</span>
+                        </li>
+                        <li class="list">
+                            <span class="code">x = false; y = x ?? “hello”;</span>
+                        </li>
+                        <li class="list">
+                            <span class="code">x = NaN; y = x ?? “hello”;</span>
+                        </li>
+                        <li class="list">
+                            <span class="code">x = “”; y = x ?? “hello”;</span>
+                        </li>
+                        <li class="list">
+                            <span class="code">x = []; y = x ?? “hello”</span>
+                        </li>
+                        <li class="list">
+                            <span class="code">x = 0; y = x ?? “hello”;</span>
+                        </li>
+                        <li class="list">
+                            <span class="code">x = {}; y = x ?? “hello”;</span>
+                        </li>
+                    </ol>
+                </p>
+                <p class="answer">answer</p>
+            </li>    
+            <li class="list">
+                <p class="assignment">
+                    Go to the Tensorflow Playground -- <A href="https://playground.tensorflow.org">Tensorflow Playground</A> -- and solve each of the four datasets.  
+                    Take a screenshot of each solution.  
+                    Discuss.
+                </p>
+                <p class="answer">answer</p>
+            </li>    
+        </ol>
+    </body>
