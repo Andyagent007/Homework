@@ -57,10 +57,15 @@
             justify-content: space-between;
             
         }
+        div.images img
+        {
+            height: 300px;
+            margin: 50px;
+        }
         code.language-javascript
         {
             font: 100% Helvetica, sans-serif;
-            color: rgb(183, 0, 255);
+            color: rgb(182, 58, 145);
         }
     </style>
     <body>
@@ -233,6 +238,18 @@
                     </ol>
                 </p>
                 <p class="answer">answer</p>
+                <div class="image">
+                    <img src="5_CCfunctions.png" height="600">
+                </div>
+                <pre>
+                    <code class="language-javascript">
+                        const CCFunctions5 = (x) => CCFunctions4(x*x)/abs(x*x)
+                        const CCFunctions4 = (x) => CCFunctions1(CCFunctions3(x)*CCFunctions2(x))
+                        const CCFunctions3 = (x) => 5**(5-2)/4*atan(x)*tan(x)
+                        const CCFunctions2 = (x) => ceil(x*x)/abs(x*x)
+                        const CCFunctions1 = (x) => 1**x/cos(x*x/x+x)+sin(x) 
+                    </code>
+                </pre>
             </li>    
             <li class="list">
                 <p class="assignment">
@@ -261,6 +278,31 @@
                     Take two screenshots at interesting moments and explain all of the Flex details you are working on.
                 </p>
                 <p class="answer">answer</p>
+                <div class="images">
+                    <img src="Chapter8_Out-of-order_level8.png" height="300">
+                    <img src="Chapter8_Out-of-order_level14.png" height="300">
+                </div>
+                <p class="assignment">
+                </p>
+                The images show the chapter 8, level 8 (the first one) and level 14(the second one) and the chapter 8 teach how to use <span class="code">order</span>, it is use to the positions of the zombies in other words, to lining up well the zombies, and in both images i am fixing the order of the female zombies, goo zombies, and male zombies, as you can see in the first one i put:
+                <pre>
+                    <code class="language-javascript">
+                        .target.goo {
+                            order:2
+                        }
+                    </code>
+                </pre>
+                And
+                <pre>
+                    <code class="language-javascript">
+                        .target.male {
+                            order:3
+                        }
+                    </code>
+                </pre>
+                Because as you see the two goo zombies are second in the row, and the male zombie is thirdth.
+                And in the second image the male zombie and the goo zombies are in different order:
+                The male firsth and the goo zombies thirdth.  
             </li>    
             <li class="list">
                 <p class="assignment">
