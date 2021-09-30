@@ -34,9 +34,9 @@
         {
             font-family: 'Roboto Mono', monospace;
             font-size: 8;
-            background: rgb(165, 164, 164);
+            background: rgb(196, 195, 195);
             border-radius: 2pt;
-            color:rgb(22, 140, 161);
+            color:rgb(35, 133, 150);
         }
         p.answer
         {
@@ -107,20 +107,59 @@
                     replace that with your own file.
                     <ol type="a">
                         <li class="list">
-                            <span class="code">brew install pngquant</span>
+                            <span class="code">brew install pngquant</span> = installed
                         </li>
                         <li class="list">
                             <span class="code">pngquant --help</span>
+                            <p class="assignment"> this is what the terminal return when i run the code above:</p>
+                            <pre>
+                                <code class="language-javascript">
+                                    ➜  ~ pngquant --help
+
+                                    pngquant, 2.15.1 (May 2021), by Kornel Lesinski, Greg Roelofs.
+                                    Color profiles are supported via Little CMS. Using libpng 1.6.37.
+                                    
+                                    usage:  pngquant [options] [ncolors] -- pngfile [pngfile ...]
+                                    pngquant [options] [ncolors] - >stdout < stdin
+                                    
+                                    options:
+                                    --force           overwrite existing output files (synonym: -f)
+                                    --skip-if-larger  only save converted files if they're smaller than original
+                                    --output file     destination file path to use instead of --ext (synonym: -o)
+                                    --ext new.png     set custom suffix/extension for output filenames
+                                    --quality min-max don't save below min, use fewer colors below max (0-100)
+                                    --speed N         speed/quality trade-off. 1=slow, 4=default, 11=fast & rough
+                                    --nofs            disable Floyd-Steinberg dithering
+                                    --posterize N     output lower-precision color (e.g. for ARGB4444 output)
+                                    --strip           remove optional metadata (default on Mac)
+                                    --verbose         print status messages (synonym: -v)
+                                    
+                                    Quantizes one or more 32-bit RGBA PNGs to 8-bit (or smaller) RGBA-palette.
+                                    The output filename is the same as the input name except that
+                                    it ends in "-fs8.png", "-or8.png" or your custom extension (unless the
+                                    input is stdin, in which case the quantized image will go to stdout).
+                                    If you pass the special output path "-" and a single input file, that file
+                                    will be processed and the quantized image will go to stdout.
+                                    The default behavior if the output file exists is to skip the conversion;
+                                    use --force to overwrite. See man page for full list of options.
+                                </code>
+                            </pre>
                         </li>
                         <li class="list">
                             <span class="code">pngquant coolFuncs.png</span>
                         </li>
                         <li class="list">
                             <span class="code">ls -l coolFuncs*</span>
+                            <p class="assignment"> this is what the terminal return when i run the code above:</p>
+                            <pre>
+                                <code class="language-javascript">
+                                    ➜  2021-10-10 git:(main) ✗ ls -l 5_CCfunctions.png
+                                    -rw-r--r--@ 1 andy007  staff  2416603 Sep 29 15:12 5_CCfunctions.png
+                                </code>
+                            </pre>
                         </li>
                     </ol>
                 </p>
-                <p class="answer">answer</p>
             </li>    
             <li class="list">
                 <p class="assignment">
@@ -309,37 +348,43 @@
                     What is "nullish coalescing", the new operator ?? 
                     introduced into JavaScript in the year 2020?  
                     Do some research/reading, then explain these:
+                    <p class="answer">answer</p>
+                    <p class="assignment">
+                        The nullish coalescing operator (<span class="code">??</span>) 
+                        it's similar to the <span class="code">OR</span> (<span class="code">||</span>) operator,
+                        just that the nullish coalescing operator only recognize as empty the values <span class="code">null</span> or <span class="code">undefined</span>.
+                        It means that it only will return the rigth value if the left value is <span class="code">null</span> or <span class="code">undefined</span>, diferent as the <span class="code">OR</span> operator that will return the rigth value if the left is a falsy value (<span class="code">null, undefined, false, 0, NaN and ""</span>
+                    </p>
                     <ol type="a">
                         <li class="list">
-                            <span class="code">x = null; y = x ?? "hello";</span>
+                            <span class="code">x = null; y = x ?? "hello";</span> = It would return the "hello", because <span class="code">x</span> is null then it will return the rigth value. 
                         </li>
                         <li class="list">
-                            <span class="code">x = undefined; y = x ?? "hello";</span>
+                            <span class="code">x = undefined; y = x ?? "hello";</span> = It will return "hello", because <span class="code">x</span> is undefined ,so it return the rigth value.
                         </li>
                         <li class="list">
-                            <span class="code">x = 3.14; y = x ?? "hello";</span>
+                            <span class="code">x = 3.14; y = x ?? "hello";</span> = In this one <span class="code">x</span> has a value of 3.14, then it will return the left side because <span class="code">x</span> is not empty.
                         </li>
                         <li class="list">
-                            <span class="code">x = false; y = x ?? "hello";</span>
+                            <span class="code">x = false; y = x ?? "hello";</span> = In this case we have that <span class="code">x</span> is false, and the rules say that the nullish coalescing operator only doesn't accept <span class="code">null</span> and <span class="code">undefined</span>, so <span class="code">y</span> must be false.
                         </li>
                         <li class="list">
-                            <span class="code">x = NaN; y = x ?? "hello";</span>
+                            <span class="code">x = NaN; y = x ?? "hello";</span> = In this case <span class="code">y</span> will be NaN, because NaN is a falsy value.
                         </li>
                         <li class="list">
-                            <span class="code">x = ""; y = x ?? "hello";</span>
+                            <span class="code">x = ""; y = x ?? "hello";</span> = <span class="code">y</span> is equal to "", because although <span class="code">x</span> is with empty quotes, it is not either <span class="code">null</span> or <span class="code">undefined</span>
                         </li>
                         <li class="list">
-                            <span class="code">x = []; y = x ?? "hello"</span>
+                            <span class="code">x = []; y = x ?? "hello"</span> = This time the nullish coalescing operator will return [], the same as all ones the [] are not <span class="code">null</span> or <span class="code">undefined</span>
                         </li>
                         <li class="list">
-                            <span class="code">x = 0; y = x ?? "hello";</span>
+                            <span class="code">x = 0; y = x ?? "hello";</span> = If <span class="code">x</span> is 0, <span class="code">y</span> would be 0 also because <span class="code">x</span> has a value. 
                         </li>
                         <li class="list">
-                            <span class="code">x = {}; y = x ?? "hello";</span>
+                            <span class="code">x = {}; y = x ?? "hello";</span> = The same in this one, <span class="code">x</span> is {}, then the nullish coalescing operator would return the rigth value.
                         </li>
                     </ol>
                 </p>
-                <p class="answer">answer</p>
             </li>    
             <li class="list">
                 <p class="assignment">
