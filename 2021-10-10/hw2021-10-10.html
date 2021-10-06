@@ -149,11 +149,12 @@
                             <span class="code">pngquant coolFuncs.png</span>
                         </li>
                         <li class="list">
-                            <span class="code">ls -l coolFuncs*</span>
+                            <span class="code">ls -l 5_CCfunctions*</span>
                             <p class="assignment"> this is what the terminal return when i run the code above:</p>
                             <pre>
                                 <code class="language-javascript">
-                                    ➜  2021-10-10 git:(main) ✗ ls -l 5_CCfunctions.png
+                                    ➜  2021-10-10 git:(main) ✗ ls -l 5_CCfunctions*
+                                    -rw-r--r--@ 1 andy007  staff   562531 Sep 30 14:08 5_CCfunctions-fs8.png
                                     -rw-r--r--@ 1 andy007  staff  2416603 Sep 29 15:12 5_CCfunctions.png
                                 </code>
                             </pre>
@@ -196,6 +197,17 @@
                     On the third day write a sentence with some comments regarding what is easy and what is hard about this exercise.
                 </p>
                 <p class="answer">answer</p>
+                <ol type="1">
+                    <li class="list">
+                        <span class="code">first day</span> Friday. 
+                    </li>
+                    <li class="list">
+                        <span class="code">second day</span> Sunday.
+                    </li>
+                    <li class="code">
+                        <span class="code">third day</span> Tuesday. Well this excercise is easy, but the easiest thing of this exercise is memorizing and the hard is the calculation. 
+                    </li>
+                </ol>
             </li>    
             <li class="list">
                 <p class="assignment">
@@ -246,19 +258,11 @@
                     <ol type="a">
                         <li class="list">
                             <span class="code">A graph with five degree 0 polynomial functions</span>
-                            <div class="image">
-                                <img src="5_zeroPolynomialFuncs.png" height="500">
-                            </div>
-                            <pre><code class="language-javascript">
-                                const zeroDegreePolynomialFunc5 = (x) => -5
-                                const zeroDegreePolynomialFunc4 = (x) => -8
-                                const zeroDegreePolynomialFunc3 = (x) => 9;
-                                const zeroDegreePolynomialFunc2 = (x) => 6;
-                                const zeroDegreePolynomialFunc1 = (x) => 3;
-                            </code></pre>
-                        </li>
                         <li class="list">
                             <span class="code">A graph with five degree 1 polynomial functions</span>
+                            <div class="image">
+                                <img src="" >
+                            </div>
                         </li>
                         <li class="list">
                             <span class="code">A graph with five degree 2 polynomial functions</span>
@@ -274,18 +278,84 @@
                         </li>
                     </ol>
                 </p>
-                <ol>
+                <p class="answer">answer</p>
+                <ol type="a">
                     <li class="list">
-
+                        Graph with five degree 0 polynomial functions
                         <div class="image">
                             <img src="5_zeroPolynomialFuncs.png" height="500">
                         </div>
                         <pre><code class="language-javascript">
-                            const zeroDegreePolynomialFunc5 = (x) => -5
+                            const zeroDegreePolynomialFunc5 = (x) => -5 
                             const zeroDegreePolynomialFunc4 = (x) => -8
                             const zeroDegreePolynomialFunc3 = (x) => 9;
                             const zeroDegreePolynomialFunc2 = (x) => 6;
                             const zeroDegreePolynomialFunc1 = (x) => 3;
+                        </code></pre>
+                    </li>
+                    <li class="list">
+                        Graph with five degree 1 polynomial functions
+                        <div class="image">
+                            <img src="5_oneDegreePolynomialFuncs.png" height="500">
+                        </div>
+                        <pre><code class="language-javascript">
+                            const oneDegreePolynomialFunc5 = (x) => 2 * x - 5
+                            const oneDegreePolynomialFunc4 = (x) => 8-6*x
+                            const oneDegreePolynomialFunc3 = (x) => 5*x+2;
+                            const oneDegreePolynomialFunc2 = (x) => 24+x
+                            const oneDegreePolynomialFunc1 = (x) => x
+                        </code></pre>
+                    </li>
+                    <li class="list">
+                        Graph with five degree 2 polynomial functions
+                        <div class="image">
+                            <img src="5_twoDegreesPolynomialFuncs.png" height="500">
+                        </div>
+                            <pre><code class="language-javascript">
+                                const twoDegreePolynomialFunc5 = (x) => x**2 + 3*x - 2;
+                                const twoDegreePolynomialFunc4 = (x) => x**2 + x 
+                                const twoDegreePolynomialFunc3 = (x) => x**2 - x
+                                const twoDegreePolynomialFunc2 = (x) => x*x
+                                const twoDegreePolynomialFunc1 = (x) => x**2 - 4
+                            </code></pre>
+                    </li>
+                    <li class="list">
+                        Graph with five degree 3 polynomial functions                  
+                        <div class="image">
+                            <img src="5_threeDegreePolynomialFuncs.png" height="500">
+                        </div>
+                        <pre><code class="language-javascript">
+                            const threeDegreePolynomialFunc5 = (x) => x + 0.3 * x**3
+                            const threeDegreePolynomialFunc4 = (x) => x**2 + x**3
+                            const threeDegreePolynomialFunc3 = (x) => x**3 - 3*x**2 - 8
+                            const threeDegreePolynomialFunc2 = (x) => x**3 - 2*x + 3
+                            const threeDegreePolynomialFunc1 = (x) => x**3 - x**2 + x - 3
+                        </code></pre>
+                    </li>
+                    <li class="list">
+                        Graph with five degree 4 polynomial functions                    
+                        <div class="image">
+                            <img src="5_fourDegreePolynomialFuncs.png" height="500">
+                        </div>
+                        <pre><code class="language-javascript">
+                            const fourDegreePolynomialFunc5 = (x) => 0.1 * x**4 + x**3 - x**2
+                            const fourDegreePolynomialFunc4 = (x) => x**4 * 0.8 - 10
+                            const fourDegreePolynomialFunc3 = (x) => 0.3 * x**4 + x**3
+                            const fourDegreePolynomialFunc2 = (x) => x**4 + 5 - x**3
+                            const fourDegreePolynomialFunc1 = (x) => x - 4 * x**4
+                        </code></pre>
+                    </li>
+                    <li class="list">
+                        Graph with five degree 5 polynomial functions
+                        <div class="image">
+                            <img src="5_fiveDegreesPlynomialFuncs.png" height="500">
+                        </div>
+                        <pre><code class="language-javascript">
+                            const fiveDegreePolynomialFunc5 = (x) => x**2 - x + x**5
+                            const fiveDegreePolynomialFunc4 = (x) => 5 - x**5
+                            const fiveDegreePolynomialFunc3 = (x) => x - x**5 
+                            const fiveDegreePolynomialFunc2 = (x) => x**5
+                            const fiveDegreePolynomialFunc1 = (x) => x - x**2 - x**3 + x**4 + x**5
                         </code></pre>
                     </li>
                 </ol>
