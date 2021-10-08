@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"
+   />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw2021-06-25</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+        #title
+        {
+            font-family: 'Raleway', sans-serif;;
+            text-align: center;
+            color:rgb(0, 255, 13);
+        }
+        li.list
+        {
+            font-family: 'Raleway', sans-serif;;
+        }
+        p.assignment
+        {
+            font-family: 'Raleway', sans-serif;;
+        }
+        p.answer
+        {
+            font-family: 'Raleway', sans-serif;
+            text-decoration-line: underline;
+            color:rgb(8, 211, 35);
+        }
+        span.code
+        {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 8;
+            background: rgb(196, 195, 195);
+            border-radius: 2pt;
+            color:rgb(24, 128, 24);
+        }
+    </style>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+        <ol>
+            <h1 id="title">Homework due June 25</h1>
+            <li class="list">
+                <p class="assignment">
+                    Guess the function — see the attached <span class="code">graph</span>.  Hint:  try your guesses on your own graph so that they match up.
+                    <ol type="a">
+                        <li class="list">
+                            purple function
+                        </li>
+                        <li class="list">
+                            brown function
+                        </li>
+                        <li class="list">
+                            green function
+                        </li>
+                    </ol>
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Individual work:
+                    <ol type="a">
+                        <li class="list">
+                            Cris:  
+                            show a screenshot of that weird function you showed in class on Sunday June 20.  
+                            The one that had <span class="code">Math.random</span> in it, and the graph was mostly above the x-axis but had just a couple points below it.  
+                            It had a few bumps in the third quadrant, then in the first quadrant it looked like it went up to positive infinity at three different places.  
+                            Please include the definition of the function in your screenshot.
+                        </li>
+                        <li class="list">
+                            Alex: 
+                            Give a code snippet from your Unity game and write an explanation of it.
+                        </li>
+                        <li class="list">
+                            Kenneth:  
+                            Prove the two difficult cases from the <span class="code">compare</span> function; 
+                            why does Cris beat Alex with probability = 2/3 and why does Alex beat Kenneth with probability = 2/3?
+                            <ol type="i">
+                                <li class="list">
+                                    <span class="code">4 4 4 4 0 0</span> — Kenneth
+                                </li>
+                                <li class="list">
+                                    <span class="code">3 3 3 3 3 3</span> — Kai
+                                </li>
+                                <li class="list">
+                                    <span class="code">2 2 2 2 6 6</span> — Cris
+                                </li>
+                                <li class="list">
+                                    <span class="code">1 1 1 5 5 5</span> — Alex
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Goldbach’s conjecture is one of the oldest and best-known unsolved problems in number theory and all of mathematics. 
+                    It states that every even whole number greater than 2 is the sum of two prime numbers.
+                    <ol class="a">
+                        <li class="list">
+                            Prove it up to 10.  Easy:
+                            <ol class="i">
+                                <li class="list">
+                                    <span class="code">4 = 2 + 2</span>
+                                </li>
+                                <li class="list">
+                                    <span class="code">6 = 3 + 3</span>
+                                </li>
+                                <li class="list">
+                                    <span class="code">8 = 3 + 5</span>
+                                </li>
+                                <li class="list">
+                                    <span class="code">10 = 3 + 7</span>
+                                </li>
+                            </ol>
+                        </li>
+                        <li class="list">
+                            continue the above proof by hand up through the number 30.
+                        </li>
+                        <li class="list">
+                            Let’s suppose you wanted to prove this for even numbers up through 1000 … or up through <span class="code">n</span>?  
+                            Think about an algorithm that could accomplish this (hint, your algorithm could in turn rely on <span class="code">sieve</span>).  
+                            Write down a sentence or two describing how that algorithm would work.
+                        </li>
+                    </ol>
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Let’s write a function called <span class="code">randomLife</span>.  
+                    Start with your <span class="code">graph</span> function in order to draw some graph paper, but omit the x-axis and the y-axis.  
+                    Also, we won’t be putting functions on there.  
+                    Instead, we will be looking at the squares of your graph, and we will refer to them as “cells”.  
+                    We are calling this function <span class="code">randomLife</span> because you will fill the cells with color black when they are alive; and when you draw your grid, 
+                    look at each cell, calculate <span class="code">Math.random()</span>, and if it’s less than 1/3, mark that cell as alive.  That’s it.  
+                    So every time you reload the page it should have a different random setup with approximately 1/3 of the cells alive.
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Write <span class="code">solve(mathString)</span>.  
+                    This function will read <span class="code">mathString</span> and solve it.  
+                    For now, you can make a very strong simplifying assumption:  
+                    <span class="code">mathString</span> will always be of the form <span class="code">"x + y"</span> where <span class="code">x</span> and <span class="code">y</span> are positive integers.  
+                    Examples: <span class="code"> "17 + 23"</span>, <span class="code">"29999 + 314159"</span>.  
+                    Also, 
+                    let’s assume that <span class="code">x</span> and <span class="code">y</span> are both less than <span class="code">Math.MAX_SAFE_INTEGER / 2</span> so that we don’t have to worry about <span class="code">BigInt</span>.  
+                    In short, <span class="code">mathString</span> will always be:  number, space, plus, space, number.  
+                    Then perform that computation and return the result.
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Easy <span class="code">console.log</span> work.  Write a sentence describing observations.
+                    <ol class="a">
+                        <li class="list">
+                            <span class="code">
+                                Math.E
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                Math.E * Math.E
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                Math.exp(2)
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                Math.E * Math.E == Math.exp(2)
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                Math.log2(10)
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                Math.log(10)
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                Math.log10(10)
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                googol = 10**100
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                Math.log2(googol)
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                Math.log(googol)
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                Math.log10(googol)
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                Math.log13(googol)
+                            </span>
+                        </li>
+                    </ol>
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    More console work.  
+                    Explain what’s going on here.  
+                    What’s the <span class="code">b</span> and what’s the <span class="code">^</span> 
+                    <ol type="a">
+                        <li class="list">
+                            <span class="code">
+                                0b0
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                0b1
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                0b10
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                0b11
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                0b100
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                0b101
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                0b110
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                0b111
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                0b111 ^ 0b111
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                0b111 ^ 0b110
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                0b111 ^ 0b101
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                0b111 ^ 0b100
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                0b111 ^ 0b011
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                0b111 ^ 0b010
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                0b111 ^ 0b001
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                0b111 ^ 0b000
+                            </span>
+                        </li>
+                    </ol>
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    What is destructuring in JavaScript?  
+                    Read sections 10.1, 10.2, 10.3 of this: 
+                    <A href="https://exploringjs.com/es6/ch_destructuring.html">ch_destructuring.html</A>.  
+                    Write a paragraph describing destructuring in your own words. 
+                    Give 3 or more examples preferably from your own code, or, 
+                    suggest how we could use destructuring to simplify the rock-paper-scissors code we spoke about on 
+                    Friday June 18 (see the thread here, it’s in a snippet). 
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Write five crazy cool math functions and put them all on the same <span class="code">graph</span>.
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Prepare five easy/medium math functions to <span class="code">graph</span> for our Google Meet version of guess-the-function.
+                </p>
+                <p class="answer">answer</p>
+            </li>
+        </ol>
+    </body>
