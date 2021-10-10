@@ -263,6 +263,48 @@
                     </ol>
                 </p>
                 <p class="answer">answer</p>
+                <ol type="a">
+                    <li class="list">
+                        <span class="code">xToThe(n)</span> function:
+                        <pre><code class="language-javascript">
+                            function xToThe(n){
+                                const exp = ["⁰","¹","²","³","⁴","⁵","⁶","⁷","⁸","⁹"];
+                                let result = "x";
+                                let exponents = n.toString().split('');
+                                if(n < 0){
+                                    exponents.splice(0, 1);
+                                    result += "⁻";
+                                }
+                                for(const e of exponents){
+                                    result += exp[e];
+                                }
+                                return result; 
+                            }
+                        </code></pre>
+                        <div>
+                            <img src="xToThe_assertions.png" height="200">
+                        </div>
+                    </li>
+                    <li class="list">
+                        <span class="code">xSub</span> function:
+                        <pre>
+                            <code class="language-javascript">
+                                function xSub(n){
+                                    const sub = ["₀","₁","₂","₃","₄","₅","₆","₇","₈","₉"];
+                                    let result = "x";
+                                    let subs = n.toString().split('');
+                                    for(const s of subs){
+                                        result += sub[s];
+                                    }
+                                    return result; 
+                                }
+                            </code>
+                        </pre>
+                        <div>
+                            <img src="xSub_assertions.png" height="200">
+                        </div>
+                    </li>
+                </ol>
             </li>    
             <li class="list">
                 <p class="assignment">
@@ -541,6 +583,37 @@
                     Discuss.
                 </p>
                 <p class="answer">answer</p>
+                <ol type="a">
+                    First Data:
+                    <li class="box">
+                        <div class="image">
+                            <img src="firstData.png" height="500">
+                        </div>
+                        <pre class="assignment">
+                            What this image show, is the fastes way that I found to solve this dataset and the time that it took, on the top.
+                        </pre>
+                    </li>
+                    Second Data:
+                    <li class="box">
+                        <div class="image">
+                            <img src="secondData.png" height="500">
+                        </div>
+                        <pre class="assignment">
+                            In the second dataset wasn't so difficult to solve it, because as you can see I just needed only one propetry and zero hidden layer and zero neurons, 
+                            because the feature that i choosed has the same shape properties that the data.
+                            The second data was the easiest one.
+                        </pre>
+                    </li>
+                    Third data:
+                    <li class="box">
+                        <div class="image">
+                            <img src="thirdData.png" height="500">
+                        </div>
+                        <pre class="assignment">
+                            On the third Data was the second easier, but in this time I needed two properties instead of one like in the second data.
+                        </pre>
+                    </li>
+                </ol>
             </li>    
         </ol>
     </body>
