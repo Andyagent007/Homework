@@ -40,6 +40,16 @@
             border-radius: 2pt;
             color:rgb(24, 128, 24);
         }
+        div.image
+        {
+            display: flex;
+            justify-content: center;
+        }
+        code.language-javascript
+        {
+            font: 100% Helvetica, sans-serif;
+            color: rgb(4, 81, 245);
+        }
     </style>
     <body>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
@@ -50,17 +60,31 @@
                     Guess the function — see the attached <span class="code">graph</span>.  Hint:  try your guesses on your own graph so that they match up.
                     <ol type="a">
                         <li class="list">
-                            purple function
+                            <span class="code">purple function</span>
                         </li>
                         <li class="list">
-                            brown function
+                            <span class="code">brown function</span>
                         </li>
                         <li class="list">
-                            green function
+                            <span class="code">green function</span>
                         </li>
                     </ol>
                 </p>
+                <div>
+                    <img src="some polynomial functions.png" height="500">
+                </div>
                 <p class="answer">answer</p>
+                <ol type="a">
+                    <li class="list">
+                        <span class="code">f(x) => x**3 + 4</span>
+                    </li>
+                    <li class="list">
+                        <span class="code">f(x) => x**3</span>
+                    </li>
+                    <li class="code">
+                        <span class="code">f(x) => (x-1)*(x-2)*(x-3)</span>
+                    </li>
+                </ol>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -99,15 +123,21 @@
                     </ol>
                 </p>
                 <p class="answer">answer</p>
+                <div class="image">
+                    <img src="Weird_function.png" height="500">
+                </div>
+                <pre><code class="language-javascript">
+                    f(x) => Math.random(x) / Math.cos(x)**x
+                </code></pre>
             </li>
             <li class="list">
                 <p class="assignment">
                     Goldbach’s conjecture is one of the oldest and best-known unsolved problems in number theory and all of mathematics. 
                     It states that every even whole number greater than 2 is the sum of two prime numbers.
-                    <ol class="a">
+                    <ol type="a">
                         <li class="list">
                             Prove it up to 10.  Easy:
-                            <ol class="i">
+                            <ol type="i">
                                 <li class="list">
                                     <span class="code">4 = 2 + 2</span>
                                 </li>
@@ -132,7 +162,7 @@
                         </li>
                     </ol>
                 </p>
-                <p class="answer">answer</p>
+                <p class="answer">answer</p> 
             </li>
             <li class="list">
                 <p class="assignment">
