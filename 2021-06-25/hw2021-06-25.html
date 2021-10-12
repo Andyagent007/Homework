@@ -163,6 +163,166 @@
                     </ol>
                 </p>
                 <p class="answer">answer</p> 
+                <ol type="a">
+                    <li class="list">
+                        <ol type="i">
+                            <li class="list">
+                                <span class="code">
+                                    4 = 2 + 2
+                                </span>
+                            </li>
+                            <li class="list">
+                                <span class="code">
+                                    6 = 3 + 3
+                                </span>
+                            </li>
+                            <li class="list">
+                                <span class="code">
+                                    8 = 3 + 5
+                                </span>
+                            </li>
+                            <li class="list">
+                                <span class="code">
+                                    10 = 3 + 7
+                                </span>
+                            </li>
+                        </ol>
+                    </li>
+                    <li class="list">
+                        <ol type="i">
+                            <li class="list">
+                                <span class="code">
+                                    12 = 5 + 7
+                                </span>
+                            </li>
+                            <li class="list">
+                                <span class="code">
+                                    14 = 7 + 7
+                                </span>
+                            </li>
+                            <li class="list">
+                                <span class="code">
+                                    16 = 11 + 5
+                                </span>
+                            </li>
+                            <li class="list">
+                                <span class="code">
+                                    18 = 13 + 5
+                                </span>
+                            </li>
+                            <li class="list">
+                                <span class="code">
+                                    20 = 17 + 3
+                                </span>
+                            </li>
+                            <li class="list">
+                                <span class="code">
+                                    22 = 11 + 11
+                                </span>
+                            </li>
+                            <li class="list">
+                                <span class="code">
+                                    24 = 17 + 7
+                                </span>
+                            </li>
+                            <li class="list">
+                                <span class="code">
+                                    26 = 13 + 13
+                                </span>
+                            </li>
+                            <li class="list">
+                                <span class="code">
+                                    28 = 17 + 11
+                                </span>
+                            </li>
+                            <li class="list">
+                                <span class="code">
+                                    30 = 17 + 13
+                                </span>
+                            </li>
+                        </ol>
+                    </li>
+                    <li class="list">
+                        This is the algorithm:
+                        <pre><code class="language-javascript">
+                            function from2to(max) {
+                                let array = [];
+                                for (let i = 0; i < max - 1; i++) {
+                                    let number = 2 + i;
+                                    array.push(number);
+                                }
+                                return array;
+                            }
+
+                            function sieve(n) {
+                                let sqrt = Math.floor(Math.sqrt(n));
+                                let primes = [];
+                                let numbers = from2to(n);
+                                primes.push(numbers[0]);
+                                numbers.splice(0, 1)
+                                for(let i = 0; i < sqrt; i++){
+                                    let prime = primes[i];
+                                    for(let j = 0; j < numbers.length; j++){
+                                        let number = numbers[j];
+                                        let mod = number%prime;
+                                        if(mod == 0){
+                                            numbers.splice(j, 1);
+                                        }
+                                    }
+                                    primes.push(numbers[0]);
+                                    numbers.splice(0, 1);
+                                }
+                                let rArray = primes.concat(numbers);
+                                return rArray;
+                            }
+
+                            function getEvens(num){
+                                let evens = []
+                                for(let i=4; i<=num; i+=2){
+                                    evens.push(i);
+                                }
+                                return evens;
+                            }
+
+                            function backwardSearch(array,value){
+                                for(i=array.length-1; i>=0; i--){
+                                    let element = this[i];
+                                    if(element==value){
+                                        return true;
+                                    }
+                                }
+                                return false
+                            }
+
+                            Array.prototype.backwardSearch = function(value){
+                                for(i=this.length-1; i>=0; i--){
+                                    let element = array[i];
+                                    if(element==value){
+                                        return true;
+                                    }
+                                }
+                                return false
+                            }
+
+                            function goldbach(num){
+                                let primes = sieve(num)
+
+                                function partner(even){
+                                    let difference;
+                                    for(let prime of primes){
+                                        difference = even-prime;
+                                        if(primes.backwardSearch(difference)){
+                                            return [even,prime,difference]
+                                        }
+                                    }
+                                    return [even,'Goldbach fails!!']
+                                } 
+
+                                return getEvens(num).map(partner);
+                            }
+                        </code></pre>
+                    </li>
+                </ol>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -175,6 +335,42 @@
                     So every time you reload the page it should have a different random setup with approximately 1/3 of the cells alive.
                 </p>
                 <p class="answer">answer</p>
+                <pre><code class="language-javascript">
+                    function setup() {
+                        createCanvas(windowWidth, windowHeight);
+                        graph(400, 10);
+                      }
+                      ​
+                      function draw() {
+                      }
+                      ​
+                      ​
+                      windowResized = function () {
+                        resizeCanvas(windowWidth, windowHeight);
+                      };
+                      ​
+                      ​
+                      function randomLife(displaySize , length) {
+                        const scale = displaySize/length
+                        square(0,0,displaySize);
+                      ​
+                        for(let i = scale ; i < displaySize; i+= scale){
+                        strokeWeight(1)
+                           stroke('skyBlue')
+                           line(i,0,i,displaySize)
+                           line(0,i,displaySize,i)
+                        }
+                        for(y = 0; y < displaySize; y+= scale){
+                          for(x = 0; x < displaySize; x+= scale){
+                            var chanceOfKapoot = Math.random()
+                            if(chanceOfKapoot > 1/3){
+                              fill('black');
+                              square(x,y,scale)
+                            }
+                          }
+                        }
+                      }
+                </code></pre>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -189,74 +385,59 @@
                     Then perform that computation and return the result.
                 </p>
                 <p class="answer">answer</p>
+                <pre><code class="language-javascript">
+                    function solve(mathString){
+                        let terms = mathString.split(/\s+\+\s+/);
+                        let numbers = [];
+                        for(let i=0; i < terms.length; i++){
+                            numbers.push(Number.parseFloat(terms[i]));
+                        }
+                       return numbers.reduce((a, b) => a+b);
+                    }
+                </code></pre>
             </li>
             <li class="list">
                 <p class="assignment">
                     Easy <span class="code">console.log</span> work.  Write a sentence describing observations.
                     <ol class="a">
                         <li class="list">
-                            <span class="code">
-                                Math.E
-                            </span>
+                            <span class="code">Math.E</span> is the euler number.
                         </li>
                         <li class="list">
-                            <span class="code">
-                                Math.E * Math.E
-                            </span>
+                            <span class="code">Math.E * Math.E</span> is the euler number times euler number.
                         </li>
                         <li class="list">
-                            <span class="code">
-                                Math.exp(2)
-                            </span>
+                            <span class="code">Math.exp(2)</span> is a close number to <span class="code">Math.E * Math.E</span> ,i mean is like the euler constant to the power of 2.
                         </li>
                         <li class="list">
-                            <span class="code">
-                                Math.E * Math.E == Math.exp(2)
-                            </span>
+                            <span class="code">Math.E * Math.E == Math.exp(2)</span>  we are making sure if <span class="code">Math.E * Math.E</span> is the same as <span class="code">Math.exp(2)</span>.
                         </li>
                         <li class="list">
-                            <span class="code">
-                                Math.log2(10)
-                            </span>
+                            <span class="code">Math.log2(10)</span> is the base of 2 of 10.
                         </li>
                         <li class="list">
-                            <span class="code">
-                                Math.log(10)
-                            </span>
+                            <span class="code">Math.log(10)</span> is the natural base of the number 10.
                         </li>
                         <li class="list">
-                            <span class="code">
-                                Math.log10(10)
-                            </span>
+                            <span class="code">Math.log10(10)</span> is the base of 10 of 10.
                         </li>
                         <li class="list">
-                            <span class="code">
-                                googol = 10**100
-                            </span>
+                            <span class="code">googol = 10**100</span> that’s the number googol.
                         </li>
                         <li class="list">
-                            <span class="code">
-                                Math.log2(googol)
-                            </span>
+                            <span class="code">Math.log2(googol)</span> is the logarithm base 2 of a googol ,is the same as Math.log2(10**100).
                         </li>
                         <li class="list">
-                            <span class="code">
-                                Math.log(googol)
-                            </span>
+                            <span class="code">Math.log(googol)</span> is the natural base of a googol.
                         </li>
                         <li class="list">
-                            <span class="code">
-                                Math.log10(googol)
-                            </span>
+                            <span class="code">Math.log10(googol)</span> is the base 10 of a googol that is 100, because a googol is 10**100
                         </li>
                         <li class="list">
-                            <span class="code">
-                                Math.log13(googol)
-                            </span>
+                            <span class="code">Math.log13(googol)</span> is the base 13 of a googol.
                         </li>
                     </ol>
                 </p>
-                <p class="answer">answer</p>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -265,88 +446,57 @@
                     What’s the <span class="code">b</span> and what’s the <span class="code">^</span> 
                     <ol type="a">
                         <li class="list">
-                            <span class="code">
-                                0b0
-                            </span>
+                            <span class="code">0b0</span> = 0
                         </li>
                         <li class="list">
-                            <span class="code">
-                                0b1
-                            </span>
+                            <span class="code">0b1</span> = 1
                         </li>
                         <li class="list">
-                            <span class="code">
-                                0b10
-                            </span>
+                            <span class="code">0b10</span> = 2
                         </li>
                         <li class="list">
-                            <span class="code">
-                                0b11
-                            </span>
+                            <span class="code">0b11</span> = 3
                         </li>
                         <li class="list">
-                            <span class="code">
-                                0b100
-                            </span>
+                            <span class="code">0b100</span> = 4
                         </li>
                         <li class="list">
-                            <span class="code">
-                                0b101
-                            </span>
+                            <span class="code">0b101</span> = 5
                         </li>
                         <li class="list">
-                            <span class="code">
-                                0b110
-                            </span>
+                            <span class="code">0b110</span> = 6
                         </li>
                         <li class="list">
-                            <span class="code">
-                                0b111
-                            </span>
+                            <span class="code">0b111</span> = 7
                         </li>
                         <li class="list">
-                            <span class="code">
-                                0b111 ^ 0b111
-                            </span>
+                            <span class="code">0b111 ^ 0b111</span> = 0
                         </li>
                         <li class="list">
-                            <span class="code">
-                                0b111 ^ 0b110
-                            </span>
+                            <span class="code">0b111 ^ 0b110</span> = 1
                         </li>
                         <li class="list">
-                            <span class="code">
-                                0b111 ^ 0b101
-                            </span>
+                            <span class="code">0b111 ^ 0b101</span> = 2
                         </li>
                         <li class="list">
-                            <span class="code">
-                                0b111 ^ 0b100
-                            </span>
+                            <span class="code">0b111 ^ 0b100</span> = 3
                         </li>
                         <li class="list">
-                            <span class="code">
-                                0b111 ^ 0b011
-                            </span>
+                            <span class="code">0b111 ^ 0b011</span> = 4
                         </li>
                         <li class="list">
-                            <span class="code">
-                                0b111 ^ 0b010
-                            </span>
+                            <span class="code">0b111 ^ 0b010</span> = 5
                         </li>
                         <li class="list">
-                            <span class="code">
-                                0b111 ^ 0b001
-                            </span>
+                            <span class="code">0b111 ^ 0b001</span> = 6
                         </li>
                         <li class="list">
-                            <span class="code">
-                                0b111 ^ 0b000
-                            </span>
+                            <span class="code">0b111 ^ 0b000</span> = 7
                         </li>
                     </ol>
                 </p>
                 <p class="answer">answer</p>
+                The <span class="code">b</span> stands for binary and the <span class="code">^</span> return the distance between the left side number and the rigth side number.
             </li>
             <li class="list">
                 <p class="assignment">
@@ -359,18 +509,35 @@
                     Friday June 18 (see the thread here, it’s in a snippet). 
                 </p>
                 <p class="answer">answer</p>
+                <p class="assignment">
+                    Destructuring is a method, where you can extract information or data you use extracting to put something or change <span class="code">object</span> and <span class="code">array</span>, and you can destructure the sources or the element of the object also the target of the array, and it is very usually because before there wasn’t a mechanism to extract data, destructuring is: exctract a data or a property from an object or an array.
+                    And actually I use property in my graph’s code . I made a constant called options in which i extract in an object all the functions stuff like <span class="code">displaySize</span>, <span class="code">length</span> and all those stuff in it.
+                </p>
             </li>
             <li class="list">
                 <p class="assignment">
                     Write five crazy cool math functions and put them all on the same <span class="code">graph</span>.
                 </p>
                 <p class="answer">answer</p>
+                <div class="image">
+                    <img src="5_Crazzycoolmath-Functions.png" height="600">
+                </div>
+                <pre><code class="language-javascript">
+                    const crazyFunc5 = (x) => x/Math.ceil(x) ** Math.exp(x) / Math.atan(x) ** Math.tan(x)
+                    const crazyFunc4 = (x) => 5 * x / 10**x
+                    const crazyFunc3 = (x) => 3**3 / -14 * Math.exp(x) ** Math.exp(x) 
+                    const crazyFunc2 = (x) => Math.atan(x) / Math.tan(x) ** Math.cos(x) * Math.sin(x)
+                    const crazyFunc1 = (x) => x**x / -9 * x**Math.ceil(x) * Math.ceil(x)**Math.atan(x) / Math.tan(x) 
+                </code></pre>
             </li>
             <li class="list">
                 <p class="assignment">
                     Prepare five easy/medium math functions to <span class="code">graph</span> for our Google Meet version of guess-the-function.
                 </p>
                 <p class="answer">answer</p>
+                <p class="assgnament">
+                    Functions prepare for a round of guess the function.
+                </p>
             </li>
         </ol>
     </body>
