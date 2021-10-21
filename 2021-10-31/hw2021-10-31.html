@@ -23,11 +23,6 @@
         {
             font-family: 'Raleway', sans-serif;;
         }
-        div.image
-        {
-            display: flex;
-            justify-content: center;
-        }
         span.code
         {
             font-family: 'Roboto Mono', monospace;
@@ -51,11 +46,34 @@
         {
             font-family: 'Raleway', sans-serif;;
         }
+        div.image
+        {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
         div.images
         {
             display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
             flex-wrap: wrap;
-            align-content: space-around;
+        }
+        div.images img
+        {
+            width: auto;
+            height: auto;
+            max-width: 600px;
+            margin: 20px;
+        }
+        div.images .right
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            max-width: 50%;
         }
         li.box
         {
@@ -64,6 +82,20 @@
             flex-direction: column;
             border-radius: 5px;
             border-style: double;
+            height: 700px;
+        }
+        li.otherBox
+        {
+            display: flex;
+            background-color: rgb(196, 195, 195);
+            flex-direction: column;
+            border-radius: 5px;
+            border-style: double;
+            height: 850px;
+        }
+        img.Img
+        {
+            align-self: center;
         }
         pre.assignment
         {
@@ -334,11 +366,48 @@
                         </pre>
                     </li>    
                     <p class="answer">2nd Day:</p>
-                    <!-- <li class="box">
+                    <li class="box">
                         <div class="images">
-
+                            <img class="img" src="2ndScreeps-image(Tiggattack).png" height="600">
+                            <div class="right">
+                                <img src="4thScreeps-image(Tiggattack).png">
+                                <img src="3rdScreeps-image(Tiggattack).png">
+                            </div>
                         </div>
-                    </li> -->
+                        <pre class="assignment">
+                            In the second day, seems like it the idea of run away of the "Tiggatory", because Tigga attacked me.
+                        </pre>
+                    </li>
+                    <p class="answer">3rd Day:</p>
+                    <li class="box">
+                        <div class="image">
+                            <img src="7thScreeps-image.png" height="600">
+                        </div>
+                        <pre class="assignment">
+                            In this day I did a respawn in the same room, because I didn' like the others room because they were more far away because the invaders had all the other 
+                            rooms ocuppied, and i tougth that there wouldn't be problem and no one would attack me, but I was wrong.
+                        </pre>
+                    </li>
+                    <p class="answer">4th Day:</p>
+                    <li class="otherBox">
+                        <div class="images">
+                            <img src="5thScreeps-image(2ndAttack).png">
+                            <img src="6thScreeps-image(2ndAttack).png">
+                        </div>
+                        <pre class="assignment">
+                            In the 4th day someone just attacked me and I got surprise because it wasn't Tigga, but anyway he destroy my room again, so i had to change of position 
+                            and I was looking for my next room.
+                        </pre>
+                    </li>
+                    <p class="answer">5th Day:</p>
+                    <li class="box">
+                        <div class="image">
+                            <img src="8thScreeps-image(new-room).png" height="600">
+                        </div>
+                        <pre class="assignment">
+                            This is the last day and what the image show is my new room.
+                        </pre>
+                    </li>
                 </ol>
             </li>
             <li class="list">
