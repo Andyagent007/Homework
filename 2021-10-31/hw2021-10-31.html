@@ -11,7 +11,13 @@
     <title>hw2021-10-31</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;200;400&display=swap');
+        /* img.imgs {
+            display: flex;
+            max-width: 90% ;
+            height: auto;
+            width: auto;
+        } */
         #title
         {
             font-family: 'Raleway', sans-serif;;
@@ -21,7 +27,7 @@
         }
         li.list
         {
-            font-family: 'Raleway', sans-serif;;
+            font-family: 'Raleway', sans-serif;
         }
         span.code
         {
@@ -44,7 +50,7 @@
         }
         p.assignment
         {
-            font-family: 'Raleway', sans-serif;;
+            font-family: 'Raleway', sans-serif;
         }
         div.image
         {
@@ -99,7 +105,14 @@
         }
         pre.assignment
         {
-            font-family: 'Raleway', sans-serif;;
+            font-family: 'Raleway', sans-serif;
+            white-space: pre-wrap;
+            margin: 20px;
+            white-space: pre-line;
+        }
+        li.code
+        {
+            font-family: 'Roboto Mono', monospace;
         }
     </style>
     <body>
@@ -204,16 +217,16 @@
                 <p class="assignment">
                     Easy console work, plus a "discuss" question:
                     <ol type="a">
-                        <li class="list">
+                        <li class="code">
                             const Dog = { barks: true }
                         </li>
-                        <li class="list">
+                        <li class="code">
                             const Pug = Object.create(Dog)
                         </li>
-                        <li class="list">
+                        <li class="code">
                             Pug.barks
                         </li>
-                        <li class="list">
+                        <li class="code">
                             // what's going on here?  Hint:  mdn prototypal inheritance
                         </li>
                     </ol>
@@ -249,7 +262,7 @@
                         return result;
                     }
                 </code></pre>
-                    <img src="randObject-Examples.png" height="800">
+                    <img src="randObject-Examples.png">
             </li>
             <li class="list">
                 <p class="assignment">
@@ -368,7 +381,7 @@
                     <p class="answer">2nd Day:</p>
                     <li class="box">
                         <div class="images">
-                            <img class="img" src="2ndScreeps-image(Tiggattack).png" height="600">
+                            <img class="img" src="2ndScreeps-image(Tiggattack).png">
                             <div class="right">
                                 <img src="4thScreeps-image(Tiggattack).png">
                                 <img src="3rdScreeps-image(Tiggattack).png">
@@ -438,19 +451,19 @@
                 <p class="assignment">
                     Write a function <span class="code">xPlusOneToThe(n)</span> that takes a positive integer <span class="code">n</span> and returns the polynomial expansion of (x+1)ⁿ.  Show your code plus a screenshot with these 4 assertions passing, and show the result of the fifth expression.
                     <ol type="a">
-                        <li class="list">
+                        <li class="code">
                             console.assert(xPlusOneToThe(1) == "x + 1")
                         </li>
-                        <li class="list">
+                        <li class="code">
                             console.assert(xPlusOneToThe(2) == "x² + 2x + 1")
                         </li>
-                        <li class="list">
+                        <li class="code">
                             console.assert(xPlusOneToThe(3) == "x³ + 3x² + 3x + 1")
                         </li>
-                        <li class="list">
+                        <li class="code">
                             console.assert(xPlusOneToThe(10) == "x¹⁰ + 10x⁹ + 45x⁸ + 120x⁷ + 210x⁶ + 252x⁵ + 210x⁴ + 120x³ + 45x² + 10x + 1")
                         </li>
-                        <li class="list">
+                        <li class="code">
                             xPlusOneToThe(100)
                         </li>
                     </ol>
