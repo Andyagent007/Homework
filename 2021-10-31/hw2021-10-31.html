@@ -403,7 +403,7 @@
                             </div>
                         </div>
                         <pre class="assignment">
-                            In the second day, seems like it the idea of run away of the "Tiggatory", because Tigga attacked me.
+                            In the second day, seems like the idea of run away of the "Tiggatory", because Tigga attacked me.
                         </pre>
                     </li>
                     <p class="answer">3rd Day:</p>
@@ -412,7 +412,7 @@
                             <img src="7thScreeps-image.png" height="600">
                         </div>
                         <pre class="assignment">
-                            In this day I did a respawn in the same room, because I didn' like the others room because they were more far away because the invaders had all the other 
+                            In this day I did a respawn in the same room, because the other rooms were more far away because the invaders had all the other 
                             rooms ocuppied, and i tougth that there wouldn't be problem and no one would attack me, but I was wrong.
                         </pre>
                     </li>
@@ -518,6 +518,55 @@
                         </li>
                     </ol>
                 </p>
+                <p class="answer">answer</p>
+                <pre><code class="language-javascript">
+                    //This is the function of the assignment
+                    function xPlusOneToThe(n){
+                        let result = '';
+                        let coefficients = pascalRow(n);
+                        for(let i=0; i < n; i++) {
+                          let x = i < n-1 ? xToThe(n-i) : 'x';
+                          let c = coefficients[i];
+                          result += c==1 ? x : c+x;
+                          result += ' + '
+                        }
+                        result += "1";
+                        return result;
+                      }
+                      //These are function that are used on the xPlusOneToThe() function
+                    function pascalRow(n){
+                        let array = [1,1];
+                        for(let i=1; i < n; i++){
+                            let next = [];
+                            let scratch = [0, ...array, 0]
+                            for(let j=0; j < scratch.length-1; j++){
+                                next.push(scratch[j]+scratch[j+1]);
+                            }
+                            array = next;
+                        }
+                        return array;
+                    }
+                    function xToThe(n){
+                        const exp = ["⁰","¹","²","³","⁴","⁵","⁶","⁷","⁸","⁹"];
+                        let result = "x";
+                        let exponents = n.toString().split('');
+                        if(n < 0){
+                            exponents.splice(0, 1);
+                            result += "⁻";
+                        }
+                        for(const e of exponents){
+                            result += exp[e];
+                        }
+                        return result; 
+                    }
+                </code></pre>
+                <p class="assignment">Btw the xToThe() function is on the last homework assignment</p>
+                <p class="assignment">
+                    Here is the screenshot for the results of the 4 assertions 
+                </p>
+                <div class="image">
+                    <img src="assertionsResults.png" height="450">
+                </div>
             </li>
             
         </ol>
