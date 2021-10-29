@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"
+   />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw2021-06-18</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;200;400&display=swap');
+        #title
+        {
+            font-family: 'Raleway', sans-serif;;
+            text-align: center;
+            text-decoration-line: underline;
+            color:rgb(248, 161, 0);
+        }
+        li.list
+        {
+            font-family: 'Raleway', sans-serif;
+        }
+        span.code
+        {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 8;
+            background: rgb(196, 195, 195);
+            border-radius: 2pt;
+            color:rgb(107, 79, 0);
+        }
+        code.language-javascript
+        {
+            font: 100% Helvetica, sans-serif;
+            color: rgb(0, 117, 172);
+        }
+        p.answer
+        {
+            font-family: 'Raleway', sans-serif;
+            text-decoration-line: underline;
+            color:rgb(255, 226, 97);
+        }
+        p.assignment
+        {
+            font-family: 'Raleway', sans-serif;
+        }
+        div.image
+        {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+        <h1 id="title">Homework Due June 18</h1>
+        <ol>
+            <li class="list">
+                <p class="assignment">
+                    Look at the image called continued fraction.  
+                    Sort of like an infinite repeated decimal, 
+                    this is an infinite repeated fraction.  
+                    Those three dots (the ellipsis) go on forever.  
+                    But let’s calculate an approximation.  
+                    Evaluate the expression as if the ellipsis has the value zero.  
+                    Take a screenshot to show your work.  
+                    You can do it in the JavaScript console with one expression and a whole bunch of parenthesis.
+                </p>
+                <img src="continued fraction.png" height="300">
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    In the Moon Unit Zappa question from last week, when she was four years old she had four books.  
+                    Along these lines, write a JavaScript program that will generate all permutations of the letters 
+                    <span class='code'>a b c d</span> and <span class='code'>console.table</span> the result.  
+                    So we should see <span class='code'>abcd</span>, 
+                    <span class='code'>abdc</span>, 
+                    <span class='code'>acbd</span>, ….
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Write functions to play rock-paper-scissors.  
+                    You’ll write three functions for the three players; 
+                    use the following identifiers to name your functions:
+                    <span class='code'>crisRPS</span>, <span class='code'>alexRPS</span>, <span class='code'>kennethRPS</span>.
+                    Implement these any way you like, so long as they are capable of returning an object like this: 
+                    <span class='code'>{name: 'cris', rps: 'scissors'}</span> — so in this example
+                    <span class='code'>crisRPS</span> has been invoked, it tells it’s name (‘cris’), 
+                    then its rock-paper-scissors value, in this case ‘scissors’.  
+                    Use whatever strategy you like to generate the <span class='code'>rps</span> value.
+                    Then write a second function <span class='code'>play(func1, func2)</span>
+                    that takes two rock-paper-scissors functions and plays them against each other one time.  
+                    It outputs an object like this <span class='code'>{players: 'cris vs alex', result: 'rock rock — draw'}</span>
+                    or like this <span class='code'>{players 'cris vs alex', result: 'scissors paper — cris wins'}</span>.  
+                    Play this game 10 times.
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Look at last week’s homework where you wrote a <span class='code'>compare</span> function.
+                    <ol type="a">
+                        <li class="list">
+                            Run each of part a-d 3 times, capturing all results
+                        </li>
+                        <li class="list">
+                            Explain, mathematically, why the theoretical probability for each result is precisely 2/3.
+                        </li>
+                    </ol>
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Look at last week’s homework, question 8, the easy console work.  
+                    Use the results you got to make intelligent guesses for the what these values should be, 
+                    without needing to consult MDN:
+                    <ol type="a">
+                        <li class="list">
+                            <span class='code'>Math.LN2</span>
+                        </li>
+                        <li class="list">
+                            <span class='code'>Math.LN10</span>
+                        </li>
+                        <li class="list">
+                            <span class='code'>What is the “LN” for?</span>
+                        </li>
+                    </ol>
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Use your <span class='code'>graph</span> function to show 5 different functions (on the same graph) 
+                    that have significant differences to any functions you’ve graphed before.  
+                    Go for complex and bizarre combinations you haven’t tried before.
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Use your <span class='code'>graph</span> function to show 5 different functions 
+                    (on the same graph) that you think would be suitable for a guess-the-function game 
+                    — so maybe a couple really easy ones, 
+                    and a few medium difficulty ones.
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    New logarithm rule:
+                    <ol type="a">
+                        <li class="list">
+                            from last homework, what was the value of Math.log13(665416609183179841)?
+                        </li>
+                        <li class="list">
+                            On Sunday we discussed that the above value is exactly equal to the extra credit question 
+                            — Math.log10(665416609183179841) / Math.log10(13) — Prove this by evaluating this expression in the JavaScript console.
+                        </li>
+                        <li class="list">
+                            Use part b to deduce what the new logarithm rule is.  
+                            Write down that new logarithm rule.  Test it out for a few easy examples.  
+                            Show your work.
+                        </li>
+                    </ol>
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Have a codecombat contest session with the three of you.  
+                    Write down a few sentences describing how it went, 
+                    and what was the most interesting thing you did.
+                </p>
+                <p class="answer">answer</p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Please give a brief update on Screepslandia.
+                </p>
+                <p class="answer">answer</p>
+            </li>
+        </ol>
+    </body>
