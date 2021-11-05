@@ -69,6 +69,12 @@
                 </p>
                 <img src="continued fraction.png" height="300">
                 <p class="answer">answer</p>
+                <div class="image">
+                    <img src="continuedFractionExample.png" height="100">
+                </div>
+                <p class="assignment">
+                    I notice that the result is kinda similar to the square root of 2 
+                </p>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -80,6 +86,24 @@
                     <span class='code'>acbd</span>, ….
                 </p>
                 <p class="answer">answer</p>
+                <pre><code class="language-javascript">
+                    function getAllPermutations(string) {
+                        var results = [];
+                        if (string.length === 1) {
+                          results.push(string);
+                          return results;
+                        }
+                        for (var i = 0; i < string.length; i++) {
+                          var firstChar = string[i];
+                          var charsLeft = string.substring(0, i) + string.substring(i + 1);
+                          var innerPermutations = getAllPermutations(charsLeft);
+                          for (var j = 0; j < innerPermutations.length; j++) {
+                            results.push(firstChar + innerPermutations[j]);
+                          }
+                        }
+                        return results;
+                      }
+                </code></pre>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -98,7 +122,36 @@
                     or like this <span class='code'>{players 'cris vs alex', result: 'scissors paper — cris wins'}</span>.  
                     Play this game 10 times.
                 </p>
-                <p class="answer">answer</p>
+                <p class="answer">answer</p> 
+                <pre><code class="language-javascript">
+                    //crisRPS function
+                    function crisRPS(){
+                        const name = 'cris';
+                        const rps = 'rock paper scissors'.split(' ')[Math.floor(Math.random()*3)]
+                        let obj = {}; 
+                        obj["name"] = name;
+                        obj["rps"] = rps;
+                        return obj;
+                    }
+                    //alexRPS function
+                    function alexRPS(){
+                        const name = 'alex';
+                        const rps = 'rock paper scissors'.split(' ')[Math.floor(Math.random()*3)]
+                        let obj = {}; 
+                        obj["name"] = name;
+                        obj["rps"] = rps;
+                        return obj;
+                    }
+                    //kennethRPS function
+                    function kennethRPS(){
+                        const name = 'kenneth';
+                        const rps = 'rock paper scissors'.split(' ')[Math.floor(Math.random()*3)]
+                        let obj = {}; 
+                        obj["name"] = name;
+                        obj["rps"] = rps;
+                        return obj;
+                    }
+                </code></pre>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -113,6 +166,17 @@
                     </ol>
                 </p>
                 <p class="answer">answer</p>
+                <ol type="a">
+                    <li class="list">
+                        <p class="assignment">
+                            These are the result that the <span class='code'>compare</span> function return 3 times every part
+                        </p>
+                        <img src="compareExamples.png" height="600">
+                    </li>
+                    <li class="list">
+                        Becuase for every different example, the probability to win of one side is the double to win for the other side 
+                    </li>
+                </ol>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -121,10 +185,10 @@
                     without needing to consult MDN:
                     <ol type="a">
                         <li class="list">
-                            <span class='code'>Math.LN2</span>
+                            <span class='code'>Math.LN2</span> = 0.6931471805599453
                         </li>
                         <li class="list">
-                            <span class='code'>Math.LN10</span>
+                            <span class='code'>Math.LN10</span> = 2.302585092994046
                         </li>
                         <li class="list">
                             <span class='code'>What is the “LN” for?</span>
@@ -132,6 +196,11 @@
                     </ol>
                 </p>
                 <p class="answer">answer</p>
+                <p class="assignment">
+                    LN stands for logarithm, so I think <span class='code'>Math.log(2)</span> is the same as <span class='code'>Math.LN2</span>
+                    and in the last homework in the console work assignment you asked fot <span class='code'>Math.log(2)</span> and <span class='code'>Math.log(10)</span>,
+                    so I guess is the same result for these two console work.
+                </p>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -185,4 +254,15 @@
                 <p class="answer">answer</p>
             </li>
         </ol>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+        <script type="text/javascript">
+        // Optional
+        Prism.plugins.NormalizeWhitespace.setDefaults({
+            'remove-trailing': true,
+            'remove-indent': true,
+            'left-trim': true,
+            'right-trim': true,
+        });
+        </script>
     </body>
