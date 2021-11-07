@@ -61,47 +61,42 @@
         div.images
         {
             display: flex;
-            flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
             flex-wrap: wrap;
         }
         div.images img
         {
-            width: auto;
-            height: auto;
-            max-width: 600px;
+            height: 400px;
             margin: 20px;
         }
-        div.images .right
+        div.imges
+        {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        div.imges img
+        {
+            height: 300px;
+            margin: 20px;
+        }
+        /* div.images .right
         {
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
             max-width: 50%;
-        }
+        } */
         li.box
         {
             display: flex;
             background-color: rgb(196, 195, 195);
-            flex-direction: column;
             border-radius: 5px;
             border-style: double;
-            height: 700px;
-        }
-        li.otherBox
-        {
-            display: flex;
-            background-color: rgb(196, 195, 195);
             flex-direction: column;
-            border-radius: 5px;
-            border-style: double;
-            height: 880px;
-        }
-        img.Img
-        {
-            align-self: center;
         }
         pre.assignment
         {
@@ -113,13 +108,6 @@
         li.code
         {
             font-family: 'Roboto Mono', monospace;
-        }
-        div.DaveImages
-        {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 10px;
-            align-content: space-between;
         }
     </style>
     <body>
@@ -223,6 +211,10 @@
                     Use <span class="code">pageres</span> to make an image of that file and include it as your answer here.  
                     And don't forget to use <span class="code">pngquant</span> as well!
                 </p>
+                <p class="answer">answer</p>
+                <div class="image">
+                    <img src="HomeworkJun18.png" height="500">
+                </div>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -396,11 +388,9 @@
                     <p class="answer">2nd Day:</p>
                     <li class="box">
                         <div class="images">
-                            <img class="img" src="2ndScreeps-image(Tiggattack).png">
-                            <div class="right">
-                                <img src="4thScreeps-image(Tiggattack).png">
-                                <img src="3rdScreeps-image(Tiggattack).png">
-                            </div>
+                            <img src="2ndScreeps-image(Tiggattack).png">
+                            <img src="4thScreeps-image(Tiggattack).png">
+                            <img src="3rdScreeps-image(Tiggattack).png">
                         </div>
                         <pre class="assignment">
                             In the second day, seems like the idea of run away of the "Tiggatory", because Tigga attacked me.
@@ -417,7 +407,7 @@
                         </pre>
                     </li>
                     <p class="answer">4th Day:</p>
-                    <li class="otherBox">
+                    <li class="box">
                         <div class="images">
                             <img src="5thScreeps-image(2ndAttack).png">
                             <img src="6thScreeps-image(2ndAttack).png">
@@ -465,12 +455,12 @@
                     <p class="answer">
                         And here a curious that happened in the chapter 10:
                     </p>
-                    <li class="otherBox"> 
-                        <div class="DaveImages">
-                            <img src="DaveTalk.png" height="400">
-                            <img src="DaveTalk2.png" height="400">
-                            <img src="DaveTalk3.png" height="400">
-                            <img src="DaveTalk4.png" height="400">
+                    <li class="box"> 
+                        <div class="imges">
+                            <img src="DaveTalk.png">
+                            <img src="DaveTalk2.png">
+                            <img src="DaveTalk3.png">
+                            <img src="DaveTalk4.png">
                         </div>
                         <pre class="assignment">
                             What is going on in these images is that Dave was bite or injured by a zombie during the chapter, and the kid didn't know that, then Dave decides to show him because he couldn't hold it anymore and then Dave just collapse.
