@@ -22,6 +22,7 @@
         li.list
         {
             font-family: 'Raleway', sans-serif;
+            margin: 10px;
         }
         span.code
         {
@@ -50,6 +51,12 @@
         {
             display: flex;
             justify-content: center;
+        }
+        div.img
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
     </style>
     <body>
@@ -209,6 +216,16 @@
                     Go for complex and bizarre combinations you haven’t tried before.
                 </p>
                 <p class="answer">answer</p>
+                <div class="image">
+                    <img src="CrazyFuncs.png" height="500">
+                </div>
+                <pre><code class="language-javascript">
+                    const extraFunc5 = (x) => x**-9/x*4
+                    const extraFunc4 = (x) => Math.cos(x)**Math.cos(x)
+                    const extraFunc3 = (x) => Math.cos(x) * 8 / Math.sin(x) * 4
+                    const extraFunc2 = (x) => x**6 * -5
+                    const extraFunc = (x) => 2*x**4/x**x**-3
+                </code></pre>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -218,6 +235,9 @@
                     and a few medium difficulty ones.
                 </p>
                 <p class="answer">answer</p>
+                <p class="assignemnt">
+                    Function ready for a round of guess the function.
+                </p>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -238,6 +258,24 @@
                     </ol>
                 </p>
                 <p class="answer">answer</p>
+                <ol type="a">
+                    <li class="list">
+                       The value of Math.log13(665416609183179841) is 16.     
+                    </li>
+                    <li class="list">
+                        <div class="img">
+                            Tried.
+                            <img src="logarithmExample.png">
+                        </div>
+                    </li>
+                    <li class="list">
+                        The logarithm rule is that the logarithm base x of n number is the same result as logarithm normal base of n number divided by the logarithm normal base of x number.
+                        Here some examples:
+                        <div>
+                            <img src="logarithmRuleExamples.png" height="500">
+                        </div>
+                    </li>
+                </ol>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -246,12 +284,23 @@
                     and what was the most interesting thing you did.
                 </p>
                 <p class="answer">answer</p>
+                <p class="assignment">
+                    It was so incredible!, I like it very much, the new game option work just like screeps it is similar to screeps there are little workers that pick up tree different materials, 
+                    fire, water and earth and they send the material to a magic guy who is like your superhero and it’s attack to the other superhero of the other user and there are spells for the magic guy. 
+                    And I really got surprise!!, because just in that day I advance to the number tree hundred something in the users ranking!!, 
+                    and it surprise me because there are like a thousand of players!.
+                </p>
             </li>
             <li class="list">
                 <p class="assignment">
                     Please give a brief update on Screepslandia.
                 </p>
                 <p class="answer">answer</p>
+                <p class="assignment">
+                    Right now I am not doing something interesting or something especial I am just looking for my second room, 
+                    like I have been doing all these time, and also now that I have my room controller in level 6 
+                    I am just constructing my terminal and the labs and making the code for the creeps to make it works for my terminal and also I am making the extractor’s code (the extractor is what we extract the material from the room with).
+                </p>
             </li>
         </ol>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
