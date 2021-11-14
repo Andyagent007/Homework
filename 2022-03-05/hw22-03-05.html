@@ -305,6 +305,213 @@
                     </li>
                 </ol>
             </li>
+            <li class="list">
+                <p class="assignmnet">
+                    What is a Venn Diagram?  Discuss.
+                </p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Draw the following Venn Diagrams using p5js; do this question early during the assignment period:
+                </p>
+                <ol type="a">
+                    <li class="list">
+                        2 sets that intersect
+                    </li>
+                    <li class="list">
+                        3 sets that intersect
+                    </li>
+                    <li class="list">
+                        4 sets that intersect
+                    </li>
+                </ol>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    For the previous question, when you drew 4 sets that intersected, did they intersect in all combinations of ways possible?  
+                    If not, use p5js to draw 4 sets that do intersect in all ways possible.
+                </p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Sets, a simple practical example: the set of amino acids, and its various subsets.  
+                    In the diagram:
+                </p>
+                <ol type="a">
+                    <li class="list">
+                        What amino acids are both prolines and negatively charged?
+                    </li>
+                    <li class="list">
+                        What is the set of amino acids that are both tiny and aromatic?
+                    </li>
+                    <li class="list">
+                        Are polar amino acids a proper subset of the negatively charged amino acids?  
+                        (“Proper” meaning strictly smaller than the enclosing set.)
+                    </li>
+                    <li class="list">
+                        List the amino acids that would be in the small subset minus the tiny subset.
+                    </li>
+                    <li class="list">
+                        How many amino acids are there in the intersection of the aliphatic subset and the small subset?
+                    </li>
+                    <li class="list">
+                        List the amino acids that are in the union of the aromatic and the positive subsets.
+                    </li>
+                </ol>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Write a function <span class='code'>gcd(a, b)</span> that takes two non-negative integers <span class='code'>a</span> and <span class='code'>b</span> and uses the Euclidean Algorithm to find their Greatest Common Divisor.  
+                    For reference you can look at <A href="https://en.wikipedia.org/wiki/Euclidean_algorithm">Euclidean algorithm</A> or Number Theory: <em>Euclidean x Algorithm - An example</em> by <strong>Socratica</strong>:
+                    <A href=" https://www.youtube.com/watch?v=fwuj4yzoX1o">Euclidean algorithm Example video</A> .  And then for completeness, show the previous <span class='code'>gcd</span> function you wrote that depended on <span class='code'>sieve</span>.
+                </p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    We are going to find a way to list, in order, every single positive integer and fraction in the mathematical universe. 
+                    Enumerate all of the rational numbers m/n first where m+n≤2, then m+n≤3, then m+n≤4, etc., omitting numbers that are not relatively prime; i.e., omit when gcd(m,n) > 1.  
+                    Write a function <span class='code'>enumerateFractions(max)</span> that will return an array of positive fractions.  (And <span class='code'>max</span> will be a positive integer greater than 1.)
+                </p>
+                <ol type="a">
+                    <li class="list">
+                        First it lists fractions m/n where m+n≤2.
+                    </li>
+                    <li class="list">
+                        Then it lists fractions m/n where m+n≤3.
+                    </li>
+                    <li class="list">
+                        Then it lists fractions m/n where m+n≤4.
+                    </li>
+                    <li class="list">
+                        ... (pattern continues)
+                    </li>
+                    <li class="list">
+                        Then it lists fractions m/n where m+n≤<span class='code'>max</span>.
+                    </li>
+                    <li class="list">
+                        It will omit fractions m/n when gcd(m,n) > 1.
+                    </li>
+                    <li class="list">
+                        Make sure the following assertions pass:
+                        <ol type="i">
+                            <li class="list">
+                                <span class='code'>console.assert(enumerateFractions(2) == [‘1/1’]</span>
+                            </li>
+                            <li class="list">
+                                <span class='code'>console.assert(enumerateFractions(3) == [‘1/1’, ‘2/1’, ‘1/2’]</span>
+                            </li>
+                            <li class="list">
+                                <span class='code'>console.assert(enumerateFractions(4) == [‘1/1’, ‘2/1’, ‘1/2’, ‘3/1’, ‘1/3’]</span>
+                            </li>
+                            <li class="list">
+                                <span class='code'>console.assert(enumerateFractions(5) == [‘1/1’, ‘2/1’, ‘1/2’, ‘3/1’, ‘1/3’, ‘4/1’, ‘3/2’, ‘2/3’, ‘1/4’]</span>
+                            </li>
+                            <li class="list">
+                                <span class='code'>console.assert(enumerateFractions(6) == [‘1/1’, ‘2/1’, ‘1/2’, ‘3/1’, ‘1/3’, ‘4/1’, ‘3/2’, ‘2/3’, ‘1/4’, ‘5/1’, ‘1/5’]</span>
+                            </li>
+                            <li class="list">
+                                <span class='code'>console.assert(enumerateFractions(7) == [‘1/1’, ‘2/1’, ‘1/2’, ‘3/1’, ‘1/3’, ‘4/1’, ‘3/2’, ‘2/3’, ‘1/4’, ‘5/1’, ‘1/5’, ‘6/1’, ‘5/2’, ‘4/3’, ‘3/4’, ‘2/5’, ‘1/6’]</span>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    A bus seats 52 people (see the floorplan).
+                </p>
+                <ol type="a">
+                    <li class="list">
+                        First, as mental math, estimate:  
+                        How many ways can 52 people be arranged in this bus?  
+                        What order of magnitude do you get?  
+                        For example, if your estimate is a million arrangements, then your order of magnitude is 6 -- because a million has 6 zeroes.
+                    </li>
+                    <li class="list">
+                        Now, calculate the exact number of arrangements
+                    </li>
+                    <li class="list">
+                        Take the base 10 <span class='code'>log</span> of that result and compare it to the magnitude you guessed.  
+                        Discuss.
+                    </li>
+                </ol>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Write and show all of the following functions on the same <span class='code'>graph</span>:
+                </p>
+                <ol type="a">
+                    <li class="list">
+                        A first degree polynomial that crosses the x-axis at 1 point
+                    </li>
+                    <li class="list">
+                        A second degree polynomial that crosses the x-axis at 0 points
+                    </li>
+                    <li class="list">
+                        A second degree polynomial that touches the x-axis at exactly 1 point
+                    </li>
+                    <li class="list">
+                        A second degree polynomial that crosses the x-axis at 2 points
+                    </li>
+                    <li class="list">
+                        A third degree polynomial that crosses the x-axis at exactly 1 point
+                    </li>
+                    <li class="list">
+                        A third degree polynomial that crosses/touches the x-axis at exactly 2 points
+                    </li>
+                    <li class="list">
+                        A third degree polynomial that crosses the x-axis at exactly 3 points
+                    </li>
+                    <li class="list">
+                        A fourth degree polynomial that crosses the x-axis at 0 points
+                    </li>
+                    <li class="list">
+                        A fourth degree polynomial that touches the x-axis at exactly 1 point
+                    </li>
+                    <li class="list">
+                        A fourth degree polynomial that crosses the x-axis at exactly 2 points
+                    </li>
+                    <li class="list">
+                        A fourth degree polynomial that crosses/touches the x-axis at exactly 3 points
+                    </li>
+                    <li class="list">
+                        A fourth degree polynomial that crosses the x-axis at exactly 4 points
+                    </li>
+                </ol>
+            </li>
+            <li class="list">
+                <p class="list">
+                    <span class='code'>Graph</span>  the following.  
+                    Make two graphs; first graph all of them on the same graph, then graph just <span class='code'>f</span> and <span class='code'>ts</span> on the same graph.  
+                    Choose a viewing window that helps us see how these functions curve around.
+                </p>
+                <ol type="a">
+                    <li class="list">
+                        <span class='code'>f(x) = sin(x)</span>
+                    </li>
+                    <li class="list">
+                        <span class='code'>t₀(x) = x - x³/3!</span>
+                    </li>
+                    <li class="list">
+                        <span class='code'>t₁(x) = x - x³/3!</span>
+                    </li>
+                    <li class="list">
+                        <span class='code'>t₂(x) = x - x³/3! + x⁵/5!</span>
+                    </li>
+                    <li class="list">
+                        <span class='code'>t₃(x) = x - x³/3! + x⁵/5! - x⁷/7!</span>
+                    </li>
+                    <li class="list">
+                        <span class='code'>t₄(x) = x - x³/3! + x⁵/5! - x⁷/7! + x⁹/9!</span>
+                    </li>
+                    <li class="list">
+                        <span class='code'>t₅(x) = x - x³/3! + x⁵/5! - x⁷/7! + x⁹/9! - x¹¹/11!</span>
+                    </li>
+                    <li class="list">
+                        “t” is for “Taylor Series” -- a series of increasingly accurate approximations
+                    </li>
+                </ol>
+            </li>
         </ol>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
