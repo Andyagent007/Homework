@@ -22,7 +22,7 @@
         {
             font-family: 'Raleway', sans-serif;;
         }
-        p.assignment
+        .assignment
         {
             font-family: 'Raleway', sans-serif;
         }
@@ -37,6 +37,21 @@
             background: rgb(196, 195, 195);
             border-radius: 2pt;
             color:rgb(0, 158, 158);
+        }
+        p.answer
+        {
+            font-family: 'Raleway', sans-serif;
+            text-decoration-line: underline;
+            color:rgb(9, 187, 157);
+        }
+        code.language-javascript
+        {
+            font: 100% Helvetica, sans-serif;
+            color: #333;
+        }
+        li.code
+        {
+            font-family: 'Roboto Mono', monospace;
         }
     </style>
     <body>
@@ -199,44 +214,36 @@
                     For reference, see <A href="https://en.wikipedia.org/wiki/Element_%28mathematics%29">Element(Mathematics)</A>
                     <ol type="a">
                         <li class="list">
-                            <span class='code'>
-                                1 ∈ {1, 2, 3, 27}
-                            </span>
+                            <span class='code'>1 ∈ {1, 2, 3, 27}</span>
+                            True
                         </li>
                         <li class="list">
-                            <span class='code'>
-                                10 ∈ {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31}
-                            </span>
+                            <span class='code'>10 ∈ {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31}</span>
+                            False
                         </li>
                         <li class="list">
-                            <span class='code'>
-                                1048 ∈ {2ⁿ: where n is an integer}
-                            </span>
+                            <span class='code'>1048 ∈ {2ⁿ: where n is an integer}</span>
+                            False
                         </li>
                         <li class="list">
-                            <span class='code'>
-                                Let A = {all real numbers less than 100}, B = {all real numbers greater than π} -- 10 ∈ A ∩ B
-                            </span>
+                            <span class='code'>Let A = {all real numbers less than 100}, B = {all real numbers greater than π} -- 10 ∈ A ∩ B</span>
+                            True
                         </li>
                         <li class="list">
-                            <span class='code'>
-                                7 ∈ the set of prime numbers
-                            </span>
+                            <span class='code'>7 ∈ the set of prime numbers</span>
+                            True
                         </li>
                         <li class="list">
-                            <span class='code'>
-                                7 ∈ the set of solutions to the equation (x-4)(x+3)(2x+1)(x+5) = 0
-                            </span>
+                            <span class='code'>7 ∈ the set of solutions to the equation (x-4)(x+3)(2x+1)(x+5) = 0</span>
+                            False
                         </li>
                         <li class="list">
-                            <span class='code'>
-                                {1, 2} ∈ {1, 3, {1, 2}, 5, {5}}
-                            </span>
+                            <span class='code'>{1, 2} ∈ {1, 3, {1, 2}, 5, {5}}</span>
+                            True
                         </li>
                         <li class="list">
-                            <span class='code'>
-                                {1, 2, 3} ∈ 𝓟({1, 2, 3, 4})
-                            </span>
+                            <span class='code'>{1, 2, 3} ∈ 𝓟({1, 2, 3, 4})</span>
+                            True
                         </li>
                     </ol>
                 </p>
@@ -246,61 +253,61 @@
                     Now, sets in JavaScript.  Easy console work, then write a paragraph explaining what’s going on:
                 </p>
                 <ol type="a">
-                    <li class="list">
+                    <li class="code">
                         const mySet1 = new Set()
                     </li>
-                    <li class="list">
+                    <li class="code">
                         mySet1.add(1)
                     </li>
-                    <li class="list">
+                    <li class="code">
                         mySet1.add(5)
                     </li>
-                    <li class="list">
+                    <li class="code">
                         mySet1.add(5)
                     </li>
-                    <li class="list">
+                    <li class="code">
                         mySet1.add(‘some text’)
                     </li>
-                    <li class="list">
+                    <li class="code">
                         const o = {a: 1, b: 2}
                     </li>
-                    <li class="list">
+                    <li class="code">
                         mySet1.add(o)
                     </li>
-                    <li class="list">
+                    <li class="code">
                         mySet1.add({a: 1, b: 2}) // on this one, things get interesting ...
                     </li>
-                    <li class="list">
+                    <li class="code">
                         mySet1.has(1)
                     </li>
-                    <li class="list">
+                    <li class="code">
                         mySet1.has(3)
                     </li>
-                    <li class="list">
+                    <li class="code">
                         mySet1.has(5)
                     </li>
-                    <li class="list">
+                    <li class="code">
                         mySet1.has(Math.sqrt(25))
                     </li>
-                    <li class="list">
+                    <li class="code">
                         mySet1.has(‘Some Text’.toLowerCase())
                     </li>
-                    <li class="list">
+                    <li class="code">
                         mySet1.has(o)
                     </li>
-                    <li class="list">
+                    <li class="code">
                         mySet1.size
                     </li>
-                    <li class="list">
+                    <li class="code">
                         mySet1.delete(5)
                     </li>
-                    <li class="list">
+                    <li class="code">
                         mySet1.has(5)
                     </li>
-                    <li class="list">
+                    <li class="code">
                         mySet1.size
                     </li>
-                    <li class="list">
+                    <li class="code">
                         console.log(mySet1)
                     </li>
                 </ol>
@@ -365,6 +372,34 @@
                     For reference you can look at <A href="https://en.wikipedia.org/wiki/Euclidean_algorithm">Euclidean algorithm</A> or Number Theory: <em>Euclidean x Algorithm - An example</em> by <strong>Socratica</strong>:
                     <A href=" https://www.youtube.com/watch?v=fwuj4yzoX1o">Euclidean algorithm Example video</A> .  And then for completeness, show the previous <span class='code'>gcd</span> function you wrote that depended on <span class='code'>sieve</span>.
                 </p>
+                <p class="answer">answer</p>
+                <p class='assignment'>We did three version of it, one is Kenneth's version the other one is Alex's version and my version.</p> 
+                <p class='answer'>Here is mine:</p>
+                <pre><code class="language-javascript">
+                    function gcd(a, b){
+                        while(a !== b){ 
+                            if(a > b){
+                                a = a - b;
+                            }
+                            else{
+                                b = b - a;
+                            }
+                        }
+                        return a;
+                    }
+                </code></pre>
+                <p class='answer'>Here is Kenneth's version:</p>
+                <pre><code class="language-javascript">
+                    function gcd(a, b){
+                        if (b == 0) {
+                            return a
+                        }
+                        else {
+                            return gcd(b, a % b)
+                        }
+                    }
+                </code></pre>
+                <p class='answer'>And Alex's version:</p>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -394,22 +429,22 @@
                     <li class="list">
                         Make sure the following assertions pass:
                         <ol type="i">
-                            <li class="list">
+                            <li class="code">
                                 <span class='code'>console.assert(enumerateFractions(2) == [‘1/1’]</span>
                             </li>
-                            <li class="list">
+                            <li class="code">
                                 <span class='code'>console.assert(enumerateFractions(3) == [‘1/1’, ‘2/1’, ‘1/2’]</span>
                             </li>
-                            <li class="list">
+                            <li class="code">
                                 <span class='code'>console.assert(enumerateFractions(4) == [‘1/1’, ‘2/1’, ‘1/2’, ‘3/1’, ‘1/3’]</span>
                             </li>
-                            <li class="list">
+                            <li class="code">
                                 <span class='code'>console.assert(enumerateFractions(5) == [‘1/1’, ‘2/1’, ‘1/2’, ‘3/1’, ‘1/3’, ‘4/1’, ‘3/2’, ‘2/3’, ‘1/4’]</span>
                             </li>
-                            <li class="list">
+                            <li class="code">
                                 <span class='code'>console.assert(enumerateFractions(6) == [‘1/1’, ‘2/1’, ‘1/2’, ‘3/1’, ‘1/3’, ‘4/1’, ‘3/2’, ‘2/3’, ‘1/4’, ‘5/1’, ‘1/5’]</span>
                             </li>
-                            <li class="list">
+                            <li class="code">
                                 <span class='code'>console.assert(enumerateFractions(7) == [‘1/1’, ‘2/1’, ‘1/2’, ‘3/1’, ‘1/3’, ‘4/1’, ‘3/2’, ‘2/3’, ‘1/4’, ‘5/1’, ‘1/5’, ‘6/1’, ‘5/2’, ‘4/3’, ‘3/4’, ‘2/5’, ‘1/6’]</span>
                             </li>
                         </ol>
@@ -634,10 +669,20 @@
             </li>
             <li class='list'>
                 <p class='assignment'>
-                    Review <span class='code'>randObject</span> rom the previous homework.  
+                    Review <span class='code'>randObject</span> from the previous homework.  
                     Mentally (or in the console) run this code: <span class='code'>obj = randObject()</span> .  
                     Is it necessary that <span class='code'>obj</span> will have two different properties that share the same value?  
                     Discuss.
+                </p>
+                <p class="answer">answer</p>
+                <p class='assignment'>
+                    Well, lets review what the function <span class='code'>randObject()</span> do, 
+                    so the function <span class='code'>randObject()</span> return a random number of properties between 6 and 12, 
+                    and the values of those properties are just 4 numbers(1, 2, 3, 4) 
+                    and the numbers of properties will be greater than 4 numbers(they could be 6, 7, 8, 9, 10, 11, 12) 
+                    so the probability that one number repeat is a 100% because the numbers should even be repeated more than once, 
+                    because to make all the parameters have a value, 
+                    maybe two or three numbers shoul repeat two ot three times, even more.
                 </p>
             </li>
             <li class="list">
@@ -699,17 +744,17 @@
                         <li class='list'>
                             Clone your forked repository, e.g.:
                             <ol type="i">
-                                <li class='list'>
+                                <li class='code'>
                                     <span class='code'>
                                         git clone git@github.com:purplejacket/mal.git
                                     </span>
                                 </li>
-                                <li class='list'>
+                                <li class='code'>
                                     but you'll use your own fork for the above
                                 </li>
                             </ol>
                         </li>
-                        <li class='list'>
+                        <li class='code'>
                             Change directory to the repo
                             <ol type="i">
                                 <li class='list'>
@@ -725,27 +770,27 @@
                         <li class='list'>
                             Create a new directory and file for our implementation, and then commit/push
                             <ol type="i">
-                                <li class='list'>
+                                <li class='code'>
                                     <span class='code'>
                                         mkdir impls/javascript
                                     </span>
                                 </li>
-                                <li class='list'>
+                                <li class='code'>
                                     <span class='code'>
                                         touch impls/javascript/step0_repl.js
                                     </span>
                                 </li>
-                                <li class='list'>
+                                <li class='code'>
                                     <span class='code'>
                                         git add .
                                     </span>
                                 </li>
-                                <li class='list'>
+                                <li class='code'>
                                     <span class='code'>
                                         git commit -m "empty javascript step 0 file"
                                     </span>
                                 </li>
-                                <li class='list'>
+                                <li class='code'>
                                     <span class='code'>
                                         git push
                                     </span>
