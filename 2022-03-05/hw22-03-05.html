@@ -53,11 +53,36 @@
         {
             font-family: 'Roboto Mono', monospace;
         }
+        div.image
+        {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+        div.images
+        {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        div.images img
+        {
+            height: 400px;
+            margin: 20px;
+        }
+        pre.assignment
+        {
+            font-family: 'Raleway', sans-serif;
+            white-space: pre-wrap;
+            margin: 0px;
+            white-space: pre-line;
+        }
     </style>
     <body>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
         <ol>
-            <h1 id="title">homework august 17th</h1>
+            <h1 id="title">Homework Due March 5, 2022</h1>
             <li class="list">
                 <p class="assignment">
                     The following questions are from GMAT Prep Plus 2019, ISBN 1506234895, page 709:
@@ -65,7 +90,7 @@
                         <li class="list">
                             If z is an integer is z even? You are given:
                             <ol type="i">
-                                <li class="code">
+                                <li class="list">
                                     <span class='code'>(z+m) / 3 = 2m + 1 where m is an integer</span>
                                 </li>
                                 <li class="list">
@@ -76,10 +101,10 @@
                         <li class="list">
                             The set S contains n integers.  Is the sum of all the elements of set S odd?  You are given:
                             <ol type="i">
-                                <li class="code">
+                                <li class="list">
                                     <span class='code'>All the elements of S are prime numbers</span>
                                 </li>
-                                <li class="code">
+                                <li class="list">
                                     <span class='code'>n = 2</span>
                                 </li>
                             </ol>
@@ -87,25 +112,39 @@
                         <li class="list">
                             If m is an odd number and p is a prime number, which of the following must be odd?
                             <ol type="i">
-                                <li class="code">
-                                    <span class='code'>mp</span>
+                                <li class="list">
+                                    <span class='code'>mp</span> = false
                                 </li>
-                                <li class="code">
-                                    <span class='code'>m(m + p)</span>
+                                <li class="list">
+                                    <span class='code'>m(m + p)</span> = false
                                 </li>
-                                <li class="code">
-                                    <span class='code'>m - p</span>
+                                <li class="list">
+                                    <span class='code'>m - p</span> = false
                                 </li>
-                                <li class="code">
-                                    <span class='code'>m² + 2p² + 1</span>
+                                <li class="list">
+                                    <span class='code'>m² + 2p² + 1</span> = false
                                 </li>
-                                <li class="code">
-                                    <span class='code'>m²(m + 2p)</span>
+                                <li class="list">
+                                    <span class='code'>m²(m + 2p)</span> = true
                                 </li>
                             </ol>
                         </li>
                     </ol>
                 </p>
+                <p class='answer'>answer</p>
+                <ol type="a">
+                    <li class='list'>
+                        <pre class='assignment'>
+                            The equation is not always true and z³ is not always even. It will be true only when m = odd, because if m is not equal to an odd number, the equation will never be true and z³ won't be even.
+                            Z is not always even, when m is an odd number then z will be even but if m is even then z is not even.
+                        </p>
+                    </li>
+                    <li class='list'>
+                        <pre class='assignment'>
+                            The sum of the elements of the set S is odd, only if one of the two primes numbers in the set is 2, for example the set S = {2, 5} then that would be 7, if one of the numbers in the set is not 2 then, the sum of the numbers contant in the set will not be odd.
+                        </p>
+                    </li>
+                </ol>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -137,7 +176,7 @@
                 Recreate this image in p5js and enhance it as described below.  
                 Also, answer the questions.
                 <ol type="a">
-                    <li class="listr">
+                    <li class="list">
                         Create an 800x800 canvas to contain your image.  
                         Make the blue square have size 600x600.  
                         (Pixels)
@@ -194,7 +233,7 @@
                 Then 𝓟({1, 2}) = {{}, {1}, {2}, {1, 2}}.  Evaluate the following:
                 <ol type="a">
                     <li class="list">
-                        𝓟({1, 2, 3})
+                        𝓟({1, 2, 3}) 
                     </li>
                     <li class="list">
                         𝓟({2, 3, 4})
@@ -204,6 +243,21 @@
                     </li>
                     <li class="list">
                         𝓟({2, 3, 4, 5}) ∩ 𝓟({4, 5, 6, 7})
+                    </li>
+                </ol>
+                <p class="answer">answer</p>
+                <ol type="a">
+                    <li class="code">
+                        𝓟({1, 2, 3}) = {{}, {1}, {2}, {3}, {1,2}, {2,3}, {1,3}}
+                    </li>
+                    <li class="code">
+                        𝓟({2, 3, 4}) = {{}, {2}, {3}, {4}, {2,3}, {3,4}, {2,4}}
+                    </li>
+                    <li class="code">
+                        𝓟({1, 2, 3, 4}) = {{}, {1}, {2}, {3}, {4}, {1,2}, {2,3}, {3,4}, {1,3}, {1,4}, {2,4}}
+                    </li>
+                    <li class="code">
+                        𝓟({2, 3, 4, 5}) ∩ 𝓟({4, 5, 6, 7}) = {{}, {4}, {5}, {4, 5}}
                     </li>
                 </ol>
             </li>
@@ -311,10 +365,18 @@
                         console.log(mySet1)
                     </li>
                 </ol>
+                <p class="answer">answer</p>
+                <p class='assignment'>
+                    First we made a set by using the prototypie <span class='code'>set()</span>, then we add some numbers to the set and 'some text' then we made an object called o with two properties and we add it to the set that we made, so now the object "o" is a subset in the set, then we ask if the set has some numbers and if the set has 'some text', then we ask if the set has the subset "o", we ask for the size of the subset and it give 5 because it just have five properties, two numbers, two subsets and 'some text', then we delete one number so now they are 4 properties in the set then we ask for the size of the set, now the size is 4 because we delete the number 5, then for the las thing we do a console.log for the set.
+                </p>
             </li>
             <li class="list">
                 <p class="assignmnet">
                     What is a Venn Diagram?  Discuss.
+                </p>
+                <p class="answer">answer</p>
+                <p class='assignment'>
+                    A Venn Diagram is a diagram of circles or other shapes that stands to represent the relation that can be between two or more sets, every sets are represent by a circle.
                 </p>
             </li>
             <li class="list">
@@ -330,6 +392,75 @@
                     </li>
                     <li class="list">
                         4 sets that intersect
+                    </li>
+                </ol>
+                <p class="answer">answer</p>
+                <ol type="a">
+                    <li class="code">
+                        2 sets:
+                        <div class="image">
+                            <img src="2-sets.png" height="500">
+                        </div>
+                        <pre><code class="language-javascript">
+                            function setup() {
+                                createCanvas(windowWidth, windowHeight);
+                                noStroke()
+                            }
+                            
+                            function draw() {
+                                //2 sets
+                                fill(159, 223, 213, 50)
+                                circle(500, windowHeight/2, 500)
+                                fill(229, 177, 204, 50)
+                                circle(800, windowHeight/2, 500)
+                            }
+                        </code></pre>
+                    </li>
+                    <li class="code">
+                        3 sets:
+                        <div class="image">
+                            <img src="3-sets.png" height="500">
+                        </div>
+                        <pre><code class="language-javascript">
+                            function setup() {
+                                createCanvas(windowWidth, windowHeight);
+                                noStroke()
+                            }
+                            
+                            function draw() {
+                                //3 sets
+                                fill(159, 223, 213, 50)
+                                circle(windowWidth/2-100, windowHeight/2-100, 300)
+                                fill(229, 177, 204, 50)
+                                circle(windowWidth/2+100, windowHeight/2-100, 300)
+                                fill(239, 223, 207, 50)
+                                circle(windowWidth/2, 500, 300)
+                            }
+                        </code></pre>
+                    </li>
+                    <li class='code'>
+                        4 sets:
+                        <div class="image">
+                            <img src="4sets.png" height="500">
+                        </div>
+                        <pre><code class="language-javascript">
+                            function setup() {
+                                createCanvas(windowWidth, windowHeight);
+                                noStroke()
+                            }
+                            
+                            function draw() {
+                                //4 sets 
+                                fill(159, 223, 213, 50)
+                                circle(windowWidth/2-100, windowHeight/2-100, 300)
+                                fill(229, 177, 204, 50)
+                                circle(windowWidth/2+100, windowHeight/2-100, 300)
+                                fill(239, 223, 207, 50)
+                                circle(windowWidth/2-100, 500, 300)
+                                fill(184, 183, 231, 50)
+                                circle(windowWidth/2+100, 500, 300)
+                            }
+                        </code></pre>
                     </li>
                 </ol>
             </li>
