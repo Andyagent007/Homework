@@ -75,8 +75,17 @@
         {
             font-family: 'Raleway', sans-serif;
             white-space: pre-wrap;
-            margin: 0px;
+            margin: 20px;
             white-space: pre-line;
+        }
+        li.box
+        {
+            display: flex;
+            background-color: rgb(196, 195, 195);
+            border-radius: 5px;
+            border-style: double;
+            flex-direction: column;
+            margin: 20px;
         }
     </style>
     <body>
@@ -225,6 +234,45 @@
                         Give three examples of infinite sets.
                     </li>
                 </ol>
+                <p class="answer">answer</p>
+                <p class='assignment'>
+                    <ol type="a">
+                        <li class="list">
+                            first set:
+                        </li>
+                        {3, 5, 7, 9, 10, 11}
+                        <li class="list">
+                            two empty sets that intersection is ∅:
+                            <ol type="i">
+                                <li class="list">
+                                    first example:
+                                </li>
+                                {negative numbers} ∩ {positive numbers}
+                                <li class="list">
+                                    second example:
+                                </li>
+                                {even numbers} ∩ {odd numbers}
+                            </ol>
+                        </li>
+                        <li class="list">
+                            three infinite sets:
+                            <ol type="i">
+                                <li>
+                                    first example:
+                                </li>
+                                {prime numbers}
+                                <li>
+                                    second example:
+                                </li>
+                                {numbers up to 0}
+                                <li>
+                                    third example:
+                                </li>
+                                {integer numbers}
+                            </ol>
+                        </li>
+                    </ol>
+                </p>
             </li>
             <li class="list">
                 𝓟 -- the power set.  Let 𝓟(x) be the function that takes a set x and returns a set containing all of the subsets of x.  
@@ -469,6 +517,8 @@
                     For the previous question, when you drew 4 sets that intersected, did they intersect in all combinations of ways possible?  
                     If not, use p5js to draw 4 sets that do intersect in all ways possible.
                 </p>
+                <p class="answer">answer</p>
+                <p class='assignment'>It's intersect all ways possible.</p>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -749,6 +799,19 @@
                         </li>
                     </ol>
                 </p>
+                <p class="answer">answer</p>
+                <div class="image">
+                    <img src="ACISPIfunctions.png" height="500">
+                </div>
+                <pre><code class="language-javascript">
+                    const ACISPIFuns1 = (x) => log(abs(x) + abs(x) + abs(x)) - abs(log(abs(x)))
+                    const ACISPIFuns2 = (x) => abs(log(x)) - abs(x) / abs(x) + abs(abs(x)) 
+                    const ACISPIFuns3 = (x) => ACISPIFuns1(ACISPIFuns2(x)) + log(ACISPIFuns4(x))
+                    const ACISPIFuns4 = (x) => ACISPIFuns2(x) + ACISPIFuns1(x) / log(abs(x)) + abs(x) + abs(x)
+                    const ACISPIFuns5 = (x) => ACISPIFuns1(ACISPIFuns2(ACISPIFuns3(ACISPIFuns4(x)))) - ACISPIFuns4(ACISPIFuns3(x)) - ACISPIFuns1(x)
+                    const log = Math.log
+                    const abs = Math.abs
+                </code></pre>
             </li>
             <li class='list'>
                 <p class='assignment'>
@@ -793,6 +856,15 @@
                     Go through two more levels. 
                     Take two screenshots at interesting moments and explain all of the Flex details you are working on.
                 </p>
+                <p class="answer">answer</p>
+                <li class="box">
+                    <div class="image">
+                        <img src="FlexBoxZombies.png" height="600">
+                    </div>
+                    <pre class='assignment'>
+                        This is the last chapter of this game. In this chapter I confront against Dave's friend/the final Boss. 
+                        In this chapter the game tests you all the lessons you have been practicing throughout the entire game</p>
+                </li>
             </li>
             <li class='list'>
                 Simplify the following expression: 
