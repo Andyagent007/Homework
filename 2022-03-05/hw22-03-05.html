@@ -5,7 +5,7 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"
    />
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" dog="Bobby"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hw2022-03-05</title>
@@ -14,13 +14,14 @@
         @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
         #title
         {
-            font-family: 'Raleway', sans-serif;;
+            font-family: 'Raleway', sans-serif;
             text-align: center;
             color:darkred;
         }
         li.list
         {
-            font-family: 'Raleway', sans-serif;;
+            font-family: 'Raleway', sans-serif;
+            margin: 2px;
         }
         .assignment
         {
@@ -47,7 +48,7 @@
         code.language-javascript
         {
             font: 100% Helvetica, sans-serif;
-            color: #333;
+            color: rgb(12, 83, 131);
         }
         li.code
         {
@@ -91,7 +92,7 @@
     <body>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
         <ol>
-            <h1 id="title">Homework Due March 5, 2022</h1>
+            <h1 id="title" >Homework Due March 5, 2022</h1>
             <li class="list">
                 <p class="assignment">
                     The following questions are from GMAT Prep Plus 2019, ISBN 1506234895, page 709:
@@ -144,14 +145,13 @@
                 <ol type="a">
                     <li class='list'>
                         <pre class='assignment'>
-                            The equation is not always true and z³ is not always even. It will be true only when m = odd, because if m is not equal to an odd number, the equation will never be true and z³ won't be even.
-                            Z is not always even, when m is an odd number then z will be even but if m is even then z is not even.
-                        </p>
+                            Z is even. The second statement tell you that z is even because, even * even * even = even. Taking in count the first statement if m is odd then z is going to be even, otherwise z is going to be odd.
+                        </pre>
                     </li>
                     <li class='list'>
                         <pre class='assignment'>
                             The sum of the elements of the set S is odd, only if one of the two primes numbers in the set is 2, for example the set S = {2, 5} then that would be 7, if one of the numbers in the set is not 2 then, the sum of the numbers contant in the set will not be odd.
-                        </p>
+                        </pre>
                     </li>
                 </ol>
             </li>
@@ -181,9 +181,11 @@
                 </p>
             </li>
             <li class="list">
-                Here we have an image of a square within a square.  
-                Recreate this image in p5js and enhance it as described below.  
-                Also, answer the questions.
+                <p class='assignment'>
+                    Here we have an image of a square within a square.  
+                    Recreate this image in p5js and enhance it as described below.  
+                    Also, answer the questions.
+                </p>
                 <ol type="a">
                     <li class="list">
                         Create an 800x800 canvas to contain your image.  
@@ -213,7 +215,9 @@
                 </ol>
             </li>
             <li class="list">
-                Basic concepts of mathematical Set Theory:
+                <p class='assignment'>
+                    Basic concepts of mathematical Set Theory:
+                </p>
                 <ol type="a">
                     <li class="list">
                         Show an example of a set containing 5 integers
@@ -296,16 +300,16 @@
                 <p class="answer">answer</p>
                 <ol type="a">
                     <li class="code">
-                        𝓟({1, 2, 3}) = {{}, {1}, {2}, {3}, {1,2}, {2,3}, {1,3}}
+                        𝓟({1, 2, 3}) = {{}, {1}, {2}, {3}, {1,2}, {2,3}, {1,3}, {1,2,3}}
                     </li>
                     <li class="code">
-                        𝓟({2, 3, 4}) = {{}, {2}, {3}, {4}, {2,3}, {3,4}, {2,4}}
+                        𝓟({2, 3, 4}) = {{}, {2}, {3}, {4}, {2,3}, {3,4}, {2,4}, {2,3,4}}
                     </li>
                     <li class="code">
-                        𝓟({1, 2, 3, 4}) = {{}, {1}, {2}, {3}, {4}, {1,2}, {2,3}, {3,4}, {1,3}, {1,4}, {2,4}}
+                        𝓟({1, 2, 3, 4}) = {{}, {1}, {2}, {3}, {4}, {1,2}, {2,3}, {3,4}, {1,3}, {1,4}, {2,4}, {1,2,3,4}}
                     </li>
                     <li class="code">
-                        𝓟({2, 3, 4, 5}) ∩ 𝓟({4, 5, 6, 7}) = {{}, {4}, {5}, {4, 5}}
+                        𝓟({2, 3, 4, 5}) ∩ 𝓟({4, 5, 6, 7}) = {{}, {4}, {5}, {4,5}}
                     </li>
                 </ol>
             </li>
@@ -518,7 +522,12 @@
                     If not, use p5js to draw 4 sets that do intersect in all ways possible.
                 </p>
                 <p class="answer">answer</p>
-                <p class='assignment'>It's intersect all ways possible.</p>
+                <div class="image">
+                    <img src="allPosibleWaysOf4Intersection.png" height="500">
+                    <p class='assignment'>
+                        And here is a list of all combinations posible
+                    </p>
+                </div>
             </li>
             <li class="list">
                 <p class="assignment">
@@ -694,6 +703,120 @@
                         A fourth degree polynomial that crosses the x-axis at exactly 4 points
                     </li>
                 </ol>
+                <p class="answer">answer</p>
+                <div class="image">
+                    <img src="allPolynomialFuncs.png" height="500">
+                </div>
+                    <ol type="a">
+                        <li class="list">
+                            First degree polynomial that crosses the x-axis at 1 point:
+                            <pre><code class="language-javascript">
+                                const FDPxAxisOnePoint = (x) => 10 - 5 * x  
+                            </code></pre>
+                            <div class="image">
+                                <img src="firstDegreePolynomialFunc.png" height="500">
+                            </div>
+                        </li>
+                        <li class='list'>
+                            Second degree polynomial that crosses the x-axis at 0 points:
+                            <pre><code class="language-javascript">
+                                const SDPxAxisZeroPoint = (x) => 5**x / 5**x
+                            </code></pre>
+                            <div class="image">
+                                <img src="secondDegreePolynomialFunc1.png" height="500">
+                            </div>
+                        </li>
+                        <li class='list'>
+                            Second degree polynomial that touches the x-axis at exactly 1 point
+                            <pre><code class="language-javascript">
+                                const SDPxAxisOnePoint = (x) => x * x
+                            </code></pre>
+                            <div class="image">
+                                <img src="secondDegreePolynomialFunc2.png" height="500">
+                            </div>
+                        </li>
+                        <li class='list'>
+                            Second degree polynomial that crosses the x-axis at 2 points
+                            <pre><code class="language-javascript">
+                                const SDPxAxisTwoPoints = (x) => 2**x - 6*x
+                            </code></pre>
+                            <div class="image">
+                                <img src="secondDegreePolynomialFunc3.png" height="500">
+                            </div>
+                        </li>
+                        <li class='list'>
+                            Third degree polynomial that crosses the x-axis at exactly 1 point
+                            <pre><code class="language-javascript">
+                                const TDPxAxisOnePoint = (x) => x**x - 3 - x
+                            </code></pre>
+                            <div class="image">
+                                <img src="thirdDegreePolynomialFunc1.png" height="500">
+                            </div>
+                        </li>
+                        <li class='list'>
+                            Third degree polynomial that crosses/touches the x-axis at exactly 2 points
+                            <pre><code class="language-javascript">
+                                const TDPxAxisTwoPoints = (x) => x**3 + x**4 + x**3
+                            </code></pre>
+                            <div class="image">
+                                <img src="thirdDegreePolynomialFunc2.png" height="500">
+                            </div>
+                        </li>
+                        <li class='list'>
+                            Third degree polynomial that crosses the x-axis at exactly 3 points
+                            <pre><code class="language-javascript">
+                                const TDPxAxisThreePoints = (x) => x**2 + x**2 - x**3 - 1
+                            </code></pre>
+                            <div class="image">
+                                <img src="thirdDegreePolynomialFunc3.png" height="500">
+                            </div>
+                        </li>
+                        <li class='list'>
+                            Fourth degree polynomial that crosses the x-axis at 0 points
+                            <pre><code class="language-javascript">
+                                const FDPxAxisZeroPoint = (x) => 5 * x**2 + x**2 + x**2 - x**4 - 15
+                            </code></pre>
+                            <div class="image">
+                                <img src="fourthDegreePolynomialFunc1.png" height="500">
+                            </div>
+                        </li>
+                        <li class='list'>
+                            Fourth degree polynomial that touches the x-axis at exactly 1 point
+                            <pre><code class="language-javascript">
+                                const FDPxAxisOnePoints = (x) => 4**x + x**5 + x + x / 5
+                            </code></pre>
+                            <div class="image">
+                                <img src="fourthDegreePolynomialFunc2.png" height="500">
+                            </div>
+                        </li>
+                        <li class='list'>
+                            Fourth degree polynomial that crosses the x-axis at exactly 2 points
+                            <pre><code class="language-javascript">
+                                const FDPxAxisTwoPoints = (x) => x**3 * x**4 * x**3 + x**2 -4
+                            </code></pre>
+                            <div class="image">
+                                <img src="fourthDegreePolynomialFunc3.png" height="500">
+                            </div>
+                        </li>
+                        <li class='list'>
+                            Fourth degree polynomial that crosses/touches the x-axis at exactly 3 points
+                            <pre><code class="language-javascript">
+                                const FDPxAxisThreePoints = (x) => x**2 + x**4 + x**4 + x**5 - 3
+                            </code></pre>
+                            <div class="image">
+                                <img src="fourthDegreePolynomialFunc4.png" height="500">
+                            </div>
+                        </li>
+                        <li class='list'>
+                            Fourth degree polynomial that crosses the x-axis at exactly 4 points
+                            <pre><code class="language-javascript">
+                                const FDPxAxisFourPoints = (x) => (x + 3) * (x + 4) * (x - 5) * x
+                            </code></pre>
+                            <div class="image">
+                                <img src="fourthDegreePolynomialFunc5.png" height="500">
+                            </div>
+                        </li>
+                    </ol>
             </li>
             <li class="list">
                 <p class="list">
@@ -957,7 +1080,7 @@
                                 </li>
                             </ol>
                         </li>
-                        <li class='code'>
+                        <li class='list'>
                             Change directory to the repo
                             <ol type="i">
                                 <li class='list'>
@@ -1014,7 +1137,7 @@
                 <p class='assignment'>
                     Advanced, extra credit.  
                     Let's talk about a function <strong>f</strong> that takes in a real number and gives back a real number.  
-                    And we are going to define a special property called <em>játkuva</em> that <strong>f</strong> might or might not have for some particular real number <strong>r</strong>  
+                    And we are going to define a special property called <em>játkuva</em> that <strong>f</strong> might or might not have for some particular real number <strong>r</strong>.  
                     A function <strong>f</strong> from ℝ to ℝ is <em>játkuva</em> at a value r if given ε > 0 there exists δ > 0 such that if |r - x| < δ then |f(r) - f(x)| < ε. 
                     <ol type="a">
                         <li class='list'>
