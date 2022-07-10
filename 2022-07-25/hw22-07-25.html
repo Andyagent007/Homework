@@ -5,7 +5,7 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"
    />
-    <meta charset="UTF-8" dog="Bobby"> 
+    <meta charset="UTF-8"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hw22-07-25</title>
@@ -16,25 +16,34 @@
         {
             font-family: 'Raleway', sans-serif;
             text-align: center;
-            color:slateblue;
+            color: rgb(251,209,0);
         }
         span.code
         {
             font-family: 'Roboto Mono', monospace;
             font-size: 8;
-            background: rgb(196, 195, 195);
+            background: rgb(167, 167, 167);
             border-radius: 2pt;
-            color:rgb(0, 158, 158);
+            color:rgb(0, 109, 134);
         }
         code.language-javascript
         {
-            font: 100% Helvetica, sans-serif;
+            /* font: 100% Helvetica, sans-serif; */
             color: rgb(12, 83, 131);
+            
         }
         li.list
         {
+            /* display: flex; */
             font-family: 'Raleway', sans-serif;
-            margin: 2px;
+            color:rgb(255, 255, 255);
+            background-color: rgb(67, 87, 92);
+            border-radius: 5px;
+            border-style: double;
+            border-color: cadetblue;
+            /* flex-direction: column; */
+            margin: 20px;
+            padding: 0px 20px 0px 20px;
         }
         .assignment
         {
@@ -44,16 +53,56 @@
         {
             display: flex;
             justify-content: center;
-            margin: 20px;
+            /* margin: 20px; */
+            max-width: 100%;
+            flex-wrap: wrap;
         }
         div.images
         {
             display: flex;
-            justify-content:space-between;
-            align-items: flex-start;
+            justify-content: center;
+            /* margin: 20px; */
+            max-width: 100%;
             flex-wrap: wrap;
-            margin: 40px;
         }
+        .img-box{
+            border-style: groove;
+            border-radius: 10px;
+            max-width: 45%;
+            display: flex;
+            margin: 20px;
+            align-items: center;
+            justify-content:space-between;
+        }
+        .image-box{
+            border-color: rgb(255, 221, 0);
+            border-style: groove;
+            border-radius: 10px;
+            max-width: 45%;
+            display: flex;
+            margin: 20px;
+            align-items: center;
+            justify-content:space-between;
+        }
+        li.sublist
+        {
+            font-family: 'Raleway', sans-serif;
+            margin: 2px;
+        }
+        div.answers
+        {
+            background-color: rgb(22, 53, 70);
+        }
+        .answer
+        {
+            font-family: 'Raleway', sans-serif;
+            text-decoration-line: underline;
+            color:rgb(9, 187, 157);
+        }
+        /* *:{
+            box-sizing: border-box;
+            outline: 1px solid yellowgreen !important;
+        } */
         /* pre.code
         {
             background-color: rgb(196, 195, 195);
@@ -64,11 +113,11 @@
             white-space: pre-line;
         } */
     </style>
-    <body>
+    <body bgcolor="rgb(2,2,2)">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
         <h1 id="title">Homework for July 25, 2022</h1>
         <ol>
-            <li class='list'>
+            <li class="list">
                 <p class='assignment'>
                     The AaBbCc program 
                     <pre><code class="language-javascript">
@@ -170,75 +219,79 @@
             </li>
             <li class='list'>
                 <p class='assignment'>
-                    Grid Critters -- <A href="https://gridcritters.com/">https://gridcritters.com/</A> -- There are ten chapters.  
-                    For each chapter take 3 screenshots and explain the concepts you learned in those screenshots.
+                    Grid Garden -- <A href="https://cssgridgarden.com/" style="color:#0ed4df;">Grid Garden CSS</A> -- has 28 sections.  
+                    For your answer, incorporate each of the questions into your homework html file.  
+                    Put a "solve" slider next to each one so that when you click the slider it will show the solution.  
+                    By the way, <A href="https://learncssgrid.com/" style="color:#0ed4df;">learn CSS grid</A> might be a helpful reference.
                 </p>
             </li>
             <li class='list'>
                 <p class='assignment'>
                     Stargate.  
                     Examine the HTML file. 
-                    <pre><code class="language-javascript">
-                        &lt!DOCTYPE html>
-                        &lthtml lang="en">
-                          &lthead>
-                            &ltmeta charset="utf-8" />
-                            &lttitle>Stargate&lt/title>
-                          &lt/head>
-                          &ltbody>
-                            &ltcanvas
-                              id="myCanvas"
-                              width="192"
-                              height="100"
-                              style="border: 1px solid #000000">
-                            &lt/canvas>
-                            &ltbr />
-                            &ltcite style="padding-left: 20px">
-                              &lta href="https://news.ycombinator.com/item?id=25088683">
-                                Hacker News discussion
-                              &lt/a>
-                            &lt/cite>
-                            &ltscript>
-                              window.c = document.getElementById("myCanvas");
-                              window.x = c.getContext("2d");
-                              window.S = 0;
-                              window.C = Math.cos;
-                              window.T = 0;
-                        ​
-                              const start = Date.now();
-                              setInterval(function () {
-                                const elapsedMs = Date.now() - start;
-                                u(elapsedMs / 1000);
-                              }, 1000 / 60);
-                        ​
-                              function u(t) {
-                                z = (n) =>
-                                  n-- && Math.cos(T / 2 + (S * T) / R + t * 9) * Math.cos(T / 4 - z(n) * 2) - r / 6;
-                                for (c.width = 192, R = 48, i = 8064; i--; )
-                                  x.fillRect(
-                                    S + 96,
-                                    T + 54,
-                                    (Math.cos(
-                                      Math.atan2(
-                                        (S = (i % 97) - R),
-                                        (T = i / 97 - R),
-                                        (r = (S * S + T * T) ** 0.5)
-                                      ) * 9
-                                    ) *
-                                      20 -
-                                      r) &
-                                      44 && r > 36
-                                      ? r < 42
-                                        ? T / R
-                                        : S / R
-                                      : 1,
-                                    r > 36 ? r < R : z(3) / 5
-                                  );
-                              }
-                            &lt/script>
-                          &lt/body>
-                        &lt/html>
-                    </code></pre>  
+                </p>
+                <pre><code class="language-javascript">
+                    &lt!DOCTYPE html>
+                    &lthtml lang="en">
+                        &lthead>
+                        &ltmeta charset="utf-8" />
+                        &lttitle>Stargate&lt/title>
+                        &lt/head>
+                        &ltbody>
+                        &ltcanvas
+                            id="myCanvas"
+                            width="192"
+                            height="100"
+                            style="border: 1px solid #000000">
+                        &lt/canvas>
+                        &ltbr />
+                        &ltcite style="padding-left: 20px">
+                            &lta href="https://news.ycombinator.com/item?id=25088683">
+                            Hacker News discussion
+                            &lt/a>
+                        &lt/cite>
+                        &ltscript>
+                            window.c = document.getElementById("myCanvas");
+                            window.x = c.getContext("2d");
+                            window.S = 0;
+                            window.C = Math.cos;
+                            window.T = 0;
+                    ​
+                            const start = Date.now();
+                            setInterval(function () {
+                            const elapsedMs = Date.now() - start;
+                            u(elapsedMs / 1000);
+                            }, 1000 / 60);
+                    ​
+                            function u(t) {
+                            z = (n) =>
+                                n-- && Math.cos(T / 2 + (S * T) / R + t * 9) * Math.cos(T / 4 - z(n) * 2) - r / 6;
+                            for (c.width = 192, R = 48, i = 8064; i--; )
+                                x.fillRect(
+                                S + 96,
+                                T + 54,
+                                (Math.cos(
+                                    Math.atan2(
+                                    (S = (i % 97) - R),
+                                    (T = i / 97 - R),
+                                    (r = (S * S + T * T) ** 0.5)
+                                    ) * 9
+                                ) *
+                                    20 -
+                                    r) &
+                                    44 && r > 36
+                                    ? r < 42
+                                    ? T / R
+                                    : S / R
+                                    : 1,
+                                r > 36 ? r < R : z(3) / 5
+                                );
+                            }
+                        &lt/script>
+                        &lt/body>hw
+                    &lt/html>
+                </code></pre>
+                <p class='assignment'>
                     This small bit of code packs quite a lot of functionality.  
                     For this question:  
                     Try to see if you can figure out what is going on to make the Stargate work.  
@@ -254,7 +307,7 @@
             </li>
             <li class='list'>
                 <p class='assignment'>
-                    Lee Nau built a chessboard using HTML and CSS Grid: <A href="https://jsfiddle.net/f1wcx6bd">https://jsfiddle.net/f1wcx6bd</A>.
+                    Lee Nau built a chessboard using HTML and CSS Grid: <A href="https://jsfiddle.net/f1wcx6bd" style="color:#0ed4df;">https://jsfiddle.net/f1wcx6bd</A>.
                     Modify Lee's chess grid to have 8 queens that don't attack each other.  
                     Make 3 different versions of this that are not rotations of each other.
                 </p>
@@ -301,12 +354,12 @@
                 <p class='assignment'>
                     FizzBuzz
                     <ol>
-                        <li class='list'>
+                        <li class='sublist'>
                             Write FizzBuzz in JavaScript
                         </li>
-                        <li class='list'>
+                        <li class='sublist'>
                             Write fizzbuzz and run it on this web page that emulates an old computer:
-                            <A href="https://www.masswerk.at/pet/ ">https://www.masswerk.at/pet/ </A>
+                            <A href="https://www.masswerk.at/pet/ " style="color:#0ed4df;">https://www.masswerk.at/pet/ </A>
                             -- For this one Google is your friend.  
                             Take some screenshots and do a writeup.
                         </li>
@@ -319,7 +372,7 @@
                     There are a lot of ways to make this one look, feel free to choose which way you like.  
                     Look around the web for some examples.  
                     For instance, this video shows some interesting ones:
-                    <A href="https://www.youtube.com/watch?v=C2vgICfQawE">https://www.youtube.com/watch?v=C2vgICfQawE</A>
+                    <A href="https://www.youtube.com/watch?v=C2vgICfQawE" style="color:#0ed4df;">https://www.youtube.com/watch?v=C2vgICfQawE</A>
                 </p>
             </li>
             <li class='list'>
@@ -334,29 +387,29 @@
                 <p class='assignment'>
                     Use p5js or just plain HTML <span class='code'>canvas</span> to replicate this 7 set Venn Diagram; use these as your 7 primary colors:
                     <ol type="a">
-                        <li class='list'>
+                        <li class='sublist'>
                             gold
                         </li>
-                        <li class='list'>
+                        <li class='sublist'>
                             red
                         </li>
-                        <li class='list'>
+                        <li class='sublist'>
                             fuchsia
                         </li>
-                        <li class='list'>
+                        <li class='sublist'>
                             blue
                         </li>
-                        <li class='list'>
-                            dodgerblue
+                        <li class='sublist'>
+                        dodgerblue
                         </li>
-                        <li class='list'>
+                        <li class='sublist'>
                             mediumspringgreen
                         </li>
-                        <li class='list'>
+                        <li class='sublist'>
                             lawngreen
                         </li>
-                        <li class='list'>
-                            Note: See this list: <A href=": https://en.wikipedia.org/wiki/Lists_of_colors">List of colors</A> -- and use the "web" versions of those colors as needed
+                        <li class='sublist'>
+                            Note: See this list: <A href=": https://en.wikipedia.org/wiki/Lists_of_colors" style="color:#0ed4df;">List of colors</A> -- and use the "web" versions of those colors as needed
                         </li>
                     </ol>
                 </p>
@@ -364,10 +417,10 @@
             <li class='list'>
                 <p class='assignment'>
                     When done making the 7 set Venn Diagram, 
-                    look at this web page: <A href="https://moebio.com/research/sevensets/">https://moebio.com/research/sevensets/</A>.
+                    look at this web page: <A href="https://moebio.com/research/sevensets/" style="color:#0ed4df;">https://moebio.com/research/sevensets/</A>.
                     Write an essay about it.
                     <div class="image">
-                        <img src="seven_sets.webp" height="500">
+                        <img class="img-box" src="seven_sets.webp" height="500">
                     </div>
                 </p>
             </li>
@@ -380,9 +433,24 @@
                     You can either draw the steps, or use clay (or similar) and take photographs. 
                 </p>
                 <div class="images">
-                    <img src="image (1).png" height="300">
-                    <img src="image.png" height="300">
+                    <img class="image-box" src="image (1).png" height="300">
+                    <img class="image-box" src="image.png" height="300">
                 </div>
+                <div class="answers">
+                    <p class='answer'>
+                        answer
+                    </p>
+                    <div class="images">
+                        <img class="img-box" src="topologist_step1.webp" height="600">
+                        <img class="img-box" src="topologist_step2.webp" height="600">
+                        <img class="img-box" src="topologist_step3.webp" height="600">
+                        <img class="img-box" src="topologist_step4.webp" height="600">
+                        <img class="img-box" src="topologist_step5.webp" height="600">
+                        <img class="img-box" src="topologist_step6.webp" height="600">
+                        <img class="img-box" src="topologist_step7.webp" height="600">
+                    </div>
+                </div>
+                <p class='assignment'></p>
             </li>
             <li class='list'>
                 <p class='assignment'>
@@ -414,5 +482,40 @@
                     etc.
                 </code></pre>
             </li>
+            <li class='list'>
+                <p class='assignment'>
+                    Kaboomjs!  If you're feeling adventurous, implement Hackenbush -
+                    <A href="https://www.youtube.com/watch?v=ZYj4NkeGPdM&t=1824s" style="color:#0ed4df;">https://www.youtube.com/watch?v=ZYj4NkeGPdM&t=1824s</A> -
+                    <A href="https://en.wikipedia.org/wiki/Hackenbush" style="color:#0ed4df;">https://en.wikipedia.org/wiki/Hackenbush</A> -
+                </p>
+            </li>
+            <li class='list'>
+                <p class='assignment'>
+                Extra Credit:  
+                In honor of our good friend Marina Diaz, let's make a new concept for functions.  
+                Let's say that if you have a function <span class='code'>f</span> that is defined for some value <span class='code'>r</span>, 
+                then it's Marina quotient <span class='code'>m</span> at that value, if it exists, is defined like this:  
+                It has the property that when given an ε > 0 you can find a δ > 0 such that if |r - x| < δ then |(f(r) - f(x)) / (r-x) - m| < ε.
+                </p>
+                <ol type='a'>
+                    <li class='sublist'>
+                        Find a function f that has a Marina quotient for r=3.  And, what is the value of m for your function, at r=3?
+                    </li>
+                    <li class='sublist'>
+                        Find a function f that has no Marina quotient, or more than one Marina quotient at r=3.
+                    </li>
+                </ol>
+            </li>
         </ol>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+        <script type="text/javascript">
+        // Optional
+        Prism.plugins.NormalizeWhitespace.setDefaults({
+            'remove-trailing': true,
+            'remove-indent': true,
+            'left-trim': true,
+            'right-trim': true,
+        });
+        </script>
     </body>
