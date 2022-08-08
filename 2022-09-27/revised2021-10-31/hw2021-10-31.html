@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css"
+   />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw2021-10-31</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;200;400&display=swap');
+        /* img.imgs {
+            display: flex;
+            max-width: 90% ;
+            height: auto;
+            width: auto;
+        } */
+        #title
+        {
+            font-family: 'Raleway', sans-serif;;
+            text-align: center;
+            text-decoration-line: underline;
+            color:rgb(0, 255, 191);
+        }
+        li.list
+        {
+            font-family: 'Raleway', sans-serif;
+        }
+        span.code
+        {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 8;
+            background: rgb(196, 195, 195);
+            border-radius: 2pt;
+            color:rgb(0, 158, 158);
+        }
+        code.language-javascript
+        {
+            font: 100% Helvetica, sans-serif;
+            color: rgb(0, 117, 172);
+        }
+        p.answer
+        {
+            font-family: 'Raleway', sans-serif;
+            text-decoration-line: underline;
+            color:rgb(9, 187, 157);
+        }
+        p.assignment
+        {
+            font-family: 'Raleway', sans-serif;
+        }
+        div.image
+        {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+        div.images
+        {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        div.images img
+        {
+            height: 400px;
+            margin: 20px;
+        }
+        div.imges
+        {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        div.imges img
+        {
+            height: 300px;
+            margin: 20px;
+        }
+        /* div.images .right
+        {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            max-width: 50%;
+        } */
+        li.box
+        {
+            display: flex;
+            background-color: rgb(196, 195, 195);
+            border-radius: 5px;
+            border-style: double;
+            flex-direction: column;
+        }
+        pre.assignment
+        {
+            font-family: 'Raleway', sans-serif;
+            white-space: pre-wrap;
+            margin: 20px;
+            white-space: pre-line;
+        }
+        li.code
+        {
+            font-family: 'Roboto Mono', monospace;
+        }
+    </style>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+        <ol>
+            <h1 id="title">Homework Due October 10</h1>
+            <li class="list">
+                <p class="assignment">
+                Prove that there are infinitely many twin primes.  
+                (Here an internet search can help you.)  Discuss.
+                </p>
+                <p class="answer">answer</p>
+                <p class="assignment">
+                    That is a great question that I can't answer or prove because there is no proof of it yet, there are a lot of conjecture or theorem trying to prove it, like the <A href="https://en.wikipedia.org/wiki/Twin_prime#Brun's_theorem">Brun's theorem</A>, the <A href="https://en.wikipedia.org/wiki/Twin_prime#Twin_prime_conjecture">Twin prime conjecture</A>, the <A href="https://en.wikipedia.org/wiki/Twin_prime#First_Hardy%E2%80%93Littlewood_conjecture">Hardy-Littlewood conjecture</A>, the <A href="https://en.wikipedia.org/wiki/Twin_prime#Polignac's_conjecture">Polignac's conjecture</A> and <A href="https://en.wikipedia.org/wiki/Twin_prime#Other_theorems_weaker_than_the_twin_prime_conjecture">other theorems weaker</A>, but they have no proven it yet.
+                </p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Install and test the <span class="code">pageres</span> command.  
+                    Do the first 3 steps below; 
+                    then for all of the rest of the steps copy all the output into a single long <span class="code">&ltpre></span> tag as your answer.
+                    <ol type="a">
+                        <li class="list">
+                            <span class="code">cd</span> to your October 10 homework directory
+                        </li>
+                        <li class="list">
+                            run <span class="code">http-server</span>  -- now your terminal tab is busy, so ...
+                        </li>
+                        <li class="list">
+                                open a new Terminal tab with command-T
+                        </li>
+                        <li class="list">
+                                <span class="code">npm install -g pageres-cli</span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                pageres --help
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                pageres http://127.0.0.1:8080/hw2021-10-10.html
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                ls -l 127*
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                pngquant 127*
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                ls -l 127*
+                            </span>
+                        </li>
+                        <li class="list">
+                            <span class="code">
+                                rm 127*
+                            </span>
+                        </li>
+                    </ol>
+                </p>
+                <p class="answer">answer</p>
+                <p class="assignment">
+                    Unfortunately the command <span class="code">pageres --help</span> doesn't work on my Mac 
+                </p>
+                <pre><code class="language-javascript">
+                    npm notice 
+                    npm notice New major version of npm available! 7.9.0 -> 8.0.0
+                    npm notice Changelog: https://github.com/npm/cli/releases/tag/v8.0.0
+                    npm notice Run npm install -g npm@8.0.0 to update!
+                    npm notice 
+                    npm ERR! code 1
+                    npm ERR! path /Users/andy007/.nvm/versions/node/v15.12.0/lib/node_modules/pageres-cli/node_modules/puppeteer
+                    npm ERR! command failed
+                    npm ERR! command sh -c node install.js
+                    npm ERR! The chromium binary is not available for arm64: 
+                    npm ERR! If you are on Ubuntu, you can install with: 
+                    npm ERR! 
+                    npm ERR!  apt-get install chromium-browser
+                    npm ERR! 
+                    npm ERR! /Users/andy007/.nvm/versions/node/v15.12.0/lib/node_modules/pageres-cli/node_modules/puppeteer/lib/cjs/puppeteer/node/BrowserFetcher.js:112
+                    npm ERR!             throw new Error();
+                    npm ERR!             ^
+                    npm ERR! 
+                    npm ERR! Error
+                    npm ERR!     at /Users/andy007/.nvm/versions/node/v15.12.0/lib/node_modules/pageres-cli/node_modules/puppeteer/lib/cjs/puppeteer/node/BrowserFetcher.js:112:19
+                    npm ERR!     at FSReqCallback.oncomplete (node:fs:193:21)
+
+                    npm ERR! A complete log of this run can be found in:
+                    npm ERR!     /Users/andy007/.npm/_logs/2021-10-13T17_18_29_637Z-debug.log
+                </code></pre>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    For the homework that was due June 18, turn it into an html file with associated image files.  
+                    Use <span class="code">pageres</span> to make an image of that file and include it as your answer here.  
+                    And don't forget to use <span class="code">pngquant</span> as well!
+                </p>
+                <p class="answer">answer</p>
+                <div class="image">
+                    <img src="HomeworkJun18.png" height="500">
+                </div>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Easy console work, plus a "discuss" question:
+                    <ol type="a">
+                        <li class="code">
+                            const Dog = { barks: true }
+                        </li>
+                        <li class="code">
+                            const Pug = Object.create(Dog)
+                        </li>
+                        <li class="code">
+                            Pug.barks
+                        </li>
+                        <li class="code">
+                            // what's going on here?  Hint:  mdn prototypal inheritance
+                        </li>
+                    </ol>
+                </p>
+                <p class="answer">answer</p>
+                <p class="assignment">
+                    When you call the <span class="code">Object.create</span> prototype make the variable that you create, to have the object of the variable that you put as a paremeter in the <span class="code">Object.create()</span> for example if you make a variable call planetEarth that will be an object with a key of earth and a value of planet and make another variable that would be equals <span class="code">Object.create(planetEarth)</span> the new variable that you made will have a value of the first variable, that means that the new variable will have the same key and the same value of the key 
+                </p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Mental math, powers of 2:  On some different occasions during the weeks of this assignment, try to do 2⁰ through 2¹⁶ in your head at nighttime in bed with your eyes closed.  Visualize the numbers.  Then, towards the end of the assignment time period, write about this exercise.
+                </p>
+                <p class="answer">answer</p>
+                <p class="assignment">
+                    I think it's more efficient to do or learn the powers of 2 when you relax and there is nothing annoying you and without any pressure than when you are trying to learn those with a lot of noise or people/things interrupting you.
+                </p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Write a function called <span class="code">randObject</span> that takes no parameters.  
+                    When invoked it will return an object having a random number of properties (random from 6-12).  
+                    Each property will have a key that is a random lowercase English letter, and a value that is a random integer in the range 1-4.  Show your code and some sample runs.
+                </p>
+                <p class="answer">answer</p>
+                <pre><code class="language-javascript">
+                    const letters = 'abcdefghijklmnopqrstuvwxyz'.split('')
+                    function randObject(){
+                        const numProperties = Math.floor(Math.random()*7+6)
+                        let result = {}
+                        while(Object.keys(result).length < numProperties){
+                            let index = Math.floor(Math.random()*letters.length);
+                            let key = letters[index]
+                            let value = Math.floor(Math.random()*4+1)
+                            result[key] = value
+                        }
+                        return result;
+                    }
+                </code></pre>
+                    <img src="randObject-Examples.png" height="700">
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Create a <span class="code">graph</span> containing six 6th degree polynomials, with the following extra rules:
+                    <ol type="a">
+                        <li class="list">
+                            Have your x-axis and y-axis range from -15 through +15 (length of 30)
+                        </li>
+                        <li class="list">
+                            None of your functions can be too steep!  So:
+                            <ol type="i">
+                                <li class="list">
+                                    Hopefully you don't see dotted lines
+                                </li>
+                                <li class="list">
+                                    Every function must have some width to it -- for example <span class="code">f(x) = x**6</span> is bad, but <span class="code">g(x) = 0.0001*x**6</span> is good.
+                                </li>
+                            </ol>
+                        </li>
+                        <li class="list">
+                            No local minima or maxima can can go outside the window!
+                        </li>
+                        <li class="list">
+                            Create some space between the functions; they shouldn't be "on top" of each other too much 
+                        </li>
+                        <li class="list">
+                            Your functions should wind up and down
+                        </li>
+                        <li class="list">
+                            See the example image to see an example result.  Also, we will discuss all this, and clarify any questions.
+                        </li>
+                        <li class="list">
+                            Hint:  Try playing in Desmos first: <A href="https://www.desmos.com/calculator">Desmos calculator</A>
+                        </li>
+                        <p class="answer">This one is correct</p>
+                            <img src="six_polynomials_of_degree_6.png" height="500">
+                        <p class="answer">This one is not so great</p>
+                            <img src="these___not_so_great.png" height="500">
+                    </ol>
+                </p>
+                <p class="answer">answer</p>
+                <pre><code class="language-javascript">
+                    const sixth6thDegreePolynomialFunc = (x) => 0.001 * (x - 1)*(x - 3)*(x + 5)*(x + 2)*(x + 8)*(x + 8) + 5
+                    const fifth6thDegreePolynomialFunc = (x) => -0.0004 * (x - 3) **6 + 0.001 * x **5 - 0.01 * x **4 - x **3 + 0.1 * x**2 + 4 * x - 2
+                    const fourth6thDegreePolynomialFunc = (x) => -0.01 * (x + 5)*(x + 2)*(x + 4)*(x + 11)*(x + 9)*(x + 7) - 3
+                    const third6thDegreePolynomialFunc = (x) => -0.0001 * (x - 5)**6 + 0.00003 * (x + 1)**5 - 2
+                    const second6thDegreePolynomialFunc = (x) => 0.01 * x**6 - 10
+                    const first6thDegreePolynomialFunc = (x) => 0.001 * (x + 1)*(x + 2)*(x + 3)*(x - 4)*(x - 5)*(x+6)
+                </code></pre>
+                <div class="image">
+                    <img src="6sixth-DegreePolynomialFuncs.png" height="500">
+                </div>
+                <p class="assignment">Here a view of how looks in <span class="code">Desmos</span></p>
+                <div class="image">
+                    <img src="6sixth-DegreePolynomialFuncs_Desmos.png" height="500">
+                </div>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Write 5 miraculous, delirious, floating, rhythmical, stimulating, poetic, cultivated, mystical, sensitive functions and put them all on the same <span class="code">graph</span>. Constraints:
+                    <ol type="a">
+                        <li class="list">
+                            Only use these things to make your functions: <span class="code">sin</span> <span class="code">+</span> <span class="code">*</span>
+                        </li>
+                        <li class="list">
+                            Numbers are ok too (or challenge yourself and go numberless)
+                        </li>
+                        <li class="list">
+                            Function composition is ok (and encouraged! ... use it a lot!)
+                        </li>
+                    </ol>
+                </p>
+                <p class="answer">answer</p>
+                <div class="image">
+                    <img src="VerySuperCrazyFuncs_justWith-sin-add-multiplication.png" height="500">
+                </div>
+                <pre><code class="language-javascript">
+                    const mirDeliFloRhytmStimuPoetiCultMystSensFunction5 = (x) => sin(x * x + x) + mirDeliFloRhytmStimuPoetiCultMystSensFunction1(sin(x) + sin(x * x)) *
+                    mirDeliFloRhytmStimuPoetiCultMystSensFunction3(mirDeliFloRhytmStimuPoetiCultMystSensFunction4(x)) * sin(x) + sin(x * x)
+                    const mirDeliFloRhytmStimuPoetiCultMystSensFunction4 = (x) => sin(x*x) * sin(x) * x + mirDeliFloRhytmStimuPoetiCultMystSensFunction3(sin(x * x) + x) * sin(x + x) * x + sin(x)
+                    const mirDeliFloRhytmStimuPoetiCultMystSensFunction3 = (x) => mirDeliFloRhytmStimuPoetiCultMystSensFunction2(sin(x * x) + sin(x)) + sin(x) * 
+                    mirDeliFloRhytmStimuPoetiCultMystSensFunction1(x * sin(x + x))
+                    const mirDeliFloRhytmStimuPoetiCultMystSensFunction2 = (x) => mirDeliFloRhytmStimuPoetiCultMystSensFunction1(x) + sin(x) * sin(x) + x
+                    const mirDeliFloRhytmStimuPoetiCultMystSensFunction1 = (x) => sin(x*x) + sin(x) * x 
+                </code></pre>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Screeps update:
+                    <ol type="a">
+                        <li class="list">
+                            Show a screenshot of Screeps and describe what’s going on
+                        </li>
+                        <li class="list">
+                            2 days later: show another screenshot, and describe what has changed
+                        </li>
+                        <li class="list">
+                            3 days after that: show a third screenshot, describe what has changed,
+                        </li>
+                        <li class="list">
+                            Write a summary describing the whole arc of what happened.  Include a few interesting code samples and explain them.
+                        </li>
+                    </ol>
+                </p>
+                <p class="answer">answer</p>
+                <ol type="a">
+                    <p class="answer">1st Day:</p>
+                    <li class="box">
+                        <div class="image">
+                            <img src="1stScreeps-image.png" height="500">
+                        </div>
+                        <pre class="assignment">
+                            In this day show another because Alex, Keneth and me change of position to go out of the "Tiggatory" so that's the room that I choosed.
+                        </pre>
+                    </li>    
+                    <p class="answer">2nd Day:</p>
+                    <li class="box">
+                        <div class="images">
+                            <img src="2ndScreeps-image(Tiggattack).png">
+                            <img src="4thScreeps-image(Tiggattack).png">
+                            <img src="3rdScreeps-image(Tiggattack).png">
+                        </div>
+                        <pre class="assignment">
+                            In the second day, seems like the idea of run away of the "Tiggatory", because Tigga attacked me.
+                        </pre>
+                    </li>
+                    <p class="answer">3rd Day:</p>
+                    <li class="box">
+                        <div class="image">
+                            <img src="7thScreeps-image.png" height="600">
+                        </div>
+                        <pre class="assignment">
+                            In this day I did a respawn in the same room, because the other rooms were more far away because the invaders had all the other 
+                            rooms ocuppied, and i tougth that there wouldn't be problem and no one would attack me, but I was wrong.
+                        </pre>
+                    </li>
+                    <p class="answer">4th Day:</p>
+                    <li class="box">
+                        <div class="images">
+                            <img src="5thScreeps-image(2ndAttack).png">
+                            <img src="6thScreeps-image(2ndAttack).png">
+                        </div>
+                        <pre class="assignment">
+                            In the 4th day someone just attacked me and I got surprise because it wasn't Tigga, but anyway he destroy my room again, so i had to change of position 
+                            and I was looking for my next room.
+                        </pre>
+                    </li>
+                    <p class="answer">5th Day:</p>
+                    <li class="box">
+                        <div class="image">
+                            <img src="8thScreeps-image(new-room).png" height="600">
+                        </div>
+                        <pre class="assignment">
+                            This is the last day and what the image show is my new room.
+                        </pre>
+                    </li>
+                </ol>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Zombie Flexbox game. Go through two more levels. Take two screenshots at interesting moments and explain all of the Flex details you are working on.
+                </p>
+                <p class="answer">answer</p>
+                <ol type="a">
+                    <p class="answer">First level:</p>
+                    <li class="box">
+                        <div class="image">
+                            <img src="Flexbox-Zombies(flex-wrap).png" height="500">
+                        </div>
+                        <pre class="assignment">
+                            The first chapter learn how to use flex-wrap more especifically flex-wrap: wrap and flex-wrap: wrap-reverse, flex-wrap: wrap, wrap the zombies to the free line when there is no space in the same line. 
+                        </pre>
+                    </li>
+                    <p class="answer">Second level:</p>
+                    <li class="box">
+                        <div class="image">
+                            <img src="Flexbox-Zombies(align-content).png" height="500">
+                        </div>
+                        <pre class="assignment">
+                            This chapter is about the "align-content", the align-content is quiet similar as align-items/align-self just that align-content works with flex-wrap, it means that the function that align-items/align-self realize is the same function that align-content realize just that align-content works when you have something wrapped.
+                        </pre>
+                    </li>
+                    <p class="answer">
+                        And here a curious that happened in the chapter 10:
+                    </p>
+                    <li class="box"> 
+                        <div class="imges">
+                            <img src="DaveTalk.png">
+                            <img src="DaveTalk2.png">
+                            <img src="DaveTalk3.png">
+                            <img src="DaveTalk4.png">
+                        </div>
+                        <pre class="assignment">
+                            What is going on in these images is that Dave was bite or injured by a zombie during the chapter, and the kid didn't know that, then Dave decides to show him because he couldn't hold it anymore and then Dave just collapse.
+                        </pre>
+                    </li>
+                </ol>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Write an original kaboom game from scratch.
+                    <ol type="a">
+                        <li class="list">
+                            Cris and Alex can work together in the same game
+                        </li>
+                        <li class="list">
+                            You can work in replit and deploy it with surge
+                        </li>
+                        <li class="list">
+                            Take some screenshots of the game and some snippet of the code
+                        </li>
+                        <li class="list">
+                            Write some observations about it
+                        </li>
+                    </ol>
+                </p>
+            </li>
+            <li class="list">
+                <p class="assignment">
+                    Write a function <span class="code">xPlusOneToThe(n)</span> that takes a positive integer <span class="code">n</span> and returns the polynomial expansion of (x+1)ⁿ.  Show your code plus a screenshot with these 4 assertions passing, and show the result of the fifth expression.
+                    <ol type="a">
+                        <li class="code">
+                            console.assert(xPlusOneToThe(1) == "x + 1")
+                        </li>
+                        <li class="code">
+                            console.assert(xPlusOneToThe(2) == "x² + 2x + 1")
+                        </li>
+                        <li class="code">
+                            console.assert(xPlusOneToThe(3) == "x³ + 3x² + 3x + 1")
+                        </li>
+                        <li class="code">
+                            console.assert(xPlusOneToThe(10) == "x¹⁰ + 10x⁹ + 45x⁸ + 120x⁷ + 210x⁶ + 252x⁵ + 210x⁴ + 120x³ + 45x² + 10x + 1")
+                        </li>
+                        <li class="code">
+                            xPlusOneToThe(100)
+                        </li>
+                    </ol>
+                </p>
+                <p class="answer">answer</p>
+                <pre><code class="language-javascript">
+                    //This is the function of the assignment
+                    function xPlusOneToThe(n){
+                        let result = '';
+                        let coefficients = pascalRow(n);
+                        for(let i=0; i < n; i++) {
+                          let x = i < n-1 ? xToThe(n-i) : 'x';
+                          let c = coefficients[i];
+                          result += c==1 ? x : c+x;
+                          result += ' + '
+                        }
+                        result += "1";
+                        return result;
+                      }
+                      //These are function that are used on the xPlusOneToThe() function
+                    function pascalRow(n){
+                        let array = [1,1];
+                        for(let i=1; i < n; i++){
+                            let next = [];
+                            let scratch = [0, ...array, 0]
+                            for(let j=0; j < scratch.length-1; j++){
+                                next.push(scratch[j]+scratch[j+1]);
+                            }
+                            array = next;
+                        }
+                        return array;
+                    }
+                    function xToThe(n){
+                        const exp = ["⁰","¹","²","³","⁴","⁵","⁶","⁷","⁸","⁹"];
+                        let result = "x";
+                        let exponents = n.toString().split('');
+                        if(n < 0){
+                            exponents.splice(0, 1);
+                            result += "⁻";
+                        }
+                        for(const e of exponents){
+                            result += exp[e];
+                        }
+                        return result; 
+                    }
+                </code></pre>
+                <p class="assignment">Btw the xToThe() function is on the last homework assignment</p>
+                <p class="assignment">
+                    Here is the screenshot for the results of the 4 assertions 
+                </p>
+                <div class="image">
+                    <img src="assertionsResults.png" height="450">
+                </div>
+            </li>
+            
+        </ol>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+        <script type="text/javascript">
+        // Optional
+        Prism.plugins.NormalizeWhitespace.setDefaults({
+            'remove-trailing': true,
+            'remove-indent': true,
+            'left-trim': true,
+            'right-trim': true,
+        });
+        </script>
+    </body>
