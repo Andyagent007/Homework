@@ -17,6 +17,10 @@
         text-align: center;
         color: #6ad76c;
       }
+      div.code
+      {
+        font-family: 'Roboto Mono', monospace;
+      }
       li.list {
         /* display: flex; */
         font-family: "Raleway", sans-serif;
@@ -68,6 +72,10 @@
         font-family: "Raleway", sans-serif;
         margin: 2px;
       }
+      li.code
+      {
+          font-family: 'Roboto Mono', monospace;
+      }
       div.answers {
         background-color: rgb(22, 53, 70);
         border-radius: 5px;
@@ -96,9 +104,9 @@
       span.code {
         font-family: "Roboto Mono", monospace;
         font-size: 8;
-        background: rgb(167, 167, 167);
+        background: rgb(97, 97, 131);
         border-radius: 2pt;
-        color: rgb(0, 109, 134);
+        color: rgb(4, 4, 110);
       }
       code.language-javascript {
         /* font: 100% Helvetica, sans-serif; */
@@ -114,6 +122,85 @@
         <p class="assignment">
           The AaBbCc program
         </p>
+        <pre><code class="language-javascript">
+          You are given four integer values a, b, c and m.
+
+          Check if there exists a string that contains:
+
+          * a letters 'A';
+          * b letters 'B';
+          * c letters 'C';
+          * no other letters;
+          * exactly m pairs of adjacent equal letters (exactly m such positions i that the i-th letter is equal to the (i+1)-th one).
+
+          Input
+
+          The first line contains a single integer t (1 ≤ t ≤ 10^4) — the number of testcases.
+
+          Each of the next t lines contains the description of the testcase — four integers a, b, c and m (1 ≤ a, b, c ≤ 10^8; 0 ≤ m ≤ 10^8).
+
+          Output
+
+          For each testcase print "YES" if there exists a string that satisfies all the requirements. Print "NO" if there are no such strings.
+
+          You may print every letter in any case you want (so, for example, the strings yEs, yes, Yes and YES will all be recognized as positive answer).
+
+          Example:
+
+          Input
+
+          3
+          2 2 1 0
+          1 1 1 1
+          1 2 3 2
+
+          Output
+
+          YES
+          NO
+          YES
+
+          Notes:
+          In the first testcase strings "ABCAB" or "BCABA" satisfy the requirements. There exist other possible strings.
+          In the second testcase there's no way to put adjacent equal letters if there's no letter that appears at least twice.
+          * a letters 'A';
+          * b letters 'B';
+          * c letters 'C';
+          * no other letters;
+          * exactly m pairs of adjacent equal letters (exactly m such positions i that the i-th letter is equal to the (i+1)-th one).
+
+          Input
+
+          The first line contains a single integer t (1 ≤ t ≤ 10^4) — the number of testcases.
+
+          Each of the next t lines contains the description of the testcase — four integers a, b, c and m (1 ≤ a, b, c ≤ 10^8; 0 ≤ m ≤ 10^8).
+
+          Output
+
+          For each testcase print "YES" if there exists a string that satisfies all the requirements. Print "NO" if there are no such strings.
+
+          You may print every letter in any case you want (so, for example, the strings yEs, yes, Yes and YES will all be recognized as positive answer).
+
+          Example:
+
+          Input
+
+          3
+          2 2 1 0
+          1 1 1 1
+          1 2 3 2
+
+          Output
+
+          YES
+          NO
+          YES
+
+          Notes:
+          In the first testcase strings "ABCAB" or "BCABA" satisfy the requirements. There exist other possible strings.
+          In the second testcase there's no way to put adjacent equal letters if there's no letter that appears at least twice.
+          In the third testcase string "CABBCC" satisfies the requirements. There exist other possible strings.
+        </code></pre>
         <div class="answers">
           <p class="answer">ANSWER</p>
         </div>
@@ -154,9 +241,9 @@
       </li>
       <li class="list">
         <p class="assignment">
-          Write a `nodejs` program that will get information about the planets of the solar system from this JSON source:
+          Write a <span class='code'>nodejs</span> program that will get information about the planets of the solar system from this JSON source:
           <A href="https://github.com/Lazzaro83/Solar-System/blob/master/planets.json" style="color:#0ed4df;">JSON Solar System</A>
-          — once the data is read into JSON, make a loop that will `console.log` the rows of an HTML table.  Show your code, a pretty-print of the full JSON, and incorporate the HTML table into the homework HTML.
+          — once the data is read into JSON, make a loop that will <span class='code'>console.log</span> the rows of an HTML table.  Show your code, a pretty-print of the full JSON, and incorporate the HTML table into the homework HTML.
         </p>
         <div class="answers">
           <p class="answer">ANSWER</p>
@@ -164,10 +251,10 @@
       </li>
       <li class="list">
         <p class="assignment">
-          Write a “Hello World” HTTP server using `expressjs`.  
+          Write a “Hello World” HTTP server using <span class='code'>expressjs</span>.  
           There are simple examples online.  
           Write an explanation of how it works, and describe what were the most difficult parts of this exercise.  
-          Also, make some comments about how it compares to the plain `nodejs` version that we wrote.
+          Also, make some comments about how it compares to the plain <span class='code'>nodejs</span> version that we wrote.
         </p>
         <div class="answers">
           <p class="answer">ANSWER</p>
@@ -175,11 +262,11 @@
       </li>
       <li class="list">
         <p class="assignment">
-          Write a very rudimentary single player racecar game using the C language and `ncurses`.  
+          Write a very rudimentary single player racecar game using the C language and <span class='code'>ncurses</span>.  
           There should be a game loop that draws a random racetrack and the player uses the left and right arrow keys to navigate.  
           If you like, add occasional obstacles that the driver has to avoid.  
           Use simple ASCII or Unicode graphics, nothing fancy.  
-          Look for `ncurses` snake game examples online to get started.
+          Look for <span class='code'>ncurses</span> snake game examples online to get started.
         </p>
         <div class="answers">
           <p class="answer">ANSWER</p>
@@ -189,31 +276,31 @@
         <p class="assignment">
           Simple JavaScript console work:
           <ol>
-            <li class='sublist'>
+            <li class='code'>
               let x = []  // the x array will serve as a “Dequeue” data structure.  See the next exercise for more information on this.  “Dequeue” stands for “double-ended queue”.
             </li>
-            <li class='sublist'>
+            <li class='code'>
               x.push(‘f’)
             </li>
-            <li class='sublist'>
+            <li class='code'>
               x.push(‘o’)
             </li>
-            <li class='sublist'>
+            <li class='code'>
               x.push(‘o’)
             </li>
-            <li class='sublist'>
+            <li class='code'>
               x.unshift(‘r’)
             </li>
-            <li class='sublist'>
+            <li class='code'>
               x.unshift(‘a’)
             </li>
-            <li class='sublist'>
+            <li class='code'>
               x.unshift(‘b’)
             </li>
-            <li class='sublist'>
+            <li class='code'>
               x.pop()
             </li>
-            <li class='sublist'>
+            <li class='code'>
               x.shift()
             </li>
           </ol>
@@ -226,26 +313,26 @@
         <p class="assignment">
           Implement this programming language:
           <A href="https://concatenative.org/wiki/view/Deque" style="color:#0ed4df;">https://concatenative.org/wiki/view/Deque</A>.  
-          So write a function called `dqInterpret(instructions)` that will take a string that contains instructions in this language, and then apply those instructions to an empty Dequeue, showing every step along the way.  
-          For example, the wiki example starts with the instructions “3! !5 !2 sub! !add” and through a series of steps arrives at a Dequeue that looks like this: `[4]`.  
+          So write a function called <span class='code'>dqInterpret(instructions)</span> that will take a string that contains instructions in this language, and then apply those instructions to an empty Dequeue, showing every step along the way.  
+          For example, the wiki example starts with the instructions “3! !5 !2 sub! !add” and through a series of steps arrives at a Dequeue that looks like this: <span class='code'>[4]</span>.  
           It should show this:
           <ul>
-            <li class='sublist'>
+            <li class='code'>
               []
             </li>
-            <li class='sublist'>
+            <li class='code'>
               [3]
             </li>
-            <li class='sublist'>
+            <li class='code'>
               [5, 3]
             </li>
-            <li class='sublist'>
+            <li class='code'>
               [2, 5, 3]
             </li>
-            <li class='sublist'>
+            <li class='code'>
               [2, 2]
             </li>
-            <li class='sublist'>
+            <li class='code'>
               [4]
             </li>
           </ul>
@@ -260,6 +347,9 @@
           Either create 7 photos using plasticine, or draw seven images showing the transition.  
           Do you think a computer program could solve this question?  Write down a paragraph talking about how you might approach this with a computer.
         </p>
+        <div class="image">
+          <img class='image-box' src="topologyPictureExample.webp" height="500">
+        </div>
         <div class="answers">
           <p class="answer">ANSWER</p>
         </div>
@@ -363,7 +453,7 @@
       </li>
       <li class="list">
         <p class="assignment">
-          Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.  For instance:  `moveZeros([1,2,0,1,0,1,0,3,0,1]) == [1,2,1,1,3,1,0,0,0,0]`
+          Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.  For instance:  <span class='code'>moveZeros([1,2,0,1,0,1,0,3,0,1]) == [1,2,1,1,3,1,0,0,0,0]</span>
         </p>
         <div class="answers">
           <p class="answer">ANSWER</p>
