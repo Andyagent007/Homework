@@ -87,26 +87,36 @@
       pre.text {
         font-family: "Raleway", sans-serif;
         white-space: pre-wrap;
-        margin: 20px;
+        margin: 10px;
         white-space: pre-line;
       }
       .answer {
+        background-color: #6ad76c;
+        border-radius: 10px;
+        border-style: groove;
+        border-color: darkgoldenrod;
+        padding: 5px;
+        font-size:x-large;
+        font-weight:bolder;
         text-align: center;
         font-family: "Raleway", sans-serif;
-        text-decoration-line: underline;
-        color: #0ed4df
+        color: #0a8f9b
       }
       .hideline {
         font-family: "Raleway", sans-serif;
         text-decoration-line: underline;
         color: rgb(9, 187, 157);
       }
+      .subTheme {
+        font-family: "Raleway", sans-serif;
+        color: rgb(9, 187, 157);
+      }
       span.code {
         font-family: "Roboto Mono", monospace;
-        font-size: 8;
-        background: rgb(97, 97, 131);
+        background: rgb(97 97 131 / 50%);
         border-radius: 2pt;
-        color: rgb(4, 4, 110);
+        color: rgb(18, 0, 100);
+        padding: 0.5px;
       }
       code.language-javascript {
         /* font: 100% Helvetica, sans-serif; */
@@ -242,6 +252,64 @@
         </p>
         <div class="answers">
           <p class="answer">ANSWER</p>
+          <ol>
+            <p class="subTheme" style="font-size: 20px;">
+              HTTP status code 102 :
+            </p>
+            <div class="image">
+              <img class='img-box' src="102HTTPStatusCode.png" height="300">
+            </div>
+            <li class='sublist'>
+              <p class='assignment'>
+                This HTTP status code means that the server is processing the request that has received. 
+                This status is to prevent that the client asume that the request is still processing and hasn’t been lost.
+              </p>
+            </li>
+            <p class="subTheme" style="font-size: 20px;">
+              HTTP status code 200 :
+            </p>
+            <div class="image">
+              <img class='img-box' src="200HTTPStatusCode.png" height="300">
+            </div>
+            <li class='sublist'>
+              <p class='assignment'>
+                Is the response when a HTTP request has been received successfully.
+              </p>
+            </li>
+            <p class="subTheme" style="font-size: 20px;">
+              HTTP status code 206 :
+            </p>
+            <div class="image">
+              <img class='img-box' src="206HTTPStatusCode.png" height="350">
+            </div>
+            <li class='sublist'>
+              <p class='assignment'>
+                The HTTP status 206 means that is just sent a part of the whole request of the client to the server.
+              </p>
+            </li>
+            <p class="subTheme" style="font-size: 20px;">
+              HTTP status code 301 :
+            </p>
+            <div class="image">
+              <img class='img-box' src="301HTTPStatusCode.png" height="300">
+            </div>
+            <li class='sublist'>
+              <p class='assignment'>
+                The 301 HTTP status code means that this and all future request has moved to a different URL.
+              </p>
+            </li>
+            <p class="subTheme" style="font-size: 20px;">
+              HTTP status code 304 :
+            </p>
+            <div class="image">
+              <img class='img-box' src="304HTTPStatusCode.png" height="350">
+            </div>
+            <li class='sublist'>
+              <p class='assignment'>
+                This means that the request hasn’t modify since the last version.
+              </p>
+            </li>
+          </ol>
         </div>
       </li>
       <li class="list">
@@ -285,22 +353,22 @@
               let x = []  // the x array will serve as a “Dequeue” data structure.  See the next exercise for more information on this.  “Dequeue” stands for “double-ended queue”.
             </li>
             <li class='code'>
-              x.push(‘f’)
+              x.push('f')
             </li>
             <li class='code'>
-              x.push(‘o’)
+              x.push('o')
             </li>
             <li class='code'>
-              x.push(‘o’)
+              x.push('o')
             </li>
             <li class='code'>
-              x.unshift(‘r’)
+              x.unshift('r')
             </li>
             <li class='code'>
-              x.unshift(‘a’)
+              x.unshift('a')
             </li>
             <li class='code'>
-              x.unshift(‘b’)
+              x.unshift('b')
             </li>
             <li class='code'>
               x.pop()
@@ -312,6 +380,42 @@
         </p>
         <div class="answers">
           <p class="answer">ANSWER</p>
+          <ol>
+            <li class='sublist'>
+              <span class='code'>let x = []</span> First we make an empty array to put some elements after.
+            </li>
+            <li class='sublist'>
+              <span class='code'>x.push('f')</span> Now we add a element <span class='code'>f</span> to the end of the array with push
+            </li>
+            <li class='sublist'>
+              <span class='code'>x.push('o')</span> Then another element that will be <span class='code'>o</span>
+            </li>
+            <li class='sublist'>
+              <span class='code'>x.push('o')</span> Then we push another <span class='code'>o</span>
+            </li>
+            <p class='assignment'>
+              So the array would looks like <span class='code'>['f', 'o', 'o']</span> 
+            </p>
+            <li class='sublist'>
+              <span class='code'>x.unshift('r')</span> Then with unshift we add in the beginning of the array a new element <span class='code'>r</span>
+            </li>
+            <li class='sublist'>
+              <span class='code'>x.unshift('a')</span> We add another element to the beginning of the array, the element is <span class='code'>a</span>
+            </li>
+            <li class='sublist'>
+              <span class='code'>x.unshift('b')</span> Then we add a <span class='code'>b</span> to the beginning of the array with unshift  
+            </li>
+            <p class='assignment'>
+              So the array now looks <span class='code'>['b', 'a', 'r', 'f', 'o', 'o']</span>
+            </p>
+            <li class='sublist'>
+              <span class='code'>x.pop()</span> Then we use pop to delete the las element of the array. So the array is <span class='code'>['b', 'a', 'r', 'f', 'o']</span> now
+            </li>
+            <li class='sublist'>
+              <span class='code'>x.shift()</span> Then we use shift to delete the first element of the array. Now the array looks <span class='code'>['a', 'r', 'f', 'o']</span>
+
+            </li>
+          </ol>
         </div>
       </li>
       <li class="list">
@@ -422,6 +526,17 @@
         </p>
         <div class="answers">
           <p class="answer">ANSWER</p>
+          <pre class="text" style="font-family: 'Roboto Mono', monospace;">
+            Tim every year collect 30 lemons because he have 5 trees and get 6 lemons for every tree every year, so we multiply that result with 10 because is asking the lemons that he get in a decade and a decade are 10 years so we multiply the amounts of lemons that he get every year with the 10 years of a decade and the result is 300 lemons
+
+            ---- These are the lemons that Tim collect every year
+            5 * 6 = 30
+
+            ---- Now that we now how many lemons Tim collect every year we multiply that to the 10 years of a decade
+            30 * 10 = 300
+
+            ----> Tim got 300 lemons every decade <----
+          </pre>
         </div>
       </li>
       <li class="list">
@@ -430,6 +545,32 @@
         </p>
         <div class="answers">
           <p class="answer">ANSWER</p>
+          <pre class="text" style="font-family: 'Roboto Mono', monospace;">
+            He gave 1/2 of the 50 pencils to Brandon so that’s the half of the pencils, which is 25, now he just have 25 pencils and he gave 3/5 of the 25 pencils to Charlie that would be 15 of 25 pencils now he is just with 10 pencils left.
+
+            To now how many pencils does Brandon have we multiply the 50 pencils of Anthony with the 1/2 that gave to Brandon
+            ------ 50 * 1/2 = 25
+
+            Now, we have to now, how many pencils does Anthony have left:
+            
+            ------ 50 - 25 = 25
+            - Anthony have kept 25 pencils -
+
+            Then he gave a 3/5 of his pencils so: 
+            
+            ------ 3/5 * 25 = 15
+            - So he gave 15 pencils to Charlie -
+
+            Now, hoy many pencils does Anthony have left?
+
+            ------ First we add the total quantity of pencils that Anthony gave
+            15 + 25 = 40 
+
+            -And now we subtract that result to the original number of pencils that Anthony had:
+            40 - 50 = 10 
+
+            --------> Anthony have kept 10 pencils <--------
+          </pre>
         </div>
       </li>
       <li class="list">
