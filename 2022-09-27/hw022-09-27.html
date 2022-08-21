@@ -206,10 +206,10 @@
           NO
           YES
 
-          Notes:
-          In the first testcase strings "ABCAB" or "BCABA" satisfy the requirements. There exist other possible strings.
-          In the second testcase there's no way to put adjacent equal letters if there's no letter that appears at least twice.
-          In the third testcase string "CABBCC" satisfies the requirements. There exist other possible strings.
+          // Notes:
+          // In the first testcase strings "ABCAB" or "BCABA" satisfy the requirements. There exist other possible strings.
+          // In the second testcase there's no way to put adjacent equal letters if there's no letter that appears at least twice.
+          // In the third testcase string "CABBCC" satisfies the requirements. There exist other possible strings.
         </code></pre>
         <div class="answers">
           <p class="answer">ANSWER</p>
@@ -323,6 +323,7 @@
         </div>
       </li>
       <li class="list">
+        <!-- Working on this one -->
         <p class="assignment">
           Write a “Hello World” HTTP server using <span class='code'>expressjs</span>.  
           There are simple examples online.  
@@ -331,6 +332,20 @@
         </p>
         <div class="answers">
           <p class="answer">ANSWER</p>
+          This is the code example:
+          <pre><code class="language-javascript">
+            const express = require('express')
+            const app = express()
+            const port = 3000
+
+            app.get('/', (req, res) => {
+              res.send('Hello World!')
+            })
+
+            app.listen(port, () => {
+              console.log(`Example app listening on port ${port}`)
+            })
+          </code></pre>
         </div>
       </li>
       <li class="list">
@@ -473,12 +488,26 @@
         </div>
       </li>
       <li class="list">
+        <!-- Working on this one -->
         <p class="assignment">
           Look up the term “Jordan curve” (pronounced Jordán).  Explain what a Jordan curve is.  With paper and pencil draw six examples of Jordan curves.  
           Try to make them as different as possible.  Make one or two simple ones, but make some really complicated ones also.
         </p>
         <div class="answers">
           <p class="answer">ANSWER</p>
+          <p class='assignment'>
+            A jordan curve is all closed curve, that can take every form as long as the lines doesn't cross each other and this curve cut the plane into 2 parts, the exterior and the interior.
+          </p>
+          <p class='assignment'>
+            Here are some examples:
+          </p>
+          <div class="images">
+            <img class='image-box' src="Jordan_curve1.webp" height="500">
+            <img class='image-box' src="Jordan_curve2.webp" height="500">
+            <img class='image-box' src="Jordan_curve3.webp" height="500">
+            <img class='image-box' src="Jordan_curve4.webp" height="500">
+            <img class='image-box' src="Jordan_curve5.webp" height="500">
+          </div>
         </div>
       </li>
       <li class="list">
@@ -509,6 +538,34 @@
         </p>
         <div class="answers">
           <p class="answer">ANSWER</p>
+          <ol>
+            <li class='sublist'>
+              <p class='assignment'>
+                It's a very simple code to write actually, it wasn't so dificult to made.
+              </p>
+              Here is a example of what the output would be:
+              <div class="image">
+                <img class="image-box" src="TM_multiply_by_2.gif" height="200">
+              </div>
+              And here is the code of it:
+              <pre><code class="language-javascript">
+                //-------CONFIGURATION
+                name: Multiply binary number by 2
+                init: qinit
+                accept: qDoubled
+
+                //-------DELTA FUNCTION:
+                qinit,0
+                qinit,0 , >
+
+                qinit, 1
+                qinit, 1, >
+
+                qinit, _
+                qDoubled,0 , -
+              </code></pre>
+            </li>
+          </ol>
         </div>
       </li>
       <li class="list">
@@ -527,7 +584,7 @@
         <div class="answers">
           <p class="answer">ANSWER</p>
           <pre class="text" style="font-family: 'Roboto Mono', monospace;">
-            Tim every year collect 30 lemons because he have 5 trees and get 6 lemons for every tree every year, so we multiply that result with 10 because is asking the lemons that he get in a decade and a decade are 10 years so we multiply the amounts of lemons that he get every year with the 10 years of a decade and the result is 300 lemons
+            Tim every year collects 30 lemons because he has 5 trees and gets 6 lemons for every tree every year, so we multiply that result by 10 because is asking how many lemons he gets in a decade and a decade is 10 years so we multiply the amounts of lemons that he get every year with the 10 years of a decade and the result is 300 lemons.
 
             ---- These are the lemons that Tim collect every year
             5 * 6 = 30
@@ -590,6 +647,7 @@
         </div>
       </li>
       <li class="list">
+        <!-- Working on this one -->
         <p class="assignment">
           Make an HTML page that has a small image in it, but that image doesn’t require an extra file; the image is actually embedded in the HTML so that you only have one file.
         </p>
@@ -614,5 +672,16 @@
         </div>
       </li>
     </ol>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+    <script type="text/javascript">
+      // Optional
+      Prism.plugins.NormalizeWhitespace.setDefaults({
+          'remove-trailing': true,
+          'remove-indent': true,
+          'left-trim': true,
+          'right-trim': true,
+      });
+  </script>
   </body>
 </html>
