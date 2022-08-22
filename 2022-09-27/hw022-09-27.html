@@ -113,7 +113,7 @@
       }
       span.code {
         font-family: "Roboto Mono", monospace;
-        background: rgb(97 97 131 / 50%);
+        background: rgba(97, 129, 131, 0.5);
         border-radius: 2pt;
         color: rgb(18, 0, 100);
         padding: 0.5px;
@@ -332,6 +332,9 @@
         </p>
         <div class="answers">
           <p class="answer">ANSWER</p>
+          <pre class='text'>
+            The code is very similar to the <span class='code'>nodejs</span> one, the code first require express different as the <span class='code'>nodejs</span> that require <span class='code'>html</span> instead, then we make another constant that will invoque the express function, and then we designate the port. Then with the constant app that now is the function <span class='code'>express</span> we use <span class='code'>app.get</span> as an arraw function that is going to take two parameter, "req" that stands fot request and "res" that stands for response so we use <span class='code'>send</span> with the "res" parameter, that will return in the page what you put inside, in this case a string that says "Hello World!". And then we do <span class='code'>listen</span> that will listen to the port designated in line 3, then it will take an arrow funtcion that will print in the console "Example app listening on port ${port}" in this case ${port} is 3000.
+          </pre>
           This is the code example:
           <pre><code class="language-javascript">
             const express = require('express')
@@ -346,6 +349,9 @@
               console.log(`Example app listening on port ${port}`)
             })
           </code></pre>
+          <p class='assignment'>
+            The most difficult thing was when I was looking for a file in the terminal and I though the file was created automatically, but it wasn't so I had to do a research for it till I found it.
+          </p>
         </div>
       </li>
       <li class="list">
@@ -653,6 +659,33 @@
         </p>
         <div class="answers">
           <p class="answer">ANSWER</p>
+          <div class="image">
+            <img class="image-box" src="exampleHTML.webp" height="500">
+          </div>
+          <pre><code class="language-javascript">
+            &lt!DOCTYPE html>
+            &lthtml lang="en">
+              &ltstyle>
+                div.image
+                {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                  max-width: 100%;
+                  flex-wrap: wrap;
+                }
+              &lt/style>
+              &lthead>
+              &lt/head>
+              &ltbody>
+                <div class="image">
+                  <img src="data:image/gif;base64,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"
+                  alt="Base64 encoded image"/>
+                </div>
+            </body>
+            </html>
+          </code></pre>
         </div>
       </li>
       <li class="list">
