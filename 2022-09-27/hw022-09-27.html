@@ -596,6 +596,55 @@
                 qDoubled,0 , -
               </code></pre>
             </li>
+            <li class='sublist'>
+              <p class='assignment'>
+                Here is an example of the input:
+              </p>
+              <div class="image">
+                <img class="image-box" src="TM_adding_one.webp" height="190">
+              </div>
+              <p class='assignment'>
+                And here is the code of it:
+              </p>
+              <pre><code class="language-javascript">
+                name: Binary add
+                init: q0
+                accept: qHalt
+
+                q0, 0
+                q0, 0, >
+
+                q0, 1
+                q0, 1, >
+
+                q0, _
+                goBackwards, _, <
+
+                goBackwards, 1
+                CarryOne, 0, <
+
+                goBackwards, 0
+                q3, 1, <
+
+                CarryOne, 1
+                CarryOne, 0, <
+
+                CarryOne, 0
+                q3, 1, <
+
+                CarryOne, _
+                q3, 1, <
+
+                q3, 0
+                q3, 0, <
+
+                q3, 1
+                q3, 1, <
+
+                q3, _
+                qHalt, _, -
+              </code></pre>
+            </li>
           </ol>
         </div>
       </li>
