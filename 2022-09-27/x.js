@@ -69,7 +69,7 @@ planets = [
 
 // Figure out how to derive the columns constant from the planets constant
 
-const columns = ["position", "name", "image"] 
+const columns = ["position", "name", "image", "velocity", "distance", "description"] 
 console.log("<table>")
 console.log("<thead>")
 console.log("<tr>")
@@ -82,4 +82,18 @@ for(let col = 0; col<columns.length; col++){
 console.log("</tr>")
 console.log("</thead>")
 // Now put the planets here:
+for(let i=0; i<planets.length; i++){
+	let planet = planets[i];
+	console.log('<tr>')
+	for(let j=0; j<columns.length; j++){
+		let col = columns[j]
+		if(planet.name == 'Sun') break;
+		if(col == "image"){
+			console.log(`<td><img src=${planet[col]} width="300" /></td>`);
+		}else {
+			console.log(`<td>${planet[col]}</td>`);
+		}
+	}
+	console.log('</tr>')
+}
 console.log("</table>")

@@ -17,6 +17,17 @@
         text-align: center;
         color: #6ad76c;
       }
+      div.coded
+      {
+        background-color: aliceblue;
+        color: black;
+        padding: 3px;
+        margin: 3px;
+      }
+      pre.coded_text .coded
+      {
+        font-family: 'roboto';
+      }        
       div.code
       {
         font-family: 'Roboto Mono', monospace;
@@ -58,6 +69,15 @@
         align-items: center;
         justify-content: space-between;
       }
+      .JSON_print
+      {
+        border-color:#b9f34d;
+        border-style: groove;
+        border-radius: 10px;
+        max-width: 45%;
+        display: flex;
+        margin: 20px;
+      }
       .image-box {
         border-color: rgb(255, 221, 0);
         border-style: groove;
@@ -83,6 +103,12 @@
         border-color: #6ad76c;
         padding: 10px 20px 10px 20px;
         margin-bottom: 4px;
+      }
+      .center
+      {
+        text-decoration-line: underline;
+        color: rgb(9, 187, 157);
+        text-align: center;
       }
       pre.text {
         font-family: "Raleway", sans-serif;
@@ -121,6 +147,24 @@
       code.language-javascript {
         /* font: 100% Helvetica, sans-serif; */
         color: rgb(12, 83, 131);
+      }
+      span.lighted
+      {
+        background-color: rgba(26, 63, 63, 0.683) !important;
+      }
+      table.Solar_system
+      {
+        /* background-color: rgb(3, 30, 49); */
+        background-color: rgb(3, 1, 43);
+        font-family:'Courier New', Courier, monospace;
+        border: solid 2pt rgb(12, 83, 131);
+        border-radius: 8px;
+        margin: 20px;
+        padding: 10px
+      }
+      thead.Solar_system
+      {
+        text-align: center;
       }
     </style>
   </head>
@@ -258,6 +302,7 @@
         </p>
         <div class="answers">
           <p class="answer">ANSWER</p>
+            
         </div>
       </li>
       <li class="list">
@@ -334,6 +379,126 @@
         </p>
         <div class="answers">
           <p class="answer">ANSWER</p>
+          <table class="Solar_system">
+            <thead class="Solar_system">
+            <tr>
+            <td>planets</td>
+            </tr>
+            <tr>
+            <td >position</td>
+            <td >name</td>
+            <td >image</td>
+            <td >velocity</td>
+            <td >distance</td>
+            <td >description</td>
+            </tr>
+            </thead>
+            <tr>
+            <td>1</td>
+            <td>Mercury</td>
+            <td><img src=http://space-facts.com/wp-content/uploads/mercury-transparent.png width="300" /></td>
+            <td>47</td>
+            <td>58</td>
+            <td>Mercury is the closest planet to the Sun and due to its proximity it is not easily seen except during twilight. For every two orbits of the Sun, Mercury completes three rotations about its axis and up until 1965 it was thought that the same side of Mercury constantly faced the Sun. Thirteen times a century Mercury can be observed from the Earth passing across the face of the Sun in an event called a transit, the next will occur on the 9th May 2016.</td>
+            </tr>
+            <tr>
+            <td>2</td>
+            <td>Venus</td>
+            <td><img src=http://space-facts.com/wp-content/uploads/venus-transparent.png width="300" /></td>
+            <td>35</td>
+            <td>108</td>
+            <td>Venus is the second planet from the Sun and is the second brightest object in the night sky after the Moon. Named after the Roman goddess of love and beauty, Venus is the second largest terrestrial planet and is sometimes referred to as the Earth’s sister planet due the their similar size and mass. The surface of the planet is obscured by an opaque layer of clouds made up of sulphuric acid.</td>
+            </tr>
+            <tr>
+            <td>3</td>
+            <td>Earth</td>
+            <td><img src=http://space-facts.com/wp-content/uploads/earth-transparent.png width="300" /></td>
+            <td>29</td>
+            <td>149</td>
+            <td>Earth is the third planet from the Sun and is the largest of the terrestrial planets. The Earth is the only planet in our solar system not to be named after a Greek or Roman deity. The Earth was formed approximately 4.54 billion years ago and is the only known planet to support life.</td>
+            </tr>
+            <tr>
+            <td>4</td>
+            <td>Mars</td>
+            <td><img src=http://space-facts.com/wp-content/uploads/mars-transparent.png width="300" /></td>
+            <td>24</td>
+            <td>227</td>
+            <td>Mars is the fourth planet from the Sun and is the second smallest planet in the solar system. Named after the Roman god of war, Mars is also often described as the “Red Planet” due to its reddish appearance. Mars is a terrestrial planet with a thin atmosphere composed primarily of carbon dioxide.</td>
+            </tr>
+            <tr>
+            <td>5</td>
+            <td>Jupiter</td>
+            <td><img src=http://space-facts.com/wp-content/uploads/jupiter-transparent.png width="300" /></td>
+            <td>13</td>
+            <td>778</td>
+            <td>The planet Jupiter is the fifth planet out from the Sun, and is two and a half times more massive than all the other planets in the solar system combined. It is made primarily of gases and is therefore known as a “gas giant”.</td>
+            </tr>
+            <tr>
+            <td>6</td>
+            <td>Saturn</td>
+            <td><img src=http://space-facts.com/wp-content/uploads/saturn-transparent.png width="300" /></td>
+            <td>9</td>
+            <td>1426</td>
+            <td>Saturn is the sixth planet from the Sun and the most distant that can be seen with the naked eye. Saturn is the second largest planet and is best known for its fabulous ring system that was first observed in 1610 by the astronomer Galileo Galilei. Like Jupiter, Saturn is a gas giant and is composed of similar gasses including hydrogen, helium and methane.</td>
+            </tr>
+            <tr>
+            <td>7</td>
+            <td>Uranus</td>
+            <td><img src=http://space-facts.com/wp-content/uploads/uranus-transparent.png width="300" /></td>
+            <td>6</td>
+            <td>2870</td>
+            <td>Uranus is the seventh planet from the Sun. While being visible to the naked eye, it was not recognised as a planet due to its dimness and slow orbit. Uranus became the first planet discovered with the use of a telescope. Uranus is tipped over on its side with an axial tilt of 98 degrees. It is often described as “rolling around the Sun on its side.”</td>
+            </tr>
+            <tr>
+            <td>8</td>
+            <td>Neptune</td>
+            <td><img src=http://space-facts.com/wp-content/uploads/neptune-transparent.png width="300" /></td>
+            <td>5</td>
+            <td>4498</td>
+            <td>Neptune is the eighth planet from the Sun making it the most distant in the solar system. This gas giant planet may have formed much closer to the Sun in early solar system history before migrating to its present position.</td>
+            </tr>
+            <tr>
+            </tr>
+            </table>
+          <ol>
+            <li class='sublist'>
+              This is the code
+              <pre><code class="language-javascript">
+                const columns = ["position", "name", "image", "velocity", "distance", "description"] 
+                console.log("&lttable>")
+                console.log("&ltthead>")
+                console.log("&lttr>")
+                console.log("&lttd>planets&lt/td>")
+                console.log("&lt/tr>")
+                console.log("&lttr>")
+                for(let col = 0; col&ltcolumns.length; col++){
+                  console.log(`&lttd>${columns[col]}&lt/td>`)
+                }
+                console.log("&lt/tr>")
+                console.log("&lt/thead>")
+                // Now put the planets here:
+                for(let i=0; i&ltplanets.length; i++){
+                  let planet = planets[i];
+                  console.log('&lttr>')
+                  for(let j=0; j&ltcolumns.length; j++){
+                    let col = columns[j]
+                    if(planet.name == 'Sun') break;
+                    if(col == "image"){
+                      console.log(`&lttd>&ltimg src=${planet[col]} width="300" />&lt/td>`);
+                    }else {
+                      console.log(`&lttd>${planet[col]}&lt/td>`);
+                    }
+                  }
+                  console.log('&lt/tr>')
+                }
+                console.log("&lt/table>")
+              </code></pre>
+            </li>
+            <li class='sublist'>
+              This is the JSON Solar system
+                <img class="JSON_print" src="JSON_Solar_system.webp" height="1000">
+            </li>
+          </ol>
         </div>
       </li>
       <li class="list">
@@ -495,15 +660,6 @@
         </div>
         <div class="answers">
           <p class="answer">ANSWER</p>
-          <div class="images">
-            <img class="img-box" src="topology1.webp" height="300">
-            <img class="img-box" src="topology2.webp" height="300">
-            <img class="img-box" src="topology3.webp" height="300">
-            <img class="img-box" src="topology4.webp" height="300">
-            <img class="img-box" src="topology5.webp" height="300">
-            <img class="img-box" src="topology6.webp" height="300">
-            <img class="img-box" src="topology7.webp" height="300">
-          </div>
         </div>
       </li>
       <li class="list">
@@ -513,6 +669,138 @@
         </p>
         <div class="answers">
           <p class="answer">ANSWER</p>
+          <p class="subTheme" style="text-align: center; font-size: 30px"> This is how rule 110 works: </p>
+          <div class="image">
+            <img class="img-box" src="Rule110.webp" height="400">
+          </div>
+          Here a little view of the rule 110 implemented in P5js
+          <div class="image">
+            <img class='img-box' src="Rule110_recorded.webp" height="400">
+          </div>
+          Here's the code of it:
+          <pre><code class="language-javascript">
+            &lt!DOCTYPE html>
+            &lthead>
+              &lttitle>Rule 110&lt/title>
+              &ltstyle>
+                .range {
+                  width: 400px;
+                  height: 15px;
+                  -webkit-appearance: none;
+                  background: rgb(255, 255, 255);
+                  outline: none;
+                  border-radius: 15px;
+                  overflow: hidden;
+                  box-shadow: inset 0 0 5px rgb(255, 255, 255);
+                }
+              
+                .range::-webkit-slider-thumb {
+                  -webkit-appearance: none;
+                  width: 15px;
+                  height: 15px;
+                  border-radius: 50%;
+                  background: #000000;
+                  cursor: pointer;
+                  border: 4px solid rgb(255, 255, 255);
+                  box-shadow: -407px 0 0 400px #ffffff;
+                }
+              
+                body{
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                  color: rgb(255, 255, 255);
+                }
+              &lt/style>
+              &ltscript src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js">&lt/script>
+              &ltscript>
+                let gameSpeed = 700;
+                let playing = false;
+                function switchState() {
+                  playing = !playing;
+                  let btn = document.getElementById('play_stop');
+                  btn.textContent = playing ? 'Stop' : 'Play';
+                }
+              
+                const extension = 50;
+                let universe = new Array(extension).fill(0).map(() => new Array(extension).fill(0));
+                universe[0][extension - 1] = 1;
+              
+                function drawCells(displaySize, cells) {
+                  const SCALE = displaySize / cells.length;
+                  for (let row = 0; row &lt cells.length; row++) {
+                    for (let col = 0; col &lt cells[row].length; col++) {
+                      stroke(52, 46, 55)
+                      if (cells[row][col] == 0) {
+                        fill(255, 255, 255);
+                        square(col * SCALE, row * SCALE, SCALE);
+                      } else {
+                        fill(0, 0, 0)
+                        square(col * SCALE, row * SCALE, SCALE);
+                      }
+                    }
+                  }
+                }
+                function next(cells, row){
+              for (let col = 0; col &lt cells[row].length; col++) {
+                let a = cells[row - 1]?.[col - 1] || 0;
+                let b = cells[row - 1]?.[col] || 0;
+                let c = cells[row - 1]?.[col + 1] || 0;
+                let neighboursAlive = `${a}${b}${c}`;
+                let currentState = cells[row][col]
+                let nextState = checkRules(currentState, neighboursAlive)
+                cells[row][col] = nextState
+              }
+              return cells;
+            }
+            
+            function checkRules(cellState, neighboursAlive){
+              const rule110 = {
+                '111': 0,
+                '110': 1,
+                '101': 1,
+                '100': 0,
+                '011': 1,
+                '010': 1,
+                '001': 1,
+                '000': 0,
+              }
+              return rule110[neighboursAlive];
+            }
+            
+                async function setup() {
+                  let cnv = createCanvas(800, 800);
+                  let SCALE = Math.floor(800/universe.length);
+                  background(255, 255, 255);
+                  fill(255, 255, 255)
+                  square(0, 0, 800);
+                  drawCells(800, universe);
+                  cnv.mouseClicked(() => {let row = Math.floor(mouseY/SCALE); let col = Math.floor(mouseX/SCALE); universe[row][col] = universe[row][col] == 1 ? 0 : 1; drawCells(800, universe)})
+                  let index = 1;
+                  while(true){
+                    if(playing){
+                      drawCells(800, universe);
+                      universe = next(universe, index);
+                      index++;
+                    }
+                    await new Promise(resolve => setTimeout(resolve, gameSpeed));
+                  }
+                }
+              &lt/script>
+              &lth1>Rule 110&lt/h1>
+              &lt!-- &ltbutton id='theme' onclick="javascript:switchTheme()">Switch Theme&lt/button> -->
+              &ltbutton id='play_stop' onclick="javascript:switchState()">Play&lt/button>
+              &lt!-- &ltbutton id='clear' onclick="javascript:clear()">Reset&lt/button> -->
+              &ltdiv>
+                &ltspan id="rangeValue">Speed:&lt/span>
+                &ltinput class="range" type="range"  value="700" min="100" max="1500" onchange="javascript:gameSpeed = 1600 - Number.parseInt(this.value)">&lt/input>
+              &lt/div>
+            &lt/head>
+              
+            &ltbody bgcolor="#3f3f40">
+            &lt/body>
+          </code></pre>
         </div>
       </li>
       <li class="list">
@@ -731,6 +1019,19 @@
         </p>
         <div class="answers">
           <p class="answer">ANSWER</p>
+          I mix my ideas of how to do it with some piece of code:
+          <pre><code class="language-javascript">
+            for(let x=1; x <= 112; x++){
+              if(x*11%113 == 1){
+                  console.log(x, 11*x);
+              }
+          }
+          </code></pre>
+          This is what ir returns:
+          <div class="image">
+            <img class="img-box" src="Excercise#19_code.webp" height="300">
+          </div>
+          Numbers are 72 and 792
         </div>
       </li>
       <li class="list">
@@ -788,6 +1089,22 @@
         </p>
         <div class="answers">
           <p class="answer">ANSWER</p>
+          <pre><code class="language-javascript">
+            function moveAllZeroes(array){
+              for(let i = 0; i < array.length; i++){
+                  let n = array[i];
+                  if(n == 0){
+                      array.splice(i, 1);
+                      array.push(0);
+                  }
+              }
+              return array;
+          }
+          </code></pre>
+          <p class='assignment'>And here is an example of what it returns:</p>
+          <div class="image">
+            <img class="img-box" src="moveAllZeroes_funtion_example.png" height="200">
+          </div>
         </div>
       </li>
       <li class="list">
@@ -796,6 +1113,50 @@
         </p>
         <div class="answers">
           <p class="answer">ANSWER</p>
+          <ol>
+            <li class='sublist'>
+              <div class="image"> 
+                <img class="image-box" src="CodeCombat1.webp" height="280">
+              </div>
+            <li class='sublist'>
+              <div class="image"> 
+                <img class="image-box" src="CodeCombat2.webp" height="280">
+              </div>
+            <li class='sublist'>
+              <div class="image"> 
+                <img class="image-box" src="CodeCombat3.webp" height="280">
+              </div>
+            <li class='sublist'>
+              <div class="image"> 
+                <img class="image-box" src="CodeCombat4.webp" height="280">
+              </div>
+            <li class='sublist'>
+              <div class="image"> 
+                <img class="image-box" src="CodeCombat5.webp" height="280">
+              </div>
+            <li class='sublist'>
+              <div class="image"> 
+                <img class="image-box" src="CodeCombat6.webp" height="280">
+              </div>
+            <li class='sublist'>
+              <div class="image"> 
+                <img class="image-box" src="CodeCombat7.webp" height="280">
+              </div>
+            <li class='sublist'>
+              <div class="image"> 
+                <img class="image-box" src="CodeCombat8.webp" height="280">
+              </div>
+            <li class='sublist'>
+              <div class="image"> 
+                <img class="image-box" src="CodeCombat9.webp" height="280">
+              </div>
+            <li class='sublist'>
+              <div class="image"> 
+                <img class="image-box" src="CodeCombat10.webp" height="280">
+              </div>
+            </li>
+          </ol>
+
         </div>
       </li>
     </ol>
