@@ -95,21 +95,21 @@
                 )
               )
             </code></pre>
-            After analyzing the code, it was too repetitive. I was using 4 times
-            the sum-of-squares function. So I made a second version that doesn't 
-            need to be so recurrent with that function. First, find the two 
-            largest numbers
+            After analyzing the code, it was too repetitive, and the intent of the code was obscured by the nested if statements. I was using 4 times
+            the sum-of-squares function. Here is a re-factoring that more clearly expresses the goal of the code.
             <pre><code>
               (define (two_largest_numbers a b c)
                 (if (> a b)
-                  (if (> b c) (a b)
-                    (a c)
+                  (if (> b c) (list a b)
+                    (list a c)
                   )  
-                  ()
+                  (if (> c a) (list b c)
+                      (list a b)
                 )  
-              )
+              ))
+              (define (add_largest_sqrs a b c)
+                (apply sum-of-squares (two_largest_numbers a b c)))
             </code></pre>
-            First we make a function that find the two largest numbers:
           </div>
         </div>
       </li>
@@ -176,11 +176,55 @@
         </div>
       </li>
       <li>
-        <p>
-          Exercise 1.6: 
+        <p class="exercise">
+          Exercise 1.6: Alyssa P. Hacker doesn’t see why if needs to
+          be provided as a special form. “Why can’t I just define it as
+          an ordinary procedure in terms of cond?” she asks. Alyssa’s
+          friend Eva Lu Ator claims this can indeed be done, and she
+          defines a new version of if:
+          <pre><code>
+            (define (new-if predicate then-clause else-clause)
+              (cond (predicate then-clause)
+                    (else else-clause)))
+          </code></pre>
         </p>
-        <div class="answer">
-          <img src="Newtons_Method.png">
+        <p class="exercise">
+          Eva demonstrates the program for Alyssa:
+        </p>
+        <pre><code>
+          (new-if (= 2 3) 0 5)
+          5
+          (new-if (= 1 1) 0 5)
+          0
+        </code></pre>
+        <p class="exercise">
+          Delighted, Alyssa uses new-if to rewrite the square-root
+          program:
+        </p>
+        <pre><code>
+          (define (sqrt-iter guess x)
+            (new-if (good-enough? guess x)
+                    guess
+                    (sqrt-iter (improve guess x) x)))
+        </code></pre>
+        <p class="exercise">
+          What happens when Alyssa attempts to use this to compute
+          square roots? Explain.
+        </p>
+        <div class="answer-block">
+          <p class="answer-header">
+            ANSWER
+          </p>
+          <div class="answer-content">
+            This version of square root with the new-if procedure instead of
+            using the special form if, would still be as accurate as the first
+            version. However, it is going to be slower, than the one that uses
+            the directly the if, because a special form only analyze the
+            alternative of the predicate, IF only the predicate is FALSE. On the
+            other hand a procedure will (no matter what) analyze all the
+            operands, this resulting in a much slower program.
+          </div>
+          <!-- <img src="Newtons_Method.png"> -->
         </div>
       </li>
     </ol>
