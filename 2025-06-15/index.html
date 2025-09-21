@@ -25,11 +25,36 @@
         font-family: monospace;
         color: #58588c;
       }
-
+      #background
+      {
+        z-index: -1;
+      }
     </style>
   </head>
   <body bgcolor="#000000">
-    <div class="content">
+    <script>
+      const background = document.getElementById("background")
+      const lambdaExpressions = [
+            "λx.(x+1)",
+            "λf.λx.f(x)",
+            "λx.λy.(x y)",
+            "λx.(x x)",
+            "λa.λb.(a+b)",
+            "λn.λf.λx.f^n(x)"
+      ]
+      for (let i = 0; i <= 200; i++){
+        const span = document.createElement("span")
+        span.textContent = lambdaExpressions[
+          Math.floor(Math.random() * lambdaExpressions.length)
+        ]
+        span.style.position = "absolute";
+        span.style.left = Math.random() * 100;
+        span.style.top = Math.random() * 100;
+        span.style.textShadow = "0 0 5px #a483ae, 0 0 10px #875296"
+        background.appendChild(span)
+      }
+    </script>
+    <div id="background" class="content">
       <h1 class="title">Cristofer Herrera - All The Lambda</h1>
       <div class="list-items">
         <ul>

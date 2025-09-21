@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scip1</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-okaidia.css" rel="stylesheet" />
     <style>
       .title
       {
@@ -27,6 +28,31 @@
       .exercise
       {
         font-weight: bold;
+        font-size: larger;
+      }
+      .exercise-coded-block{
+        background-color: #352a3c;
+        border: 1px solid #675275;
+        overflow: hidden;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 15px;
+        padding: 5px;
+        border-radius: 10px;
+      }
+      .exercise-coded{
+        background-color: #4f4b5d;
+        color: #E3D0DD;
+        padding: 2px 5px;
+        border-radius: 3px;
+        font-weight: normal;
+        font-size: 90%;
+      }
+      .answer-coded{
+        background-color: #42033D;
+        color: #B7D1DA;
+        padding: 0px 2px;
+        border-radius: 3px;
       }
       .links
       {
@@ -39,6 +65,7 @@
         display: flex;
         flex-direction: column;
         padding: 10px;
+        padding-bottom: 20px;
         border-radius: 5px;
       }
       .answer-header
@@ -48,17 +75,65 @@
         text-shadow: 
          0 0 10px #52528C,
          0 0 20px #6B6BA6
-
         ;
       }
       .answer-content
       {
         padding-left: 15px;
         color: #7C9EB2;
+        font-size: 15px;
+        
+      }
+      .code-block{
+        background-color: #352a3c;
+        border: 1px solid #675275;
+        overflow: hidden;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 15px;
+        padding: 5px;
+        border-radius: 10px;
+      }
+      .code-header{
+        color: #616e75;
+        font-size: 10px;
+        padding: 5px;
+      }
+      pre.code-text{
+        background-color: #352a3c;
+        padding-top: 0%;
+        padding-bottom: 0%;
+        font-size: 13px;
+        /* display: flex; */
+        /* color: #7C9EB2; */
+        /* overflow-x: auto; */
+        
+      }
+      code.language-lisp{
+        font-family:monospace;
+        color: #fbe5fb;
+      }
+      .img-container{
+        display: flex;
+        flex-direction: column;
+        width: 800px;
+        height: 100px;
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
+        margin: 10px;
+        padding: 10px;
+        font-size: 15px;
+        font-weight: bold;
+        background-color:#3D3A4B;
+        color: #BFB5B3;
+        border-radius: 5px;
       }
     </style>
   </head>
 <body bgcolor="#3D3A4B">
+  <script src='https://cdn.jsdelivr.net/npm/prismjs/prism.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/prismjs/components/prism-lisp.min.js'></script>
   <h1 class="title">Lisp, the forgotten programming language for AIs</h1>
   <p class="description">
     The <a class="links" href="https://web.mit.edu/6.001/6.037/sicp.pdf"> 
@@ -69,9 +144,9 @@
     Artificial Intelligence.
     </p>
     <div class="exercises">
-    <h3>
+    <h2>
       Questions from Chapter 1:
-    </h3>
+    </h2>
     <ol>
       <li>
         <p class='exercise'>
@@ -82,55 +157,78 @@
         <div class="answer-block">
           <h2 class="answer-header">ANSWER</h2>
           <div class="answer-content">
-            When first attempting to solve this exercise, I all the logic inside
-            one procedure. It looked like this:
-            <pre><code>
-              (define (add_larger_sqrs a b c)
-                (if (> a b)
-                    (if (> b c) (sum-of-squares a b)
-                        (sum-of-squares a c)
-                    )
-                (if (> a c) (sum-of-squares b a)
-                    (sum-of-squares b c))
-                )
-              )
-            </code></pre>
-            After analyzing the code, it was too repetitive, and the intent of the code was obscured by the nested if statements. I was using 4 times
-            the sum-of-squares function. Here is a re-factoring that more clearly expresses the goal of the code.
-            <pre><code>
-              (define (two_largest_numbers a b c)
-                (if (> a b)
-                  (if (> b c) (list a b)
-                    (list a c)
-                  )  
-                  (if (> c a) (list b c)
-                      (list a b)
-                )  
-              ))
-              (define (add_largest_sqrs a b c)
-                (apply sum-of-squares (two_largest_numbers a b c)))
-            </code></pre>
+            When first attempting to solve this exercise, all the logic was 
+            being held into one procedure. It looked like this:
+            <div class="code-block">
+              <div class="code-header">Scheme</div>
+              <pre class="code-text"><code class="language-lisp">
+(define (add_larger_sqrs a b c)
+  (if (> a b)
+      (if (> b c) (sum-of-squares a b)
+          (sum-of-squares a c)
+      )
+  (if (> a c) (sum-of-squares b a)
+      (sum-of-squares b c))
+  )
+)
+              </code></pre>
+            </div>
+            After analyzing the code, it was too repetitive, and the intent of
+            the code was obscured by the nested <span class=
+            "answer-coded">if</span> statements. I was using 4 times the 
+            sum-of-squares function. Here is a re-factoring that more clearly
+            expresses the goal of the code.
+            <div class="code-block">
+              <div class="code-header">Scheme</div>
+              <pre class="code-text"><code class="language-lisp">
+  (define (two_largest_numbers a b c)
+  (if (> a b)
+    (if (> b c) (list a b)
+      (list a c)
+    )  
+    (if (> c a) (list b c)
+        (list a b)
+  )  
+  ))
+  (define (add_largest_sqrs a b c)
+  (apply sum-of-squares (two_largest_numbers a b c)))
+              </code></pre>
+            </div>
           </div>
         </div>
       </li>
       <li>
         <p class="exercise"> Exercise 1.4: Observe that our model of evaluation 
-          allows for combinations whose operators are compound expressions. Use 
-          this observation to describe the behavior of the following procedure:
+          allows for combinations whose <span class=
+          'exercise-coded'>operators</span> are compound expressions. Use this
+          observation to describe the behavior of the following procedure:
+          <div class="code-block">
+            <div class="code-header">Scheme</div>
+            <pre class="code-text"><code class="language-lisp">
+(define (a-plus-abs-b a b)
+  ((if (> b 0) + -) a b))
+            </code></pre>
+          </div>
         </p>
         <div class="answer-block">
           <h2 class="answer-header">ANSWER</h2>
           <div class="answer-content">
             In order to analyze the behavior of: 
-            <pre>
-              (define (a-plus-abs-b a b)
-                ((if (> b 0) + -) a b))
-            </pre>
+            <div class="code-block">
+              <div class="code-header">Scheme</div>
+              <pre class="code-text"><code class="language-lisp">
+(define (a-plus-abs-b a b)
+  ((if (> b 0) + -) a b))
+              </code></pre>
+            </div>
             Consider a simpler example: 
-            <pre>
-              (define (a-plus-b a b)
-                 (+ a b))
-            </pre>
+            <div class="code-block">
+              <div class="code-header">Scheme</div>
+              <pre class="code-text"><code class="language-lisp">
+(define (a-plus-b a b)
+    (+ a b))
+              </code></pre>
+            </div>
             The + operation is clearly visible; the point of the exercise is to 
             observe that in the a-plus-abs-b procedure (a.k.a. function) the
             actual operation performed is not a simple + or -, but is something
@@ -140,37 +238,77 @@
       <li>
         <p class="exercise"> 
           Exercise 1.5: Ben Bitdiddle has invented a test to 
-          determine whether the interpreter he is faced with is using 
-          applicative-order evaluation or normal-order evaluation. He defines 
-          the following two procedures:
+          determine whether the interpreter he is faced with is using
+          <span class='exercise-coded'>applicative-order</span>
+          evaluation or <span class='exercise-coded'>normal-order</span>
+          evaluation. He defines the following two procedures:
+          <div class="code-block">
+            <div class="code-header">Scheme</div>
+            <pre class="code-text"><code class="language-lisp">
+(define (p) (p))
+(define (test x y)
+  (if (= x 0) 0 y))
+            </code></pre>
+          </div>
+        </p>
+        <p class="exercise">
+          Then he evaluates the expression:
+          <div class="code-block">
+            <div class="code-header">Scheme</div>
+            <pre class="code-text"><code class="language-lisp">
+(define (p) (p))
+(define (test x y)
+  (if (= x 0) 0 y))
+            </code></pre>
+          </div>
+        </p>
+        <p class="exercise">
+          What behavior will Ben observe with an interpreter that uses
+          <span class='exercise-coded'>applicative-order</span> evaluation? What behavior will he observe with an
+          interpreter that uses normal-order evaluation? Explain your answer.
+          (Assume that the evaluation rule for the special form if is the same
+          whether the interpreter is using normal or applicative order: The
+          predicate expression is evaluated first, and the result determines 
+          whether to evaluate the consequent or the alternative expression.)
         </p>
         <div class="answer-block">
           <h2 class="answer-header">ANSWER</h2>
           <div class="answer-content">
             In order to solve this exercise we analyze how the procedure would 
-            be intrepreted using normal-order evaluation:
-            <pre><code>
-              (test 0 (p))
-              (if (= 0 0) 0 (p))
-                    0
-            </code></pre>
+            be intrepreted using normal-order evaluation <span 
+            style="font-weight: bold;">(note that this is not a
+            straight scheme program. It's an interpretation of the normal-order
+            evaluation for a real scheme program)</span>:
+            <div class="code-block">
+              <div class="code-header">normal-order evaluation</div>
+              <pre class="code-text"><code class="language-lisp">
+(test 0 (p))
+  (if (= 0 0) 0 (p))
+        0
+              </code></pre>
+            </div>
             <p>
               As we see in the example above, the normal-order evaluation 
-              doesn't care the value of p. It just gives the answer of 0. 
-              However, let's now do the applicative-order evaluation for this 
+              doesn't care for the value of p. It just gives the answer of 0. 
+              However, let's now do the <span class='exercise-coded'>applicative-order</span> evaluation for this 
               expresion.
             </p>
-            <pre><code>
-              (test 0 (p))
-            </code></pre>
+            <div class="code-block">
+              <pre class="code-text"><code class="language-lisp">
+(test 0 (p))
+              </code></pre>
+            </div>
             <div style="display: flex; flex-direction: row;">
               <p>
-                This code causes an infinite loop. Below is what it looks like 
-                at the bottom of the screen when I run the code using DrRacket. 
-                This shows the first 10 seconds of what I see when I run the 
-                code (the video loops).
+                When running this command, it will cause an infinite loop. At
+                the right is shown what it looks like at the bottom of the
+                screen when I run the code using DrRacket. This shows the first
+                10 seconds of what I see when I run the code (the video loops).
               </p>
-              <img style="width:25%;" src="y.webp">
+              <div class="img-container">
+                DrRacket's bottom of the screen overview
+                <img style="width:80%;" src="y.webp">
+              </div>
           </div>
           </div>
         </div>
@@ -182,39 +320,46 @@
           an ordinary procedure in terms of cond?” she asks. Alyssa’s
           friend Eva Lu Ator claims this can indeed be done, and she
           defines a new version of if:
-          <pre><code>
-            (define (new-if predicate then-clause else-clause)
-              (cond (predicate then-clause)
-                    (else else-clause)))
-          </code></pre>
+          <div class="code-block">
+            <div class="code-header">Scheme</div>
+            <pre class="code-text"><code class="language-lisp">
+(define (new-if predicate then-clause else-clause)
+  (cond (predicate then-clause)
+        (else else-clause)))
+            </code></pre>
+          </div>
         </p>
         <p class="exercise">
           Eva demonstrates the program for Alyssa:
         </p>
-        <pre><code>
-          (new-if (= 2 3) 0 5)
-          5
-          (new-if (= 1 1) 0 5)
-          0
-        </code></pre>
+        <div class="code-block">
+            <div class="code-header">Scheme (demonstration of the program)</div>
+            <pre class="code-text"><code class="language-lisp">
+(new-if (= 2 3) 0 5)
+5
+(new-if (= 1 1) 0 5)
+0
+            </code></pre>
+          </div>
         <p class="exercise">
           Delighted, Alyssa uses new-if to rewrite the square-root
           program:
         </p>
-        <pre><code>
-          (define (sqrt-iter guess x)
-            (new-if (good-enough? guess x)
-                    guess
-                    (sqrt-iter (improve guess x) x)))
-        </code></pre>
+        <div class="code-block">
+            <div class="code-header">Scheme</div>
+            <pre class="code-text"><code class="language-lisp">
+(define (sqrt-iter guess x)
+  (new-if (good-enough? guess x)
+          guess
+          (sqrt-iter (improve guess x) x)))
+            </code></pre>
+          </div>
         <p class="exercise">
           What happens when Alyssa attempts to use this to compute
           square roots? Explain.
         </p>
         <div class="answer-block">
-          <p class="answer-header">
-            ANSWER
-          </p>
+          <h2 class="answer-header">ANSWER</h2>
           <div class="answer-content">
             This version of square root with the new-if procedure instead of
             using the special form if, would still be as accurate as the first
