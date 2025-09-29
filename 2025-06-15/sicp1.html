@@ -276,9 +276,9 @@
           <div class="answer-content">
             In order to solve this exercise we analyze how the procedure would 
             be intrepreted using normal-order evaluation <span 
-            style="font-weight: bold;">(note that this is not a
-            straight scheme program. It's an interpretation of the normal-order
-            evaluation for a real scheme program)</span>:
+            style="font-weight: bold;">(note this just an interpretation of the
+            steps of the normal-order evaluation for a real scheme program)
+            </span>:
             <div class="code-block">
               <div class="code-header">normal-order evaluation</div>
               <pre class="code-text"><code class="language-lisp">
@@ -294,16 +294,17 @@
               expresion.
             </p>
             <div class="code-block">
+              <div class="code-header">applicative-order evaluation</div>
               <pre class="code-text"><code class="language-lisp">
 (test 0 (p))
+∞
               </code></pre>
             </div>
             <div style="display: flex; flex-direction: row;">
               <p>
                 When running this command, it will cause an infinite loop. At
                 the right is shown what it looks like at the bottom of the
-                screen when I run the code using DrRacket. This shows the first
-                10 seconds of what I see when I run the code (the video loops).
+                screen when I run the code using DrRacket.
               </p>
               <div class="img-container">
                 DrRacket's bottom of the screen overview
@@ -371,6 +372,76 @@
           </div>
           <!-- <img src="Newtons_Method.png"> -->
         </div>
+      </li>
+      <li>
+        <p class="exercise">
+          Exercise 1.7:
+        </p>
+        <ol>
+          <li>
+            <p class="exercise">
+              Exercise 1.7.1: The good-enough? test used in computing square
+              roots will not be very eﬀective for finding the square roots of
+              very small numbers. Also, in real computers, arith-metic
+              operations are almost always performed with limited precision.
+              This makes our test inadequate for very large numbers. Explain
+              these statements, with examples showing how the test fails for
+              small and large numbers.
+            </p>
+            <div class="answer-block">
+              <h2 class="answer-header">ANSWER</h2>
+              <div class="answer-content">
+                <h3>
+                  The good-enough? test is not effective for finding square
+                  roots of very small numbers:
+                </h3>
+                <p style="padding-left: 10px; padding-right: 5px;">
+                  This statement is the easy one to perceive at first glance.
+                  The issue with the good-enough? procedure is that it compares
+                  the absolute difference of the guess, and the x value, against
+                  a specific quantity such as 0.001. Thus, when it receives as
+                  input a number that is smaller than that quantity, at a
+                  certain point the guess will be enough to satisfy the
+                  condition when the arithmetic is done in the good-enough?
+                  procedure. However, it will be far away to the real square
+                  root.
+                </p>
+                <h3>
+                  In real computers arithmetics operations are almost always
+                  performed with limited precision, making the test poor for
+                  calculating large numbers.
+                </h3>
+                <p style="padding-left: 10px; padding-right: 5px;">
+                  This problem is related to floating-point precision. As 
+                  mentioned before, in computers, huge numbers are not affected
+                  by smaller numbers at a certain distance. So, <span
+                  class="exercise-coded">(< (abs (- square guess)) 0.001)</span>
+                  the arithmetic of this procedure struggle when having huge
+                  floating-point numbers, even when the number is close to the
+                  real square root, the absolute difference is never going to be
+                  less than 0.001. Thus causing an infinite loop, because or
+                  improve procedure is also going to struggle with
+                  floating-point arithmetic.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <p class="exercise">
+              Exercise 1.7.2: An alterna-tive strategy for implementing 
+              good-enough? is to watch how guess changes from one iteration to 
+              the next and to stop when the change is a very small fraction of 
+              the guess. Design a square-root procedure that uses this kind of
+              end test. Does this work better for small and large numbers?
+            </p>
+            <div class="answer-block">
+              <h2 class="answer-header">ANSWER</h2>
+              <div class="answer-content">
+                
+              </div>
+            </div>
+          </li>
+        </ol>
       </li>
     </ol>
   </div>
