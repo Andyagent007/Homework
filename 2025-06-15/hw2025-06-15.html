@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link 
+    rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.css"
+    >
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hw2025-06-15</title>
+    <style>
+    .title{
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      color: #c9bf91;
+    }
+    .instructions{
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      color:rgb(231, 231, 183);
+    }
+    div.assignment{
+      margin: 20px;
+      padding: 0px 20px 0px 20px;
+      background-color: #823457;
+      border-radius: 8px;
+      border-color: rgba(251, 252, 194, 0.52);
+      border-style: groove;
+    }
+    div.answer{
+      background-color: #f0eaaa;
+      border-radius: 10px; 
+      color:#3e2530;
+      margin: 20px;
+      padding: 5px 10px 5px 10px;
+      padding-bottom: 0px;
+    }
+    h2.answer{
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      text-align: center;
+      background-color: #c3bb7a;
+        border-radius: 10px;
+        border-style: groove;
+        border-color: darkgoldenrod;
+        padding: 5px;
+        font-size:x-large;
+        font-weight:bolder;
+        color: #472b3a
+    }
+    span.code{
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        background: rgba(97, 131, 131, 0.5);
+        border-radius: 2pt;
+        color: rgb(18, 0, 100);
+        padding: 0.5px;
+    }
+    p.text{
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      white-space: pre-wrap;
+      margin: 10px;
+      white-space: pre-line;
+    }
+    </style>
+  </head>
+  <body bgcolor="#47242e">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+    <h1 class="title">Homework Due June 15, 2025</h1>
+    <div class="assignment">
+    <p class='instructions'>Go to the <A href="https://lambdacalc.dev" style="color: #81a99e;">lambda calculus calculator</A> and get as far as you can translating each lambda calculus expression into javascript functions. Include screenshots of your experiments with the calculator.</p> 
+    <div class="answer">
+      <h2 class="answer">ANSWER</h2>
+      <p class="text">I had some help for these first four lambda calculus expressions. They were done in a meeting with my brother. The first two lambda calculus expressions were the easiest ones. They are practically booleans the <span class='code'>⊤</span> being equivalent of true and <span class="code">⊥</span> equivalent to false. Here is how I wrote it in JavaScript languaje:
+      </p>
+      <pre><code class="language-javascript">
+        //First expression:
+        function T(x, y){
+            return x
+        }
+        //Second expression:
+        function F(x, y){
+            return y;
+        }
+      </code></pre>
+      <p class="text">
+        For the third one, we made a code that we tought it worked but one we tried to follow the same logic for the second expression, we realized that it was not correct. So we replace it and then we were able to do the fourth one. In the next code block I will be showing the first and the right code for the <span class='code'>∧</span> (and) expression, and also the code for the <span class='code'>∨</span> (or) expression.
+      </p>
+      <pre><code class='language-javascript'>
+        //This is the first code for the and expression:
+        function and(p, q){
+            return p(q);
+        }
+        //And this is the right one:
+        function and(p, q){
+            return p(q, p);
+        }
+        //∨ expression code:
+        function or(p, q){
+            return p(p, q);
+        }
+      </p></code></pre>x`
+    </div>
+    </div>
+  </body>
+</html>
