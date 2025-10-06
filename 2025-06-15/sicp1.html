@@ -251,7 +251,7 @@
           evaluation or <span class='exercise-coded'>normal-order</span>
           evaluation. He defines the following two procedures:
           <div class="snippet-code">
-            <div class="snippet-code-header">Scheme</div>
+            <div class="snippet-code-header">R5RS Scheme</div>
             <pre class="snippet-code-text"><code class="language-lisp">
 (define (p) (p))
 (define (test x y)
@@ -262,11 +262,9 @@
         <p class="exercise">
           Then he evaluates the expression:
           <div class="snippet-code">
-            <div class="snippet-code-header">Scheme</div>
+            <div class="snippet-code-header">R5RS Scheme</div>
             <pre class="snippet-code-text"><code class="language-lisp">
-(define (p) (p))
-(define (test x y)
-  (if (= x 0) 0 y))
+(test 0 (p))
             </code></pre>
           </div>
         </p>
@@ -285,7 +283,7 @@
           <h2 class="answer-header">ANSWER</h2>
           <div class="answer-content">
             In order to solve this exercise we analyze how the procedure would 
-            be intrepreted using <span class='exercise-coded'>
+            be intrepreted using <span class='answer-coded'>
             normal-order evaluation</span><span style="font-weight: bold;">(note
             this just an interpretation of the steps of the normal-order
             evaluation for a real scheme program)</span>:
