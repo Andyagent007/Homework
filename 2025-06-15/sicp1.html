@@ -545,7 +545,7 @@ exactSqrt * exactSqrt // the value returned is 9.999999999999998e+48
           </li>
           <li>
             <p class="exercise">
-              Exercise 1.7.2: An alterna-tive strategy for implementing 
+              Exercise 1.7.2: An alternative strategy for implementing
               good-enough? is to watch how guess changes from one iteration to 
               the next and to stop when the change is a very small fraction of 
               the guess. Design a square-root procedure that uses this kind of
@@ -554,7 +554,49 @@ exactSqrt * exactSqrt // the value returned is 9.999999999999998e+48
             <div class="answer-block">
               <h2 class="answer-header">ANSWER</h2>
               <div class="answer-content">
-                
+                In order to make this change, the only part of the code that has
+                to be modified is the <span class='answer-coded'>
+                good-enough?</span> procedure to make it execute a relative
+                difference with the <span class='answer-coded'>old-guess</span>,
+                and the <span class='answer-coded'>current-guess</span>. Also,
+                the <span class='answer-coded'>if</span> is going to do <span
+                class='answer-coded'>good-enough?</span> of the <span 
+                class="answer-coded">guess</span>, and the improved
+                <span class="answer-coded">guess</span>:
+                <div class="snippet-code">
+                  <div class="snippet-code-header">Scheme</div>
+                  <pre class="snippet-code-text"><code class="language-lisp">
+(define (good-enough? old-guess current-guess)
+  (< (/ (abs (- current-guess old-guess)) old-guess) 0.001))
+
+(define (sqrt-iter guess x)
+  (if (good-enough? guess (improve guess x))
+      guess
+      (sqrt-iter (improve guess x) x)))
+                  </code></pre>
+                </div>
+                The full code would look like this:
+                <div class="snippet-code">
+                  <div class="snippet-code-header">Scheme</div>
+                  <pre class="snippet-code-text"><code class="language-lisp">
+(define (sqrt-iter guess x)
+  (if (good-enough? guess (improve guess x))
+      guess
+      (sqrt-iter (improve guess x) x)))
+
+(define (improve guess x)
+  (average guess (/ x guess)))
+
+(define (average x y)
+  (/ (+ x y) 2))
+
+(define (good-enough? old-guess current-guess)
+  (< (/ (abs (- current-guess old-guess)) old-guess) 0.001))
+
+(define (square-root x)
+  (sqrt-iter 1.0 x))
+                  </code></pre>
+                </div>
               </div>
             </div>
           </li>
