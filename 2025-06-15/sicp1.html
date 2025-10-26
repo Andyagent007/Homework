@@ -137,6 +137,7 @@
   <script src='https://cdn.jsdelivr.net/npm/prismjs/prism.js'></script>
   <script src='https://cdn.jsdelivr.net/npm/prismjs/components/prism-lisp.min.js'></script>
   <script src='https://cdn.jsdelivr.net/npm/prismjs/components/prism-javascript.min.js'></script>
+  
   <h1 class="title">Lisp, the forgotten programming language for AIs</h1>
   <p class="description">
     The <a class="links" href="https://web.mit.edu/6.001/6.037/sicp.pdf"> 
@@ -165,7 +166,7 @@
             looked like this:
             <div class="snippet-code">
               <div class="snippet-code-header">Scheme</div>
-              <pre class="snippet-code-text"><code class="language-lisp">
+              <pre class="snippet-code-text"><code class="language-scheme">
 (define (add_larger_sqrs a b c)
   (if (> a b)
       (if (> b c) (sum-of-squares a b)
@@ -184,7 +185,7 @@
             is a re-factoring that more clearly expresses the goal of the code.
             <div class="snippet-code">
               <div class="snippet-code-header">Scheme</div>
-              <pre class="snippet-code-text"><code class="language-lisp">
+              <pre class="snippet-code-text"><code class="language-scheme">
   (define (two_largest_numbers a b c)
   (if (> a b)
     (if (> b c) (list a b)
@@ -209,7 +210,7 @@
           <span class='exercise-coded'>procedure:</span>
           <div class="snippet-code">
             <div class="snippet-code-header">Scheme</div>
-            <pre class="snippet-code-text"><code class="language-lisp">
+            <pre class="snippet-code-text"><code class="language-scheme">
 (define (a-plus-abs-b a b)
   ((if (> b 0) + -) a b))
             </code></pre>
@@ -221,7 +222,7 @@
             In order to analyze the behavior of: 
             <div class="snippet-code">
               <div class="snippet-code-header">Scheme</div>
-              <pre class="snippet-code-text"><code class="language-lisp">
+              <pre class="snippet-code-text"><code class="language-scheme">
 (define (a-plus-abs-b a b)
   ((if (> b 0) + -) a b))
               </code></pre>
@@ -229,7 +230,7 @@
             Consider a simpler example: 
             <div class="snippet-code">
               <div class="snippet-code-header">Scheme</div>
-              <pre class="snippet-code-text"><code class="language-lisp">
+              <pre class="snippet-code-text"><code class="language-scheme">
 (define (a-plus-b a b)
     (+ a b))
               </code></pre>
@@ -252,7 +253,7 @@
           evaluation. He defines the following two procedures:
           <div class="snippet-code">
             <div class="snippet-code-header">R5RS Scheme</div>
-            <pre class="snippet-code-text"><code class="language-lisp">
+            <pre class="snippet-code-text"><code class="language-scheme">
 (define (p) (p))
 (define (test x y)
   (if (= x 0) 0 y))
@@ -263,7 +264,7 @@
           Then he evaluates the expression:
           <div class="snippet-code">
             <div class="snippet-code-header">R5RS Scheme</div>
-            <pre class="snippet-code-text"><code class="language-lisp">
+            <pre class="snippet-code-text"><code class="language-scheme">
 (test 0 (p))
             </code></pre>
           </div>
@@ -289,7 +290,7 @@
             evaluation for a real scheme program)</span>:
             <div class="snippet-code">
               <div class="snippet-code-header">normal-order evaluation</div>
-              <pre class="snippet-code-text"><code class="language-lisp">
+              <pre class="snippet-code-text"><code class="language-scheme">
 (test 0 (p))
   (if (= 0 0) 0 (p))
         0
@@ -304,7 +305,7 @@
             </p>
             <div class="snippet-code">
               <div class="snippet-code-header">applicative-order evaluation</div>
-              <pre class="snippet-code-text"><code class="language-lisp">
+              <pre class="snippet-code-text"><code class="language-scheme">
 (test 0 (p))
 ∞
               </code></pre>
@@ -334,7 +335,7 @@
           if:
           <div class="snippet-code">
             <div class="snippet-code-header">Scheme</div>
-            <pre class="snippet-code-text"><code class="language-lisp">
+            <pre class="snippet-code-text"><code class="language-scheme">
 (define (new-if predicate then-clause else-clause)
   (cond (predicate then-clause)
         (else else-clause)))
@@ -346,7 +347,7 @@
         </p>
         <div class="snippet-code">
             <div class="snippet-code-header">Scheme (demonstration of the program)</div>
-            <pre class="snippet-code-text"><code class="language-lisp">
+            <pre class="snippet-code-text"><code class="language-scheme">
 (new-if (= 2 3) 0 5)
 5
 (new-if (= 1 1) 0 5)
@@ -359,7 +360,7 @@
         </p>
         <div class="snippet-code">
             <div class="snippet-code-header">Scheme</div>
-            <pre class="snippet-code-text"><code class="language-lisp">
+            <pre class="snippet-code-text"><code class="language-scheme">
 (define (sqrt-iter guess x)
   (new-if (good-enough? guess x)
           guess
@@ -440,7 +441,7 @@
                   <div class="snippet-code">
                     <div class="snippet-code-header">normal-order
                       evaluation</div>
-                    <pre class="snippet-code-text"><code class="language-lisp">
+                    <pre class="snippet-code-text"><code class="language-scheme">
 (< (abs (- (square 0.03125000009590625) 0.000000000009)) 0.001)
 (< (abs (- (* 0.03125000009590625 0.03125000009590625) 0.000000000009)) 0.001)
 (< (abs (- 0.0009765625059941405 0.000000000009)) 0.001)
@@ -515,7 +516,7 @@ exactSqrt * exactSqrt // the value returned is 9.999999999999998e+48
                       <div class="snippet-code-header">normal-order
                         evaluation</div>
                       <pre class="snippet-code-text"><code 
-                        class="language-lisp">
+                        class="language-scheme">
 (< (abs (- (square guess) x)) 0.001)
 (< (abs (- (square 3.162308428500741e+24) 1e49)) 0.001)
 (< (abs (- (* 3.162308428500741e+24 3.162308428500741e+24) 1e49)) 0.001)
@@ -565,7 +566,7 @@ exactSqrt * exactSqrt // the value returned is 9.999999999999998e+48
                 <span class="answer-coded">guess</span>:
                 <div class="snippet-code">
                   <div class="snippet-code-header">Scheme</div>
-                  <pre class="snippet-code-text"><code class="language-lisp">
+                  <pre class="snippet-code-text"><code class="language-scheme">
 (define (good-enough? old-guess current-guess)
   (< (/ (abs (- current-guess old-guess)) old-guess) 0.001))
 
@@ -578,7 +579,7 @@ exactSqrt * exactSqrt // the value returned is 9.999999999999998e+48
                 The full code would look like this:
                 <div class="snippet-code">
                   <div class="snippet-code-header">Scheme</div>
-                  <pre class="snippet-code-text"><code class="language-lisp">
+                  <pre class="snippet-code-text"><code class="language-scheme">
 (define (sqrt-iter guess x)
   (if (good-enough? guess (improve guess x))
       guess
@@ -600,8 +601,105 @@ exactSqrt * exactSqrt // the value returned is 9.999999999999998e+48
               </div>
             </div>
           </li>
+          <li>
+            <p class="exercise">
+              Newton’s method for cube roots is based on the fact that if 
+              <span class='exercise-coded'>y</span> is an approximation to the
+              cube root of <span class='exercise-coded'>x</span>, then a better
+              approximation is given by the value:
+            </p>
+              <div class="exercise">
+                <math display="block">
+                  <mfrac>
+                    <mrow>
+                      <mrow>
+                        <mi>x</mi>
+                        <mo>/</mo>
+                        <msup>
+                          <mi>y</mi><mn>2</mn>
+                        </msup>
+                      </mrow>
+                      <mo>+</mo>
+                      <mrow>
+                        <mn>2</mn><mi>y</mi>
+                      </mrow>
+                    </mrow>
+                    <mn>3</mn>
+                  </mfrac>
+                </math>
+              </div>
+            <p class="exercise">
+              Use this formula to implement a cube-root procedure analogous to
+              the square-root procedure.
+            </p>
+            <div class="answer-block">
+              <h3 class="answer-header">ANSWER</h3>
+              <div class="answer-content">
+                For the creation of this code first of all we have to understand
+                what the exercise is telling. Through the analysis of the
+                indication, we can state the following conclusion: <span
+                class="answer-coded">y</span> is our <span class='answer-coded'>
+                guess</span> since the indications are: based on the fact that
+                <span class='answer-coded'>y</span> is an approximation of the
+                cube root for <span class="answer-coded">x</span> with the
+                shown formula we get a better approximation. Therefore like we
+                can say <span class="answer-coded">guess == y</span>.
+                Now that we are concious of that, we can create a function that
+                serves as the use of the formula:
+                <div class="snippet-code">
+                  <div class="snippet-code-header">Scheme</div>
+                  <pre class="snippet-code-text"><code class="language-lisp">
+(define (approximate y x)
+  (/ (+ (/ x (* y y)) (* 2 y)) 3))
+                  </code></pre>
+                </div>
+                Afterwards, we can now call our <span class="answer-coded">
+                approximate</span> function (procedure) and as we mentioned,
+                <span class='answer-coded'>guess</span> in this case will be
+                used as the second parameter of that function, the <span
+                class='answer-coded'>y</span>. So we can just replicate the
+                logic for the <span class='answer-coded'>square-root</span>
+                function, but in this case, replacing <span 
+                class="answer-coded">improve</span> for <span 
+                class="answer-coded">approximate</span>. So the final program
+                looks like this:
+                <div class="snippet-code">
+                  <div class="snippet-code-header">Scheme</div>
+                  <pre class="snippet-code-text"><code class="language-lisp">
+(define (cbrt-iter guess x)
+  (if (good-enough? guess (approximate guess x))
+      guess
+      (cbrt-iter (approximate guess x) x)))
+
+(define (cube-root x)
+  (cbrt-iter 1.0 x))
+                  </code></pre>
+                </div>                
+              </div>
+            </div>
+          </li>
         </ol>
       </li>
     </ol>
   </div>
+  <script>
+    Prism.languages.scheme = Prism.languages.extend('lisp', {
+      keyword: /\b(?:define|lambda|if|cond|else|let|letrec|begin|quote|set!|and|or|not|car|cdr|cons|list|map|apply|eq\?|equal\?|null\?|display|newline|call\/cc)\b/,
+      builtin: {
+        // note: no native lookbehind, use Prism's flag
+        pattern: /(^|[()\s])(?:\+|\-|\*|\/|=|<=|>=|<|>)(?=[()\s]|$)/,
+        lookbehind: true,
+        greedy: true
+      },
+      boolean: /#t|#f/,
+      number: /\b\d+(?:\.\d+)?\b/
+    });
+
+    // ensure builtins come before punctuation
+    Prism.languages.insertBefore('scheme', 'punctuation', {
+      operator: Prism.languages.scheme.builtin
+    });
+
+    Prism.highlightAll();
+  </script>
 </body>
