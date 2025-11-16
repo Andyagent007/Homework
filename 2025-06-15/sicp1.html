@@ -756,33 +756,34 @@ exactSqrt * exactSqrt // the value returned is 9.999999999999998e+48
               different too; it is iterative. However, there are another few
               reasons why the process is iterative besides the shape. We can
               notice a big difference between the recursive one (the first 
-              example), and this one (iterative). 
+              example), and this one (iterative). Let's elaborate:
             </p>
             <p style="padding-left: 10px; padding-right: 5px;">
               The recursive process as
               mentioned before, needs to keep track of all the values every
-              state. Let's put it like this, if you would want to execute one of
-              the state in the recursive example, say <span 
+              state. We can think of it like this, if you would want to execute
+              one of the state individually for the recursive example, say <span 
               class='answer-coded'>(inc (inc (+ 2 5)))</span> in the
               <span class='answer-coded'>interpreter</span>. Because of the way
-              a recursive process is written, no matter if I want to execute a
-              single calculation within the process itself; at the end it will
-              always end up looking like the illustration of the recursive
-              process, <span class='answer-coded'>(inc (inc (+ 2 5)))</span> Is
-              going to be adding more <span class="answer-coded">inc</span>
-              procedures to the left until <span class='answer-coded'>a</span>,
-              in this case <span class='answer-coded'>2</span> equals 0. 
-              Therefore is always going to have this arrow shape. Executing one
-              state is always going to end up recursing, unless the first value 
-              (<span class='answer-coded'>a</span>) is 0. On the other hand, in
-              the iterative process every state is an individual calculation.
-              For example, the state <span class='answer-coded'>
-              (+ (dec 2) (inc 7))</span> This can be done in the interpreter
-              without any recursion. In this procedure, the number at the left,
-              the one that is decrementing, works as a counter. Each time this
-              counter decrement by one, the number at the right is going to
-              increment by one. However each state, contains its own fixed 
-              value.
+              a recursive process is meant to be written, no matter if I want to
+              execute a single calculation within the process itself; unless the
+              parameters meet the stoping condition, it will always end up
+              calling itself recursively, and therefore looking like the first
+              illustration (recursive process) until the condition make it stop.
+              On the other hand, in the iterative process, there is always track
+              of the every value. Thus, every state can be performed as
+              individual computation. If we choose a random state for the
+              iterative procedure like: <span class='answer-coded'>
+              (+ (dec 2) (inc 7))</span> as an example. This can be done in the
+              interpreter without any recursion, and that is another main
+              difference between recursive and iterative procedures.
+              Additionally, to understand better how the iterative procedure
+              differs from the recursive; in this procedure the number at the
+              left (The one that is decrementing), works as a counter. Each time
+              this "counter" decrement by one, the number at the right is going
+              to increment by one. Unlike the recursive one, each state contains 
+              its own fixed value, and the number of iteration is determined by
+              counter.
             </p>
           </div>
         </div>
