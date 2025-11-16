@@ -992,7 +992,18 @@ exactSqrt * exactSqrt // the value returned is 9.999999999999998e+48
               </code></pre>
             </div>
             <h3>Iterative procedure example</h3>
-            Working on it...
+            <div class="snippet-code">
+              <div class="snippet-code-header">Scheme</div>
+              <pre class="snippet-code-text"><code class="language-lisp">
+(define (iterative-pascal-triangle n)
+  (pascal-traingle-iter 1 1 n))
+
+(define (pascal-triangle-iter a b counter)
+  (if (= counter 0)
+      b
+      (pascal-triangle-iter (* 2 a) a (- counter 1))))
+              </code></pre>
+            </div>
           </div>
         </div>
       </li>
