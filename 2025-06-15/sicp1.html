@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scip1</title>
     <link href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-okaidia.css" rel="stylesheet" />
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <style>
       .title
       {
@@ -828,7 +829,7 @@ exactSqrt * exactSqrt // the value returned is 9.999999999999998e+48
         <p class="exercise">
           Give concise mathematical definitions for the functions computed by
           the procedures f, g, and h for positive integer values of n. For
-          example, (k n) computes 5n2.
+          example, (k n) computes 5n<sup>2</sup>.
         </p>
         <div class="answer-block">
           <h3 class="answer-header">ANSWER</h3>
@@ -858,6 +859,139 @@ exactSqrt * exactSqrt // the value returned is 9.999999999999998e+48
 1024
               </code></pre>
             </div>
+            <div class="snippet-code">
+              <div class="snippet-code-header">normal-order evaluation</div>
+              <pre class="snippet-code-text"><code class="language-lisp">
+(A 2 4)
+(A 1 (A 2 3))
+(A 1 (A 1 (A 2 2)))
+(A 1 (A 1 (A 1 (A 2 1))))
+(A 1 (A 1 (A 1 2)))
+(A 1 (A 1 (A 0 (A 1 1))))
+(A 1 (A 1 (A 0 2)))
+(A 1 (A 1 4))
+(A 1 (A 0 (A 1 3)))
+(A 1 (A 0 (A 0 (A 1 2))))
+(A 1 (A 0 (A 0 (A 0 (A 1 1)))))
+(A 1 (A 0 (A 0 (A 0 2))))
+(A 1 (A 0 (A 0 4)))
+(A 1 (A 0 8))
+(A 1 16)
+(A 0 (A 1 15))
+(A 0 (A 0 (A 1 14)))
+(A 0 (A 0 (A 0 (A 1 13))))
+(A 0 (A 0 (A 0 (A 0 (A 1 12)))))
+(A 0 (A 0 (A 0 (A 0 (A 0 (A 1 11))))))
+(A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 1 10)))))))
+(A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 1 9))))))))
+(A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 1 8)))))))))
+(A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 1 7))))))))))
+(A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 1 6)))))))))))
+(A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 1 5))))))))))))
+(A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 1 4)))))))))))))
+(A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 1 3))))))))))))))
+(A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 1 2)))))))))))))))
+(A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 1 1))))))))))))))))
+(A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 2)))))))))))))))
+(A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 4))))))))))))))
+(A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 8)))))))))))))
+(A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 16))))))))))))
+(A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 32)))))))))))
+(A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 64))))))))))
+(A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 128)))))))))
+(A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 256))))))))
+(A 0 (A 0 (A 0 (A 0 (A 0 (A 0 (A 0 512)))))))
+(A 0 (A 0 (A 0 (A 0 (A 0 (A 0 1024))))))
+(A 0 (A 0 (A 0 (A 0 (A 0 2048)))))
+(A 0 (A 0 (A 0 (A 0 4096))))
+(A 0 (A 0 (A 0 8192)))
+(A 0 (A 0 16384))
+(A 0 32768)
+65536
+              </code></pre>
+            </div>
+            <div class="snippet-code">
+              <div class="snippet-code-header">normal-order evaluation</div>
+              <pre class="snippet-code-text"><code class="language-lisp">
+(A 3 3)
+(A 2 (A 3 2))
+(A 2 (A 2 (A 3 1)))
+(A 2 (A 2 2))
+(A 2 (A 1 (A 2 1)))
+(A 2 (A 1 2))
+(A 2 (A 0 (A 1 1)))
+(A 2 (A 0 2))
+(A 2 4)
+.
+.
+.
+65536
+
+              </code></pre>
+            </div>
+            <p>
+              A concise mathematical definition for <span 
+              class='answer-coded'>f</span> is: <span class='answer-coded'>
+               (f n)</span> computes <span class="answer-coded">2n
+              </span>
+            </p>
+            <p>
+              A concise mathematical definition for <span 
+              class='answer-coded'>g</span> is: <span class='answer-coded'>
+               (g n)</span> computes <span class="answer-coded">2<sup>n</sup>
+              </span>
+            </p>
+            <p>
+              A concise mathematical definition for <span 
+              class='answer-coded'>h</span> is: <span class='answer-coded'>
+               (h n)</span> computes <span class="answer-coded"><sup>n</sup>2</span> aka <span class='answer-coded'>2↑↑n</span> (tetration)
+            </p>
+            <p>
+              By the way, I observe that the above definition of the Ackerman
+              function differs from the traditional definition, which in R5RS
+              would look like this:
+            </p>
+            <div class="snippet-code">
+              <div class="snippet-code-header">Scheme</div>
+              <pre class="snippet-code-text"><code class="language-lisp">
+(define (ackermann m n)
+  (cond ((= m 0) (+ n 1))
+        ((= n 0) (ackermann (- m 1) 1))
+        (else (ackermann (- m 1) (ackermann m (- n 1))))))
+              </code></pre>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li>
+        <p class="exercise">
+          Exercise 1.11: A function f is defined by the rule that
+          \[f(n) = 
+          \begin{cases} 
+          \phantom{f(n - 1) + f(n } n & \text{if } n < 3 \\
+          f(n - 1) + f(n - 2) + f(n - 3) & \text{if } n \geq 3
+          \end{cases}\]
+          Write a procedure that computes \(f\) by means of a recursive process.
+          Write a procedure that computes \(f\) by means of an iterative
+          process.
+        </p>
+        <div class="answer-block">
+          <h3 class="answer-header">ANSWER</h3>
+          <div class="answer-content">
+            <h3>Recursive procedure example</h3>
+            <div class="snippet-code">
+              <div class="snippet-code-header">Scheme</div>
+              <pre class="snippet-code-text"><code class="language-lisp">
+(define (recursive-pascal-triangle n)
+    (if (< n 3)
+        n
+        (+ (pascal-triangle (- n 1)) 
+           (* 2 (pascal-triangle (- n 2)))
+           (* 3 (pascal-triangle (-n 3))))))
+              </code></pre>
+            </div>
+            <h3>Iterative procedure example</h3>
+            Working on it...
           </div>
         </div>
       </li>
