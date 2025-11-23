@@ -1,0 +1,14 @@
+(define (recursive-pascal-triangle n)
+  (if (< n 3)
+      n
+      (+ (pascal-triangle (- n 1)) (* 2 (pascal-triangle (- n 2))) (* 3 (pascal-triangle (-n 3))))))
+
+(define (iterative-pascal-triangle n)
+  (pascal-triangle-iter 1 1 n))
+
+(define (pascal-triangle-iter a b c)
+  (if (= c 0)
+      b
+      (pascal-triangle-iter (* 2 a) a (- c 1))))
+  
+(iterative-pascal-triangle 7)

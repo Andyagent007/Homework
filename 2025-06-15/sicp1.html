@@ -1007,6 +1007,48 @@ exactSqrt * exactSqrt // the value returned is 9.999999999999998e+48
           </div>
         </div>
       </li>
+      <li>
+        <p class="exercise">
+          Exercise 1.12: The following pattern of numbers is called Pascal’s
+          triangle. 
+          <div class="snippet-code">
+              <pre class="snippet-code-text"><code>
+              1
+
+            1   1
+
+          1   2   1
+
+        1   3   3   1
+
+      1   4   6   4   1
+
+            . . .
+              </code></pre>
+          </div>
+        </p>
+        <p class="exercise">
+          The numbers at the edge of the triangle are all 1, and each number
+          inside the triangle is the sum of the two numbers above it. Write a
+          procedure that computes elements of Pascal’s triangle by means of a
+          recursive process.
+        </p>
+        <div class="answer-block">
+          <h3 class="answer-header">ANSWER</h3>
+          <div class="answer-content">
+            <div class="snippet-code">
+              <div class="snippet-code-header">Scheme</div>
+              <pre class="snippet-code-text"><code class="language-lisp">
+(define (pascal-triangle row col)
+  (if (or (= col 1) (= col (+ row 1)))
+       1
+       (+ (pascal-triangle (- row 1) (- col 1))
+          (pascal-triangle (- row 1) col))))
+              </code></pre>
+            </div>
+          </div>
+        </div>
+      </li>
     </ol>
   </div>
   <script>
