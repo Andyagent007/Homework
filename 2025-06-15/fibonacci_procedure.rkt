@@ -4,5 +4,5 @@
        (+ (pascal-triangle (- row 1) (- col 1))
           (pascal-triangle (- row 1) col))))
 
-(pascal-triangle 4 3)
+(pascal-triangle 6 3)
 
