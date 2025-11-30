@@ -4,12 +4,14 @@
       (+ (f-recursive (- n 1)) (* 2 (f-recursive (- n 2))) (* 3 (f-recursive (- n 3))))))
 
 (define (f-iterative n)
-  (perform-iterations 1 1 n))
+  (if (< n 3)
+      n
+      (perform-iterations 0 1 2 (- n 2))))
 
-(define (perform-iterations a b counter)
+(define (perform-iterations a b c counter)
   (if (= counter 0)
-      b
-      (perform-iterations (+ (- a 1) (*(- a 2) 2) (* (- a 3) 3)) a (- counter 1))))
+      c
+      (perform-iterations  b c (+ c (* b 2) (* a 3)) (- counter 1))))
 
-(f-recursive 3)
-(f-iterative 1)
+(f-recursive 4)
+(f-iterative 5)

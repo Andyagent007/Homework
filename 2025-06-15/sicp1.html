@@ -983,25 +983,27 @@ exactSqrt * exactSqrt // the value returned is 9.999999999999998e+48
             <div class="snippet-code">
               <div class="snippet-code-header">Scheme</div>
               <pre class="snippet-code-text"><code class="language-lisp">
-(define (recursive-pascal-triangle n)
+(define (f-recursive n)
     (if (< n 3)
         n
-        (+ (pascal-triangle (- n 1)) 
-           (* 2 (pascal-triangle (- n 2)))
-           (* 3 (pascal-triangle (-n 3))))))
+        (+ (f-recursive (- n 1)) 
+           (* 2 (f-recursive (- n 2)))
+           (* 3 (f-recursive (-n 3))))))
               </code></pre>
             </div>
             <h3>Iterative procedure example</h3>
             <div class="snippet-code">
               <div class="snippet-code-header">Scheme</div>
               <pre class="snippet-code-text"><code class="language-lisp">
-(define (iterative-pascal-triangle n)
-  (pascal-traingle-iter 1 1 n))
+(define (f-iterative n)
+  (if (< n 3)
+      n
+      (perform-iterations 0 1 2 (- n 2))))
 
-(define (pascal-triangle-iter a b counter)
+(define (perform-iterations a b c counter)
   (if (= counter 0)
-      b
-      (pascal-triangle-iter (* 2 a) a (- counter 1))))
+      c
+      (perform-iterations  b c (+ c (* b 2) (* a 3)) (- counter 1))))
               </code></pre>
             </div>
           </div>
