@@ -1260,7 +1260,14 @@ Fib(1) = ⌊𝞅^1/√5⌉
         <div class="answer-block">
           <h3 class="answer-header">ANSWER</h3>
           <div class="answer-content">
-            <img class="img-box" src="./recursion_tree_cc.jpg" alt="Recursion_tree_cc">
+            <h3>Tree-recursive process:</h3>
+            <p style="padding-left: 10px; padding-right: 5px;">
+              <img class="img-box" src="./recursion_tree_cc.jpg" alt="Recursion_tree_cc">
+            </p>
+            <h3>Number of steps, and order of growth in space</h3>
+            <p style="padding-left: 10px; padding-right: 5px;">
+              
+            </p>
           </div>
         </div>
       </li>
@@ -1325,7 +1332,43 @@ Fib(1) = ⌊𝞅^1/√5⌉
             <h3 class="answer-header">ANSWER</h3>
             <div class="answer-content">
               <h3>Point a.</h3>
-              Working on it (Answer developed in last meeting was incorrect).
+              <p style="padding-left: 10px; padding-right: 5px;">
+                The amount of time the procedure <span class="answer-coded">p</span> is applied is 5.
+                Since 12.15 start reducing by 3 each time going through 4.05, 1.35, 0.45, 0.15, and lastly
+                0.05 where in this step the condition in the statement is true.
+              </p>
+              <h3>Point b.</h3>
+              <pre style="padding-left: 10px; padding-right: 5px;">
+To find the answer to this problem we need to understand what the procedure does in 
+relation to "angle". Each recursion call the angle is being divided by 3 until the condition
+is met "not ∣angle∣ > 0.1", equivalent to: ∣angle∣ < 0.1.
+
+Then, what each recursion call would be doing is:
+
+((((angle/3)/3)/3)/3), and so on k times. Which we can modify as following by definition:
+
+angle/3, angle/3^2, angle/3^3.... angle/3^k
+
+Thus:
+
+|angle|/3^k < 0.1
+
+Solve for k:
+
+|angle|/0.1 < 3^k
+
+Again, by logarithmic definition:
+
+logb a = x <=> b^x = a
+
+log3 |angle|/0.1 > k
+
+k = Θ(log3 |angle|/0.1)
+
+The constant 0.1 and the logarithm base does not affect the order of growth, therefore the definite answer is:
+
+k = Θ(log |angle|)
+              </pre>
             </div>
           </div>
       </li>
