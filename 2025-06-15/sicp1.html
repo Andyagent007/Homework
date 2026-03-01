@@ -1337,37 +1337,122 @@ Fib(1) = ⌊𝞅^1/√5⌉
                 Since 12.15 start reducing by 3 each time going through 4.05, 1.35, 0.45, 0.15, and lastly
                 0.05 where in this step the condition in the statement is true.
               </p>
+              <div class="snippet-code">
+                <h3 class="snippet-code-header">normal-order evaluation</h3>
+                <pre class="snippet-code-text"><code class="language-lisp">
+(sine 12.15)
+  (sine 4.05)
+    (sine 1.35)
+      (sine 0.45)
+        (sine 0.15)
+          (sine 0.05)
+                </code></pre>
+              </div>
               <h3>Point b.</h3>
               <pre style="padding-left: 10px; padding-right: 5px;">
 To find the answer to this problem we need to understand what the procedure does in 
-relation to "angle". Each recursion call the angle is being divided by 3 until the condition
-is met "not ∣angle∣ > 0.1", equivalent to: ∣angle∣ < 0.1.
+relation to the angle. Each recursion call the angle is being divided by 3 until the condition
+is met "not ∣angle∣ > 0.1", equivalent to: <span class="answer-coded">∣angle∣ < 0.1</span>.
 
 Then, what each recursion call would be doing is:
 
-((((angle/3)/3)/3)/3), and so on k times. Which we can modify as following by definition:
-
-angle/3, angle/3^2, angle/3^3.... angle/3^k
-
+<span class="answer-coded">((((angle/3)/3)/3)/3)</span>, and so on k times. Which we can modify as following by definition:
+<math display="block">
+  <mfrac>
+    <mi>angle</mi>
+    <mn>3</mn>
+  </mfrac>
+  <mi>,</mi>
+  <mfrac>
+    <mi>angle</mi>
+    <msup>
+      <mn>3</mn><mn>2</mn>
+    </msup>
+  </mfrac>
+  <mi>,</mi>
+  <mfrac>
+    <mi>angle</mi>
+    <msup>
+      <mn>3</mn><mn>3</mn>
+    </msup>
+  </mfrac>
+  <mi>...</mi>
+  <mfrac>
+    <mi>angle</mi>
+    <msup>
+      <mn>angle</mn><mi>k</mi>
+    </msup>
+  </mfrac>
+</math>
 Thus:
-
-|angle|/3^k < 0.1
+<math display="block">
+  <mfrac>
+    <mrow><mo>|</mo><mi>angle</mi><mo>|</mo></mrow>
+    <msup>
+      <mn>3</mn><mi>k</mi>
+    </msup>
+  </mfrac>
+  <mo><</mo>
+  <mn>0.1</mn>
+</math>
 
 Solve for k:
 
-|angle|/0.1 < 3^k
+<math display="block">
+  <mfrac>
+    <mrow><mo>|</mo><mi>angle</mi><mo>|</mo></mrow>
+    <mn>0.1</mn>
+  </mfrac>
+  <mo><</mo>
+  <msup>
+    <mn>3</mn><mi>k</mi>
+  </msup>
+</math>
+Then, by logarithmic definition:
 
-Again, by logarithmic definition:
+<math display="block">
+  <msub>
+    <mi>log</mi>
+    <mi>b</mi>
+  </msub>
+  <mi>a</mi>
+  <mo>=</mo>
+  <mi>x</mi>
+  <mo><</mo>
+  <mo>=</mo>
+  <mo>></mo>
+  <msup>
+    <mi>b</mi><mi>x</mi>
+  </msup>
+  <mo>=</mo>
+  <mi>a</mi>
+</math>
 
-logb a = x <=> b^x = a
+We can get to the next conclusion:
+<math display="block">
+  <mfrac>
+    <mrow>
+      <msub>
+        <mi>log</mi>
+        <mn>3</mn>
+      </msub>
+      <mo>|</mo>
+      <mi>angle</mi>
+      <mo>|</mo>
+    </mrow>
+    <mn>0.1</mn>
+  </mfrac>
+  <mo>></mo>
+  <mi>k</mi>
+</math>
+Therefore:
 
-log3 |angle|/0.1 > k
+  k = Θ(log3 |angle|/0.1)
 
-k = Θ(log3 |angle|/0.1)
+The constant <span class="answer-coded">0.1</span> and the logarithm 
+base does not affect the order of growth, therefore the definite answer is:
 
-The constant 0.1 and the logarithm base does not affect the order of growth, therefore the definite answer is:
-
-k = Θ(log |angle|)
+  Θ(log n)
               </pre>
             </div>
           </div>
