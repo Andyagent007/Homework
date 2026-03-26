@@ -112,6 +112,13 @@
         /* overflow-x: auto; */
         
       }
+      .index-text{
+        padding-left: 10px; 
+        padding-right: 5px;
+      }
+      pre.index-text{
+        white-space: pre-wrap;
+      }
       code.language-lisp{
         font-family:monospace;
         color: #fbe5fb;
@@ -418,7 +425,7 @@
                   The good-enough? test is not effective for finding square
                   roots of very small numbers:
                 </h3>
-                <p style="padding-left: 10px; padding-right: 5px;">
+                <p class="index-text">
                   This statement is the easy one to perceive at first glance.
                   The issue with the <span class='answer-coded'>
                   good-enough?</span> procedure is that it compares the absolute
@@ -455,7 +462,7 @@
 #t
                     </code></pre>
                   </div>
-                  <p style="padding-left: 10px; padding-right: 5px;">
+                  <p class="index-text">
                     Which the result is true, thus the number <span
                     class='answer-coded'>03125000009590625</span> according to
                     this algorithm is the square root of 0.000000000009.
@@ -472,7 +479,7 @@
                   performed with limited precision, making the test poor for
                   calculating large numbers.
                 </h3>
-                <p style="padding-left: 10px; padding-right: 5px;">
+                <p class="index-text">
                   This problem is related to floating-point precision. As 
                   mentioned before, in computers huge numbers are not affected
                   by smaller numbers at a certain distance. Consider this
@@ -486,7 +493,7 @@ let googol = 1e100
 googol == googol + 1
                   </code></pre>
                 </div> 
-                <div style="display: flex; flex-direction: column; padding-left: 10px; padding-right: 5px;">
+                <div class="index-text">
                   <p>
                     This should return something like this:
                   </p>
@@ -732,14 +739,14 @@ exactSqrt * exactSqrt // the value returned is 9.999999999999998e+48
 9
               </code></pre>
             </div>
-            <p style="padding-left: 10px; padding-right: 5px;">
+            <p class="index-text">
               We can notice now, with the illustration above that this is 
               procedure example is a recursive process. First of all because the
               shape of it grows until it meets the condition, and then it starts
               shrinking until we get the result.
             </p>
             <h3>Second procedure example</h3>
-            <p style="padding-left: 10px; padding-right: 5px;">
+            <p class="index-text">
               For the second procedure we notice that the shape is not the same:
             </p>
             <div class="snippet-code">
@@ -757,14 +764,14 @@ exactSqrt * exactSqrt // the value returned is 9.999999999999998e+48
 9
               </code></pre>
             </div>
-            <p style="padding-left: 10px; padding-right: 5px;">
+            <p class="index-text">
               And as the shape changes, that indicates the process is 
               different too; it is iterative. However, there are another few
               reasons why the process is iterative besides the shape. We can
               notice a big difference between the recursive one (the first 
               example), and this one (iterative). Let's elaborate:
             </p>
-            <p style="padding-left: 10px; padding-right: 5px;">
+            <p class="index-text">
               The recursive process as
               mentioned before, needs to keep track of all the values every
               state. We can think of it like this, if you would want to execute
@@ -1068,7 +1075,7 @@ exactSqrt * exactSqrt // the value returned is 9.999999999999998e+48
           <h3 class="answer-header">ANSWER</h3>
           <div class="answer-content">
             <h3>Proving that Fib(n) = (𝞅^n-ψ^n)/√5 by strong induction:</h3>
-            <pre style="padding-left: 10px; padding-right: 5px;">
+            <pre class="index-text">
 First, we will look at the definitions of:
     𝞅
     ψ
@@ -1178,7 +1185,7 @@ QED
             <h3>Proving that Fib(n) is the closest integer to 𝞅^n/√5, where 
               𝞅 = (1+√5)/2
             </h3>
-            <pre style="padding-left: 10px; padding-right: 5px;">
+            <pre class="index-text">
 We have proved that:
 
 Fib(n) = (𝞅^n−ψ^n)/√5
@@ -1261,24 +1268,32 @@ Fib(1) = ⌊𝞅^1/√5⌉
           <h3 class="answer-header">ANSWER</h3>
           <div class="answer-content">
             <h3>Tree-recursive process:</h3>
-            <p style="padding-left: 10px; padding-right: 5px;">
+            <p class="index-text">
               <img class="img-box" src="./recursion_tree_cc.jpg" alt="Recursion_tree_cc">
             </p>
             <h3>Number of steps, and order of growth in space</h3>
-            <p style="padding-left: 10px; padding-right: 5px;">
+            <p class="index-text">
               Number of steps: <span class="answer-coded">count-change</span> uses the the procedure <span class="answer-coded">cc</span>, 
               which depends on two parameters, the <span class="answer-coded">amount</span>, and the <span class="answer-coded">kinds-of-coins</span>.
-              Amount can range from 0 to n (n being the input number), whereas the kinds-of-coins is a fixed number at 5 (since there are 5 denomination of coins). 
-              This function calculates all possible ways to combine these coins to produce the value of n, exploring all possible combinations for each coin type. 
-              It achieves that outcome by spliting into two recursive branches: 
-              One that reduces the kinds-of-coins, and the other reduces the amount by the denomination of the coin. Thus, making a recursion tree.
-              Since for each kinds-of-coins there is n possibilities, and kinds-of-coins is a fixed number, the number of possibilities has a proportional growth 
+              <span class="answer-coded">Amount</span> can range from 0 to <span class="answer-coded">n</span> (<span class="answer-coded">n</span> being the input number), 
+              whereas the <span class="answer-coded">kinds-of-coins</span> is a fixed number at 5 (since there are 5 denomination of coins).  
+            </p>
+            <p class="index-text">
+              This function calculates all possible ways to combine these coins to produce the value of <span class="answer-coded">n</span>, exploring all possible combinations for each coin type. 
+              It achieves that outcome by splitting into two recursive branches: one that reduces the kinds-of-coins, and the other reduces the
+              <span class="answer-coded">amount</span> by the denomination of the coin. Thus, making a recursion tree.
+              Since for each <span class="answer-coded">kinds-of-coins</span> there is <span class="answer-coded">n</span> possibilities, 
+              and <span class="answer-coded">kinds-of-coins</span> is a fixed number, the number of possibilities has a proportional growth 
               to n⁵. Therefore, the number of steps is: Θ(n⁵)
-
+            </p>
+              
+            <p class="index-text">
               Growth in space: The growth in space of this procedure is of Θ(n), that is because the last denomination of coins is 1, and as mentioned 
-              this procedure splits each recursion call reducing kinds-of-coins from one side, and in the other reduces amount. Considering that the last denomination
-              for kinds-of-coins is 1, in one side it will be reducing amount by 1. On the other hand, the worst case for the kinds-of-coins is 5, less than the possible n for amount. 
-              In conclusion, the maximun depth is equals to n, so the order of growth in space is of Θ(n).
+              this procedure splits each recursion call reducing <span class="answer-coded">kinds-of-coins</span> from one side, and in the other reduces 
+              <span class="answer-coded">amount</span>. Considering that the last denomination for <span class="answer-coded">kinds-of-coins</span> is 1, 
+              in one side it will be reducing <span class="answer-coded">amount</span> by 1. On the other hand, the worst case for the <span class="answer-coded"> kinds-of-coins</span>
+              is 5, less than the possible <span class="answer-coded">n</span> for <span class="answer-coded">amount</span>. In conclusion, the maximun depth is equals to 
+              <span class="answer-coded">n</span>, so the order of growth in space is of Θ(n).
             </p>
           </div>
         </div>
@@ -1344,7 +1359,7 @@ Fib(1) = ⌊𝞅^1/√5⌉
             <h3 class="answer-header">ANSWER</h3>
             <div class="answer-content">
               <h3>Point a.</h3>
-              <p style="padding-left: 10px; padding-right: 5px;">
+              <p class="index-text">
                 The amount of time the procedure <span class="answer-coded">p</span> is applied is 5.
                 Since 12.15 start reducing by 3 each time going through 4.05, 1.35, 0.45, 0.15, and lastly
                 0.05 where in this step the condition in the statement is true.
@@ -1357,14 +1372,16 @@ Fib(1) = ⌊𝞅^1/√5⌉
     (sine 1.35)
       (sine 0.45)
         (sine 0.15)
-          (sine 0.05)
+          (sine 0.05) 
+
+; Note: These are indented to show that, for instance, (sine 12.15) invokes (sine 4.05), etc.
                 </code></pre>
               </div>
               <h3>Point b.</h3>
-              <pre style="padding-left: 10px; padding-right: 5px;">
+              <pre class="index-text">
 To find the answer to this problem we need to understand what the procedure does in 
 relation to the angle. Each recursion call the angle is being divided by 3 until the condition
-is met "not ∣angle∣ > 0.1", equivalent to: <span class="answer-coded">∣angle∣ < 0.1</span>.
+is met: <span class="answer-coded">(not (> (abs angle) 0.1)</span>, equivalent to: |angle∣ < 0.1|.
 
 Then, what each recursion call would be doing is:
 
@@ -1468,6 +1485,18 @@ base does not affect the order of growth, therefore the definite answer is:
               </pre>
             </div>
           </div>
+      </li>
+      <li>
+        <p class="exercise">
+          Exercise 1.16: Design a procedure that evolves an iterative exponentiation process that uses successive squaring and uses a logarithmic number of steps, 
+          as does <span class="exercise-coded">fast-expt</span> (Hint: Using the observation that (bn/2)2 = (b2)n/2, keep, along with the exponent n and the base b, 
+          an additional state variable a, and define the state transformation in such a way that the product abn is unchanged from state to state. 
+          At the beginning of the process a is taken to be 1, and the answer is given by the value of a at the end of the process. In general, the technique of 
+          defining an invariant quantity that remains unchanged from state to state is a powerful way to think about the design of iterative algorithms.)
+        </p>
+        <div class="answer-block">
+          <h3 class="answer-header">ANSWER</h3>
+        </div>
       </li>
     </ol>
   </div>
