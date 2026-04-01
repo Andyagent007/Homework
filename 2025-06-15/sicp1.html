@@ -1496,6 +1496,17 @@ base does not affect the order of growth, therefore the definite answer is:
         </p>
         <div class="answer-block">
           <h3 class="answer-header">ANSWER</h3>
+          <div class="snippet-code">
+            <div class="snippet-code-header">R5RS</div>
+            <pre class="snippet-code-text"><code class="language-lisp">
+(define (fast-expt b n)
+  (fast-expt-iter b (- n 1) 1))
+(define (fast-expt-iter b c a)
+  (cond ((= c 0) a)
+        ((is_even? c) (fast-expt-iter b (/ c 2) (* (square b) a)))
+        (else (fast-expt-iter b (- c 1) (* b a)))))
+            </code></pre>
+          </div>
         </div>
       </li>
     </ol>
