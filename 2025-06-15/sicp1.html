@@ -1489,7 +1489,7 @@ base does not affect the order of growth, therefore the definite answer is:
       <li>
         <p class="exercise">
           Exercise 1.16: Design a procedure that evolves an iterative exponentiation process that uses successive squaring and uses a logarithmic number of steps, 
-          as does <span class="exercise-coded">fast-expt</span> (Hint: Using the observation that (bn/2)2 = (b2)n/2, keep, along with the exponent n and the base b, 
+          as does <span class="exercise-coded">fast-expt</span> (Hint: Using the observation that (bⁿᐟ²)² = (b²)ⁿᐟ², keep, along with the exponent n and the base b, 
           an additional state variable a, and define the state transformation in such a way that the product abn is unchanged from state to state. 
           At the beginning of the process a is taken to be 1, and the answer is given by the value of a at the end of the process. In general, the technique of 
           defining an invariant quantity that remains unchanged from state to state is a powerful way to think about the design of iterative algorithms.)
@@ -1509,16 +1509,16 @@ base does not affect the order of growth, therefore the definite answer is:
           </div>
           <p class="answer-content">
             Number of Steps: Θ(log n). This is because the procedure is resolved by shrinking <span class="answer-coded">c</span>
-            until it gets to 0. Taking at most two steps, such as: recuding <span class="answer-coded">c</span> (the exponent) 
-            by 1, or halving it by 2. Everytime that it cannot be halved by 2, it is reduced by 1, which means that the very next step is
+            until it gets to 0. Taking at most two steps, such as: reducing <span class="answer-coded">c</span> (the exponent) 
+            by 1, or halving it by 2. Every time that it cannot be halved by 2, it is reduced by 1, which means that the very next step is
             divisible by 2. We can think about it like: how many times is n divible by 0, which is the same as:
             <math display="block">
               <msub><mi>log</mi><mn>2</mn></msub><mi>n</mi>
             </math>
           </p>
           <p class="answer-content">
-            Space complexity: Θ(1). The reason behind this, is that since is an iterative process, it doesn't have a growing call stack, instead it store the values in variables
-            like <span class="answer-coded">a</span>, <span class="answer-coded">b</span>, and <span class="answer-coded">c</span>. This simplifying the use of space for this procedure.
+            Space complexity: Θ(1). The reason behind this, is that since it's an iterative process, it doesn't have a growing call stack, instead it stores the values in variables
+            like <span class="answer-coded">a</span>, <span class="answer-coded">b</span>, and <span class="answer-coded">c</span>. This simplifies the use of space for this procedure.
           </p>
         </div>
       </li>
