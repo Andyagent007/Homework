@@ -1500,13 +1500,26 @@ base does not affect the order of growth, therefore the definite answer is:
             <div class="snippet-code-header">R5RS</div>
             <pre class="snippet-code-text"><code class="language-lisp">
 (define (fast-expt b n)
-  (fast-expt-iter b (- n 1) 1))
-(define (fast-expt-iter b c a)
-  (cond ((= c 0) a)
-        ((is_even? c) (fast-expt-iter b (/ c 2) (* (square b) a)))
-        (else (fast-expt-iter b (- c 1) (* b a)))))
+  (define (fast-expt-iter b c a)
+    (cond ((= c 0) a)
+          ((is_even? c) (fast-expt-iter (square b) (/ c 2) a))
+          (else (fast-expt-iter b (- c 1) (* b a)))))
+  (fast-expt-iter b n 1))
             </code></pre>
           </div>
+          <p class="answer-content">
+            Number of Steps: Θ(log n). This is because the procedure is resolved by shrinking <span class="answer-coded">c</span>
+            until it gets to 0. Taking at most two steps, such as: recuding <span class="answer-coded">c</span> (the exponent) 
+            by 1, or halving it by 2. Everytime that it cannot be halved by 2, it is reduced by 1, which means that the very next step is
+            divisible by 2. We can think about it like: how many times is n divible by 0, which is the same as:
+            <math display="block">
+              <msub><mi>log</mi><mn>2</mn></msub><mi>n</mi>
+            </math>
+          </p>
+          <p class="answer-content">
+            Space complexity: Θ(1). The reason behind this, is that since is an iterative process, it doesn't have a growing call stack, instead it store the values in variables
+            like <span class="answer-coded">a</span>, <span class="answer-coded">b</span>, and <span class="answer-coded">c</span>. This simplifying the use of space for this procedure.
+          </p>
         </div>
       </li>
     </ol>
